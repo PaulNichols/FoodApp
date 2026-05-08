@@ -1,0 +1,18 @@
+{
+  "name": "Swim Gym Tracker",
+  "short_name": "Gym Tracker",
+  "description": "A simple localStorage gym tracker for Program A and Program B.",
+  "start_url": "/GymApp/",
+  "scope": "/GymApp/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f766e",
+  "icons": [
+    {
+      "src": "/GymApp/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
