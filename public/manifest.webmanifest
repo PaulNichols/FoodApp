@@ -2,14 +2,14 @@
   "name": "Food Log",
   "short_name": "Food Log",
   "description": "A private mobile-first daily food tracker.",
-  "start_url": "/GymApp/",
-  "scope": "/GymApp/",
+  "start_url": "/FoodApp/",
+  "scope": "/FoodApp/",
   "display": "standalone",
   "background_color": "#f8fafc",
   "theme_color": "#0f766e",
   "icons": [
     {
-      "src": "/GymApp/icon.svg",
+      "src": "/FoodApp/icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

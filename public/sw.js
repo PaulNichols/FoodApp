@@ -1,5 +1,5 @@
 const CACHE_NAME = 'food-log-v1';
-const BASE_PATH = '/GymApp/';
+const BASE_PATH = '/FoodApp/';
 const STATIC_ASSETS = [BASE_PATH, `${BASE_PATH}manifest.webmanifest`, `${BASE_PATH}icon.svg`];
 
 self.addEventListener('install', (event) => {

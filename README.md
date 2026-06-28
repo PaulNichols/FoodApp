@@ -40,10 +40,10 @@ The workflow runs `npm ci`, `npm run build`, uploads `dist`, and deploys using t
 
 ## Vite Base Path
 
-`vite.config.ts` infers the repository name from `GITHUB_REPOSITORY` during GitHub Actions builds. For local builds it falls back to `/GymApp/`, matching the current repository URL shape:
+`vite.config.ts` infers the repository name from `GITHUB_REPOSITORY` during GitHub Actions builds. For local builds it falls back to `/FoodApp/`, matching the current repository URL shape:
 
 ```text
-https://OWNER.github.io/GymApp/
+https://OWNER.github.io/FoodApp/
 ```
 
 If this app is moved to a different repository, update the local fallback and manifest paths as needed.
