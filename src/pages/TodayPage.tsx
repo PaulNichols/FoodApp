@@ -94,7 +94,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
     setPhotos((current) => [...current.filter((item) => item.path !== photo.path), photo]);
   };
 
-  const save = async () => {
+  const save = async (): Promise<boolean> => {
     setIsLoading(true);
     setStatus('Saving...');
 
@@ -111,7 +111,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
 
         if (!tokenForSave) {
           setStatus('Save cancelled. A GitHub token is required so the JSON can be written to this repo.');
-          return;
+          return false;
         }
 
         onGitHubTokenChange(tokenForSave);
@@ -132,10 +132,24 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
         }. ${getCleanupMessage(githubCleanup, 'GitHub', cutoffDate)} Codex can read /data and /photos from this repo.`,
       );
       setDay(nextDay);
+      return true;
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Save failed.');
+      return false;
     } finally {
       setIsLoading(false);
+    }
+  };
+
+  const saveThenNavigate = async (nextDate: string) => {
+    if (!nextDate || nextDate === date || isLoading) {
+      return;
+    }
+
+    const saved = await save();
+
+    if (saved) {
+      setDate(nextDate);
     }
   };
 
@@ -143,9 +157,10 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
     <div className="page-stack">
       <DateSelector
         value={date}
-        onChange={setDate}
-        onPrevious={() => setDate(addDays(date, -1))}
-        onNext={() => setDate(addDays(date, 1))}
+        onChange={(nextDate) => void saveThenNavigate(nextDate)}
+        onPrevious={() => void saveThenNavigate(addDays(date, -1))}
+        onNext={() => void saveThenNavigate(addDays(date, 1))}
+        disabled={isLoading}
       />
 
       <SupplementCard
