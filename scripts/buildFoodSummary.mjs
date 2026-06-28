@@ -127,10 +127,15 @@ function summarizeMeal(meal) {
     label: normalizeString(meal.label),
     usedDefault: Boolean(meal.usedDefault),
     templateName: normalizeString(meal.templateName),
+    ingredients: summarizeIngredients(meal.ingredients),
     hasNotes: hasText(meal.notes),
     hasPhoto: hasText(meal.photoPath),
     analysis: summarizeFoodAnalysis(meal.analysis),
   };
+}
+
+function summarizeIngredients(ingredients) {
+  return Array.isArray(ingredients) ? ingredients.map(normalizeString).filter(Boolean) : [];
 }
 
 function summarizeSnack(snack) {

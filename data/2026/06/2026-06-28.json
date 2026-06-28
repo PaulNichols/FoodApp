@@ -31,14 +31,23 @@
       "usedDefault": true,
       "notes": "",
       "photoPath": null,
+      "ingredients": [
+        "Man Shake serving",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ],
       "analysis": {
         "itemName": "Man Shake + 2 scoops WPI protein",
         "calories": 430,
         "confidence": "medium",
         "source": "codex",
-        "notes": "Template estimate; high protein, but confirm powder scoop size if weight loss stalls.",
-        "updatedAt": "2026-06-28T16:09:04+10:00",
-        "inputHash": "codex:2026-06-28:breakfast:man-shake-wpi:v1"
+        "notes": "Template estimate. WPI component confirmed: 2 scoops/30 g = 124 Cal and 24 g protein.",
+        "updatedAt": "2026-06-28T16:18:28+10:00",
+        "inputHash": "codex:2026-06-28:breakfast:man-shake-wpi:v2-wpi-serving"
       }
     },
     {
@@ -78,19 +87,28 @@
       "usedDefault": true,
       "notes": "",
       "photoPath": null,
+      "ingredients": [
+        "Man Shake serving",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ],
       "analysis": {
         "itemName": "Man Shake + 2 scoops WPI protein",
         "calories": 430,
         "confidence": "medium",
         "source": "codex",
-        "notes": "Template estimate; useful controlled dinner if training recovery and hunger are acceptable.",
-        "updatedAt": "2026-06-28T16:09:04+10:00",
-        "inputHash": "codex:2026-06-28:evening-meal:man-shake-wpi:v1"
+        "notes": "Template estimate. WPI component confirmed: 2 scoops/30 g = 124 Cal and 24 g protein.",
+        "updatedAt": "2026-06-28T16:18:28+10:00",
+        "inputHash": "codex:2026-06-28:evening-meal:man-shake-wpi:v2-wpi-serving"
       }
     }
   ],
   "snacks": [],
   "dailyNotes": "",
   "createdAt": "2026-06-28T15:31:17+10:00",
-  "updatedAt": "2026-06-28T16:09:51+10:00"
+  "updatedAt": "2026-06-28T16:18:28+10:00"
 }

@@ -30,7 +30,16 @@
       "templateName": "Man Shake + 2 scoops WPI protein",
       "usedDefault": true,
       "notes": "",
-      "photoPath": null
+      "photoPath": null,
+      "ingredients": [
+        "Man Shake serving",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ]
     },
     {
       "slot": "lunch",
@@ -59,11 +68,20 @@
       "templateName": "Man Shake + 2 scoops WPI protein",
       "usedDefault": true,
       "notes": "",
-      "photoPath": null
+      "photoPath": null,
+      "ingredients": [
+        "Man Shake serving",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ]
     }
   ],
   "snacks": [],
   "dailyNotes": "",
   "createdAt": "2026-06-28T16:09:52+10:00",
-  "updatedAt": "2026-06-28T16:09:55+10:00"
+  "updatedAt": "2026-06-28T16:18:28+10:00"
 }

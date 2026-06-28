@@ -4,6 +4,11 @@ A mobile-first daily food tracker built with React, Vite, and TypeScript for Git
 
 The default day is optimised for a routine of morning supplements, Man Shake + WPI breakfast, Paul's lunch shake, Man Shake + WPI evening meal, optional snacks, and daily notes.
 
+Known default nutrition context:
+
+- WPI protein serving with the Man Shake: 2 scoops = 30 g.
+- Per WPI serving: 124 Cal, 24 g protein, 1.8 g fat, 1.8 g carbohydrate, 0 g fibre, 93 mg sodium, and 123 mg calcium.
+
 ## Public Data
 
 This repository is intentionally public for the personal fitness workflow, so committed `/data` and `/photos` files are public too.

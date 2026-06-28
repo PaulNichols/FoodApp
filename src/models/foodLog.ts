@@ -95,6 +95,17 @@ export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides'];
 
 const deprecatedSupplementNames = new Set(['Other daily supplements']);
 
+export const wpiProteinServingNutrition = [
+  'WPI protein serving: 2 scoops = 30 g',
+  'WPI protein per 30 g serving: 124 Cal (519 kJ)',
+  'WPI protein per 30 g serving: 24 g protein',
+  'WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat',
+  'WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose',
+  'WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium',
+];
+
+const manShakeWpiIngredients = ['Man Shake serving', ...wpiProteinServingNutrition];
+
 export const mealTemplates: MealLog[] = [
   {
     slot: 'breakfast',
@@ -104,6 +115,7 @@ export const mealTemplates: MealLog[] = [
     usedDefault: true,
     notes: '',
     photoPath: null,
+    ingredients: manShakeWpiIngredients,
   },
   {
     slot: 'lunch',
@@ -123,6 +135,7 @@ export const mealTemplates: MealLog[] = [
     usedDefault: true,
     notes: '',
     photoPath: null,
+    ingredients: manShakeWpiIngredients,
   },
 ];
 
