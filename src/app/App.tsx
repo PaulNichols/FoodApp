@@ -52,7 +52,7 @@ export function App() {
 
       <nav className="bottom-nav" aria-label="Primary navigation">
         <button className={route === 'today' ? 'active' : ''} type="button" onClick={() => setRoute('today')}>
-          Today
+          Save food logger
         </button>
         <button className={route === 'dashboard' ? 'active' : ''} type="button" onClick={() => setRoute('dashboard')}>
           Dashboard
