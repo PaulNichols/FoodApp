@@ -4,7 +4,7 @@ import { MealCard } from '../components/MealCard';
 import { SnackList } from '../components/SnackList';
 import { SupplementCard } from '../components/SupplementCard';
 import type { FoodLogDay, FoodPhoto, MealLog, MealSlot, StorageSettings } from '../models/foodLog';
-import { createDefaultFoodLogDay } from '../models/foodLog';
+import { createDefaultFoodLogDay, normalizeFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
 import {
@@ -45,7 +45,7 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
         const savedDay = await localRepository.getDay(date);
 
         if (isActive) {
-          setDay(savedDay ?? createDefaultFoodLogDay(date, toBrisbaneTimestamp()));
+          setDay(normalizeFoodLogDay(savedDay ?? createDefaultFoodLogDay(date, toBrisbaneTimestamp())));
           setStatus(savedDay ? 'Loaded local day.' : 'Using default day.');
         }
       } catch (error) {
@@ -67,7 +67,7 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
   }, [date, localRepository]);
 
   const updateDay = (nextDay: FoodLogDay) => {
-    setDay({ ...nextDay, updatedAt: toBrisbaneTimestamp() });
+    setDay(normalizeFoodLogDay({ ...nextDay, updatedAt: toBrisbaneTimestamp() }));
   };
 
   const updateMeal = (slot: MealSlot, nextMeal: MealLog) => {
@@ -83,7 +83,7 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
     setStatus('Saving...');
 
     try {
-      const nextDay = { ...day, updatedAt: toBrisbaneTimestamp() };
+      const nextDay = normalizeFoodLogDay({ ...day, updatedAt: toBrisbaneTimestamp() });
       await localRepository.saveDay(nextDay, photos);
       const cutoffDate = getOneMonthAgoDate();
       const localCleanup = await runCleanup(() => localRepository.cleanupOlderThan(cutoffDate));

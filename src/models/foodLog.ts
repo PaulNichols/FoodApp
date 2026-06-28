@@ -75,7 +75,9 @@ export const lunchShakeIngredients = [
   'optional psyllium husk',
 ];
 
-export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides', 'Other daily supplements'];
+export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides'];
+
+const deprecatedSupplementNames = new Set(['Other daily supplements']);
 
 export const mealTemplates: MealLog[] = [
   {
@@ -121,6 +123,14 @@ export const createDefaultFoodLogDay = (date: string, now: string): FoodLogDay =
   dailyNotes: '',
   createdAt: now,
   updatedAt: now,
+});
+
+export const normalizeFoodLogDay = (day: FoodLogDay): FoodLogDay => ({
+  ...day,
+  supplements: {
+    ...day.supplements,
+    items: day.supplements.items.filter((item) => !deprecatedSupplementNames.has(item.name)),
+  },
 });
 
 export const getMeal = (day: FoodLogDay, slot: MealSlot): MealLog => {
