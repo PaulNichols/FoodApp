@@ -25,9 +25,10 @@ for (const filePath of dailyFiles) {
 
 const days = expectedDates.map((date) => summarizeDay(date, daysByDate.get(date) ?? null));
 const loggedDays = days.filter((day) => day.logged);
+const sourceUpdatedAt = getLatestSourceUpdatedAt(loggedDays);
 const summary = {
   schemaVersion: 1,
-  generatedAt: new Date().toISOString(),
+  sourceUpdatedAt,
   timezone: 'Australia/Brisbane',
   source: 'FoodApp repository data',
   window: {
@@ -172,6 +173,12 @@ function summarizeAnalysis(items) {
 
 function getFoodDateFromPath(filePath) {
   return /data[/\\]\d{4}[/\\]\d{2}[/\\](\d{4}-\d{2}-\d{2})\.json$/.exec(filePath)?.[1] ?? null;
+}
+
+function getLatestSourceUpdatedAt(days) {
+  const timestamps = days.map((day) => day.updatedAt).filter(Boolean).sort();
+
+  return timestamps.at(-1) ?? null;
 }
 
 function getTodayInBrisbane() {
