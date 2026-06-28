@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-28T16:18:28+10:00",
+  "sourceUpdatedAt": "2026-06-28T17:30:32+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
@@ -16,7 +16,7 @@
     "replacedMealCount": 0,
     "snackCount": 0,
     "photoCount": 0,
-    "estimatedCalories": 1510,
+    "estimatedCalories": 1304,
     "daysWithEstimatedCalories": 1,
     "manualAnalysisItems": 0,
     "openAiAnalysisItems": 0,
@@ -28,7 +28,7 @@
     {
       "date": "2026-06-28",
       "logged": true,
-      "updatedAt": "2026-06-28T16:18:28+10:00",
+      "updatedAt": "2026-06-28T17:30:32+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -44,7 +44,16 @@
           "usedDefault": true,
           "templateName": "Man Shake + 2 scoops WPI protein",
           "ingredients": [
-            "Man Shake serving",
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
             "WPI protein serving: 2 scoops = 30 g",
             "WPI protein per 30 g serving: 124 Cal (519 kJ)",
             "WPI protein per 30 g serving: 24 g protein",
@@ -56,11 +65,11 @@
           "hasPhoto": false,
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
-            "calories": 430,
-            "confidence": "medium",
+            "calories": 327,
+            "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T16:18:28+10:00"
+            "updatedAt": "2026-06-28T17:30:32+10:00"
           }
         },
         {
@@ -96,7 +105,16 @@
           "usedDefault": true,
           "templateName": "Man Shake + 2 scoops WPI protein",
           "ingredients": [
-            "Man Shake serving",
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
             "WPI protein serving: 2 scoops = 30 g",
             "WPI protein per 30 g serving: 124 Cal (519 kJ)",
             "WPI protein per 30 g serving: 24 g protein",
@@ -108,18 +126,18 @@
           "hasPhoto": false,
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
-            "calories": 430,
-            "confidence": "medium",
+            "calories": 327,
+            "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T16:18:28+10:00"
+            "updatedAt": "2026-06-28T17:30:32+10:00"
           }
         }
       ],
       "snackCount": 0,
       "snacks": [],
       "photoCount": 0,
-      "estimatedCalories": 1510,
+      "estimatedCalories": 1304,
       "dailyNotesPresent": false,
       "analysis": {
         "manualItems": 0,

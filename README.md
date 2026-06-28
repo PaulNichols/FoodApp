@@ -6,8 +6,11 @@ The default day is optimised for a routine of morning supplements, Man Shake + W
 
 Known default nutrition context:
 
+- Man Shake serving: 56 g.
+- Per Man Shake serving: 203 Cal, 29.4 g protein, 2.5 g fat, 9.9 g carbohydrate, 6.9 g dietary fibre, 160 mg sodium, and 400 mg calcium.
 - WPI protein serving with the Man Shake: 2 scoops = 30 g.
 - Per WPI serving: 124 Cal, 24 g protein, 1.8 g fat, 1.8 g carbohydrate, 0 g fibre, 93 mg sodium, and 123 mg calcium.
+- Default Man Shake + WPI meal: 327 Cal before any added milk, fruit, or other extras.
 
 ## Public Data
 

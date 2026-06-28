@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 import type { FoodPhoto, MealLog } from '../models/foodLog';
+import { createDefaultMealAnalysis } from '../models/foodLog';
 import { getFoodPhotoPath } from '../services/dateService';
+import { toBrisbaneTimestamp } from '../services/dateService';
 import { createObjectUrl } from '../services/photoCompression';
 import { FoodAnalysisFields } from './FoodAnalysisFields';
 import { PhotoPicker } from './PhotoPicker';
@@ -31,7 +33,8 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
   }, [photo]);
 
   const resetMeal = () => {
-    onChange({ ...meal, usedDefault: true, notes: '', photoPath: null, analysis: undefined });
+    const nextMeal = { ...meal, usedDefault: true, notes: '', photoPath: null };
+    onChange({ ...nextMeal, analysis: createDefaultMealAnalysis(nextMeal, toBrisbaneTimestamp()) });
   };
 
   return (
@@ -48,13 +51,18 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
           type="checkbox"
           checked={meal.usedDefault}
           aria-label={`${meal.label}: ${meal.templateName}`}
-          onChange={(event) =>
-            onChange({
+          onChange={(event) => {
+            const nextMeal = {
               ...meal,
               usedDefault: event.target.checked,
               photoPath: event.target.checked ? null : meal.photoPath,
-            })
-          }
+            };
+
+            onChange({
+              ...nextMeal,
+              analysis: event.target.checked ? createDefaultMealAnalysis(nextMeal, toBrisbaneTimestamp()) : undefined,
+            });
+          }}
         />
         <span>{meal.templateName}</span>
       </label>

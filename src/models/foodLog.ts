@@ -104,7 +104,36 @@ export const wpiProteinServingNutrition = [
   'WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium',
 ];
 
-const manShakeWpiIngredients = ['Man Shake serving', ...wpiProteinServingNutrition];
+export const manShakeServingNutrition = [
+  'Man Shake serving: 56 g',
+  'Man Shake per 56 g serving: 203 Cal (850 kJ)',
+  'Man Shake per 56 g serving: 29.4 g protein',
+  'Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat',
+  'Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars',
+  'Man Shake per 56 g serving: 6.9 g dietary fibre',
+  'Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium',
+  'Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium',
+  'Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc',
+  'Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)',
+];
+
+const manShakeWpiIngredients = [...manShakeServingNutrition, ...wpiProteinServingNutrition];
+
+export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): FoodItemAnalysis | undefined => {
+  if (!meal.usedDefault || meal.templateId !== 'man-shake-wpi') {
+    return undefined;
+  }
+
+  return {
+    itemName: meal.templateName,
+    calories: 327,
+    confidence: 'high',
+    source: 'codex',
+    notes: 'Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.',
+    updatedAt,
+    inputHash: `codex:${meal.slot}:man-shake-wpi:v3-man-shake-label`,
+  };
+};
 
 export const mealTemplates: MealLog[] = [
   {
@@ -147,7 +176,11 @@ export const createDefaultFoodLogDay = (date: string, now: string): FoodLogDay =
     items: supplementNames.map((name) => ({ name, taken: true, notes: '' })),
     notes: '',
   },
-  meals: mealTemplates.map((meal) => ({ ...meal, ingredients: meal.ingredients ? [...meal.ingredients] : undefined })),
+  meals: mealTemplates.map((meal) => ({
+    ...meal,
+    ingredients: meal.ingredients ? [...meal.ingredients] : undefined,
+    analysis: createDefaultMealAnalysis(meal, now),
+  })),
   snacks: [],
   dailyNotes: '',
   createdAt: now,
