@@ -1,1 +1,1 @@
-export type AppRoute = 'today' | 'dashboard' | 'settings';
+export type AppRoute = 'today' | 'dashboard';

@@ -48,29 +48,22 @@ https://OWNER.github.io/FoodApp/
 
 If this app is moved to a different repository, update the local fallback and manifest paths as needed.
 
-## Storage Modes
+## GitHub Saving
 
-### Local Only
+The app is fixed to save into this repository so another Codex session can read daily JSON and photos at any time.
 
-Local-only mode stores daily JSON and compressed photos in IndexedDB on the current device. It works offline after the app has loaded, but clearing browser website data can remove local logs and photos.
-
-The normal workflow is to save into GitHub repo mode so the repository contains the daily JSON and photos for later Codex analysis.
-
-### GitHub Repo
-
-GitHub repo mode uses the GitHub REST API from the browser only when you manually enter your own fine-grained personal access token in Settings.
+Saving uses the GitHub REST API from the browser. On the first save in a browser session, the app asks for your fine-grained personal access token, stores it in `sessionStorage`, and then writes to `PaulNichols/FoodApp` on `main`.
 
 Token rules:
 
 - No token is hardcoded in the app, workflow, source, README examples, or environment files.
-- The token is optional.
-- The token is stored in `sessionStorage` by default, not `localStorage`.
+- The token is stored in `sessionStorage`, not `localStorage`.
 - The token is never logged.
-- Use **Forget token** to remove it from the browser session.
+- Close the browser tab/session to forget the token.
 
 Create a fine-grained GitHub token scoped to this single repository only with minimum **Contents: Read and write** permission. Do not grant broad account or organization permissions.
 
-When saving in GitHub mode, the app saves locally first, then commits:
+When saving, the app commits:
 
 - `data/yyyy/mm/yyyy-mm-dd.json`
 - `photos/yyyy/mm/yyyy-mm-dd/*.webp`

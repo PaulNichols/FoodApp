@@ -19,9 +19,10 @@ interface TodayPageProps {
   settings: StorageSettings;
   githubToken: string;
   localRepository: LocalFoodLogRepository;
+  onGitHubTokenChange: (token: string) => void;
 }
 
-export function TodayPage({ settings, githubToken, localRepository }: TodayPageProps) {
+export function TodayPage({ settings, githubToken, localRepository, onGitHubTokenChange }: TodayPageProps) {
   const [date, setDate] = useState(getTodayInBrisbane);
   const [day, setDay] = useState<FoodLogDay>(() => createDefaultFoodLogDay(date, toBrisbaneTimestamp()));
   const [photos, setPhotos] = useState<FoodPhoto[]>([]);
@@ -84,36 +85,37 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
 
     try {
       const nextDay = normalizeFoodLogDay({ ...day, updatedAt: toBrisbaneTimestamp() });
-      await localRepository.saveDay(nextDay, photos);
-      const cutoffDate = getOneMonthAgoDate();
-      const localCleanup = await runCleanup(() => localRepository.cleanupOlderThan(cutoffDate));
+      let tokenForSave = githubToken.trim();
 
-      if (settings.mode === 'github') {
-        if (!githubToken.trim()) {
-          setDay(nextDay);
-          setStatus(
-            `Saved locally only. ${getCleanupMessage(localCleanup, 'local')} Add your GitHub token in Settings so Save can update this repo.`,
-          );
+      if (!tokenForSave) {
+        const enteredToken = window.prompt(
+          'Enter your fine-grained GitHub token for FoodApp. It is stored in this browser session only.',
+        );
+
+        tokenForSave = enteredToken?.trim() ?? '';
+
+        if (!tokenForSave) {
+          setStatus('Save cancelled. A GitHub token is required so the JSON can be written to this repo.');
           return;
         }
 
-        await githubRepository.saveDay(nextDay, photos);
-        const githubCleanup = await runCleanup(() => githubRepository.cleanupOlderThan(cutoffDate));
-        const photoCount = photos.length;
-        setStatus(
-          `Saved to GitHub: ${getFoodLogJsonPath(nextDay.date)}${
-            photoCount > 0 ? ` and ${photoCount} photo${photoCount === 1 ? '' : 's'}` : ''
-          }. ${getCleanupMessage(githubCleanup, 'GitHub', cutoffDate)} Codex can read /data and /photos from this repo.`,
-        );
-      } else {
-        setStatus(
-          `Saved locally only. ${getCleanupMessage(
-            localCleanup,
-            'local',
-          )} Switch Settings to GitHub repo when this day should update repository JSON.`,
-        );
+        onGitHubTokenChange(tokenForSave);
       }
 
+      await localRepository.saveDay(nextDay, photos);
+      const cutoffDate = getOneMonthAgoDate();
+      await runCleanup(() => localRepository.cleanupOlderThan(cutoffDate));
+
+      const repository =
+        tokenForSave === githubToken.trim() ? githubRepository : new GitHubFoodLogRepository(settings, tokenForSave);
+      await repository.saveDay(nextDay, photos);
+      const githubCleanup = await runCleanup(() => repository.cleanupOlderThan(cutoffDate));
+      const photoCount = photos.length;
+      setStatus(
+        `Saved to GitHub: ${getFoodLogJsonPath(nextDay.date)}${
+          photoCount > 0 ? ` and ${photoCount} photo${photoCount === 1 ? '' : 's'}` : ''
+        }. ${getCleanupMessage(githubCleanup, 'GitHub', cutoffDate)} Codex can read /data and /photos from this repo.`,
+      );
       setDay(nextDay);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : 'Save failed.');

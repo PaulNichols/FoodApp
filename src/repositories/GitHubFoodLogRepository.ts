@@ -30,7 +30,7 @@ export class GitHubFoodLogRepository implements FoodLogRepository {
 
   async saveDay(day: FoodLogDay, photos: FoodPhoto[]): Promise<void> {
     if (!this.token.trim()) {
-      throw new Error('GitHub token is missing. Enter a fine-grained token in Settings or use Local only mode.');
+      throw new Error('GitHub token is missing. Enter a fine-grained token so Save can update this repo.');
     }
 
     await testRepositoryAccess(this.settings, this.token);
