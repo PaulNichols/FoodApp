@@ -23,6 +23,9 @@ interface GitHubTreeResponse {
   truncated: boolean;
 }
 
+const maxGitHubWriteAttempts = 3;
+const retryDelayMs = 700;
+
 const apiUrl = (settings: StorageSettings, path = ''): string => {
   const encodedPath = path
     .split('/')
@@ -73,24 +76,35 @@ export const putContentFile = async (
   token: string,
   request: PutContentRequest,
 ): Promise<void> => {
-  const existingSha = await getExistingSha(settings, token, request.path);
-  const payload: Record<string, unknown> = {
-    message: request.message,
-    content: await blobToBase64(request.content),
-    branch: settings.branch,
-  };
+  const content = await blobToBase64(request.content);
 
-  if (existingSha) {
-    payload.sha = existingSha;
-  }
+  for (let attempt = 1; attempt <= maxGitHubWriteAttempts; attempt += 1) {
+    const existingSha = await getExistingSha(settings, token, request.path);
+    const payload: Record<string, unknown> = {
+      message: request.message,
+      content,
+      branch: settings.branch,
+    };
 
-  const response = await fetch(apiUrl(settings, request.path), {
-    method: 'PUT',
-    headers: githubHeaders(token),
-    body: JSON.stringify(payload),
-  });
+    if (existingSha) {
+      payload.sha = existingSha;
+    }
 
-  if (!response.ok) {
+    const response = await fetch(apiUrl(settings, request.path), {
+      method: 'PUT',
+      headers: githubHeaders(token),
+      body: JSON.stringify(payload),
+    });
+
+    if (response.ok) {
+      return;
+    }
+
+    if (response.status === 409 && attempt < maxGitHubWriteAttempts) {
+      await waitForRetry(attempt);
+      continue;
+    }
+
     throw createGitHubError(response.status);
   }
 };
@@ -125,17 +139,35 @@ export const deleteContentFile = async (
   sha: string,
   message: string,
 ): Promise<void> => {
-  const response = await fetch(apiUrl(settings, path), {
-    method: 'DELETE',
-    headers: githubHeaders(token),
-    body: JSON.stringify({
-      message,
-      sha,
-      branch: settings.branch,
-    }),
-  });
+  let currentSha = sha;
 
-  if (!response.ok) {
+  for (let attempt = 1; attempt <= maxGitHubWriteAttempts; attempt += 1) {
+    const response = await fetch(apiUrl(settings, path), {
+      method: 'DELETE',
+      headers: githubHeaders(token),
+      body: JSON.stringify({
+        message,
+        sha: currentSha,
+        branch: settings.branch,
+      }),
+    });
+
+    if (response.ok || response.status === 404) {
+      return;
+    }
+
+    if (response.status === 409 && attempt < maxGitHubWriteAttempts) {
+      const latestSha = await getExistingSha(settings, token, path);
+
+      if (!latestSha) {
+        return;
+      }
+
+      currentSha = latestSha;
+      await waitForRetry(attempt);
+      continue;
+    }
+
     throw createGitHubError(response.status);
   }
 };
@@ -172,8 +204,17 @@ const createGitHubError = (status: number): Error => {
     return new Error('GitHub repository or branch was not found, or the token cannot access it.');
   }
 
+  if (status === 409) {
+    return new Error('GitHub is still processing a recent save. Wait a few seconds and tap Save again.');
+  }
+
   return new Error(`GitHub request failed with status ${status}.`);
 };
+
+const waitForRetry = (attempt: number): Promise<void> =>
+  new Promise((resolve) => {
+    window.setTimeout(resolve, retryDelayMs * attempt);
+  });
 
 const blobToBase64 = async (blob: Blob): Promise<string> => {
   const bytes = new Uint8Array(await blob.arrayBuffer());
