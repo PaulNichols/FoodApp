@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-29T08:03:23+10:00",
+  "sourceUpdatedAt": "2026-06-29T08:53:45+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
@@ -17,6 +17,13 @@
     "snackCount": 4,
     "photoCount": 0,
     "estimatedCalories": 2608,
+    "nutrition": {
+      "proteinGrams": 271.8,
+      "carbohydrateGrams": 201,
+      "fatGrams": 68.8,
+      "sugarGrams": 73.6,
+      "fibreGrams": 68
+    },
     "daysWithEstimatedCalories": 2,
     "manualAnalysisItems": 0,
     "openAiAnalysisItems": 0,
@@ -28,7 +35,7 @@
     {
       "date": "2026-06-29",
       "logged": true,
-      "updatedAt": "2026-06-29T08:03:05+10:00",
+      "updatedAt": "2026-06-29T08:53:45+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -66,10 +73,17 @@
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
             "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
             "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:30:32+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -95,10 +109,17 @@
           "analysis": {
             "itemName": "Paul's lunch shake",
             "calories": 500,
+            "nutrition": {
+              "proteinGrams": 27,
+              "carbohydrateGrams": 40,
+              "fatGrams": 25,
+              "sugarGrams": 8,
+              "fibreGrams": 15
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:35:18+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -129,10 +150,17 @@
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
             "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
             "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:30:32+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         }
       ],
@@ -145,10 +173,17 @@
           "analysis": {
             "itemName": "Kiwifruit",
             "calories": 45,
+            "nutrition": {
+              "proteinGrams": 0.8,
+              "carbohydrateGrams": 10.1,
+              "fatGrams": 0.4,
+              "sugarGrams": 6.2,
+              "fibreGrams": 2.1
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:50:55+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -158,15 +193,29 @@
           "analysis": {
             "itemName": "Banana",
             "calories": 105,
+            "nutrition": {
+              "proteinGrams": 1.3,
+              "carbohydrateGrams": 27,
+              "fatGrams": 0.4,
+              "sugarGrams": 14.4,
+              "fibreGrams": 3.1
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:50:55+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         }
       ],
       "photoCount": 0,
       "estimatedCalories": 1304,
+      "nutrition": {
+        "proteinGrams": 135.9,
+        "carbohydrateGrams": 100.5,
+        "fatGrams": 34.4,
+        "sugarGrams": 36.8,
+        "fibreGrams": 34
+      },
       "dailyNotesPresent": false,
       "analysis": {
         "manualItems": 0,
@@ -178,7 +227,7 @@
     {
       "date": "2026-06-28",
       "logged": true,
-      "updatedAt": "2026-06-29T08:03:23+10:00",
+      "updatedAt": "2026-06-29T08:53:45+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -216,10 +265,17 @@
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
             "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
             "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:55:01+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -245,10 +301,17 @@
           "analysis": {
             "itemName": "Paul's lunch shake",
             "calories": 500,
+            "nutrition": {
+              "proteinGrams": 27,
+              "carbohydrateGrams": 40,
+              "fatGrams": 25,
+              "sugarGrams": 8,
+              "fibreGrams": 15
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:55:01+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -279,10 +342,17 @@
           "analysis": {
             "itemName": "Man Shake + 2 scoops WPI protein",
             "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
             "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-28T17:55:01+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         }
       ],
@@ -295,10 +365,17 @@
           "analysis": {
             "itemName": "Banana",
             "calories": 105,
+            "nutrition": {
+              "proteinGrams": 1.3,
+              "carbohydrateGrams": 27,
+              "fatGrams": 0.4,
+              "sugarGrams": 14.4,
+              "fibreGrams": 3.1
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:50:55+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         },
         {
@@ -308,15 +385,29 @@
           "analysis": {
             "itemName": "Kiwifruit",
             "calories": 45,
+            "nutrition": {
+              "proteinGrams": 0.8,
+              "carbohydrateGrams": 10.1,
+              "fatGrams": 0.4,
+              "sugarGrams": 6.2,
+              "fibreGrams": 2.1
+            },
             "confidence": "medium",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:50:55+10:00"
+            "updatedAt": "2026-06-29T08:53:45+10:00"
           }
         }
       ],
       "photoCount": 0,
       "estimatedCalories": 1304,
+      "nutrition": {
+        "proteinGrams": 135.9,
+        "carbohydrateGrams": 100.5,
+        "fatGrams": 34.4,
+        "sugarGrams": 36.8,
+        "fibreGrams": 34
+      },
       "dailyNotesPresent": false,
       "analysis": {
         "manualItems": 0,

@@ -16,9 +16,18 @@ export type FoodAnalysisSource = 'manual' | 'openai' | 'codex';
 
 export type FoodAnalysisConfidence = 'low' | 'medium' | 'high';
 
+export interface FoodNutritionBreakdown {
+  proteinGrams: number | null;
+  carbohydrateGrams: number | null;
+  fatGrams: number | null;
+  sugarGrams: number | null;
+  fibreGrams: number | null;
+}
+
 export interface FoodItemAnalysis {
   itemName: string;
   calories: number | null;
+  nutrition?: FoodNutritionBreakdown;
   confidence: FoodAnalysisConfidence | null;
   source: FoodAnalysisSource;
   notes: string;
@@ -130,6 +139,13 @@ export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): Foo
     return {
       itemName: meal.templateName,
       calories: 327,
+      nutrition: {
+        proteinGrams: 53.4,
+        carbohydrateGrams: 11.7,
+        fatGrams: 4.3,
+        sugarGrams: 4.1,
+        fibreGrams: 6.9,
+      },
       confidence: 'high',
       source: 'codex',
       notes: 'Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.',
@@ -142,6 +158,13 @@ export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): Foo
     return {
       itemName: meal.templateName,
       calories: 500,
+      nutrition: {
+        proteinGrams: 27,
+        carbohydrateGrams: 40,
+        fatGrams: 25,
+        sugarGrams: 8,
+        fibreGrams: 15,
+      },
       confidence: 'medium',
       source: 'codex',
       notes:

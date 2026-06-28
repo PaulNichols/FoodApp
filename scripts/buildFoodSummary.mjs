@@ -45,6 +45,7 @@ const summary = {
     snackCount: sum(loggedDays, (day) => day.snackCount),
     photoCount: sum(loggedDays, (day) => day.photoCount),
     estimatedCalories: sumNullable(loggedDays, (day) => day.estimatedCalories),
+    nutrition: sumNutrition(loggedDays.map((day) => day.nutrition)),
     daysWithEstimatedCalories: loggedDays.filter((day) => day.estimatedCalories !== null).length,
     manualAnalysisItems: sum(loggedDays, (day) => day.analysis.manualItems),
     openAiAnalysisItems: sum(loggedDays, (day) => day.analysis.openAiItems),
@@ -91,6 +92,7 @@ function summarizeDay(date, day) {
   const snacks = (day.snacks ?? []).map(summarizeSnack);
   const allItems = [...meals, ...snacks];
   const estimatedCalories = sumNullable(allItems, (item) => item.analysis.calories);
+  const nutrition = sumNutrition(allItems.map((item) => item.analysis.nutrition));
 
   return {
     date,
@@ -102,6 +104,7 @@ function summarizeDay(date, day) {
     snacks,
     photoCount: allItems.filter((item) => item.hasPhoto).length,
     estimatedCalories,
+    nutrition,
     dailyNotesPresent: hasText(day.dailyNotes),
     analysis: summarizeAnalysis(allItems),
   };
@@ -152,6 +155,7 @@ function summarizeFoodAnalysis(analysis) {
     return {
       itemName: '',
       calories: null,
+      nutrition: emptyNutrition(),
       confidence: null,
       source: null,
       notesPresent: false,
@@ -162,6 +166,7 @@ function summarizeFoodAnalysis(analysis) {
   return {
     itemName: normalizeString(analysis.itemName),
     calories: normalizeCalories(analysis.calories),
+    nutrition: summarizeNutrition(analysis.nutrition),
     confidence: ['low', 'medium', 'high'].includes(analysis.confidence) ? analysis.confidence : null,
     source: ['manual', 'openai', 'codex'].includes(analysis.source) ? analysis.source : null,
     notesPresent: hasText(analysis.notes),
@@ -235,6 +240,34 @@ function normalizeCalories(value) {
   return Number.isFinite(value) && value >= 0 ? Math.round(value) : null;
 }
 
+function summarizeNutrition(nutrition) {
+  if (!nutrition || typeof nutrition !== 'object') {
+    return emptyNutrition();
+  }
+
+  return {
+    proteinGrams: normalizeMacro(nutrition.proteinGrams),
+    carbohydrateGrams: normalizeMacro(nutrition.carbohydrateGrams),
+    fatGrams: normalizeMacro(nutrition.fatGrams),
+    sugarGrams: normalizeMacro(nutrition.sugarGrams),
+    fibreGrams: normalizeMacro(nutrition.fibreGrams),
+  };
+}
+
+function emptyNutrition() {
+  return {
+    proteinGrams: null,
+    carbohydrateGrams: null,
+    fatGrams: null,
+    sugarGrams: null,
+    fibreGrams: null,
+  };
+}
+
+function normalizeMacro(value) {
+  return Number.isFinite(value) && value >= 0 ? Math.round(value * 10) / 10 : null;
+}
+
 function hasText(value) {
   return typeof value === 'string' && value.trim().length > 0;
 }
@@ -257,4 +290,32 @@ function sumNullable(items, selector) {
   }
 
   return hasValue ? total : null;
+}
+
+function sumNutrition(items) {
+  const nutritionItems = items.filter((item) => item && typeof item === 'object');
+
+  return {
+    proteinGrams: sumNutritionField(nutritionItems, 'proteinGrams'),
+    carbohydrateGrams: sumNutritionField(nutritionItems, 'carbohydrateGrams'),
+    fatGrams: sumNutritionField(nutritionItems, 'fatGrams'),
+    sugarGrams: sumNutritionField(nutritionItems, 'sugarGrams'),
+    fibreGrams: sumNutritionField(nutritionItems, 'fibreGrams'),
+  };
+}
+
+function sumNutritionField(items, field) {
+  let total = 0;
+  let hasValue = false;
+
+  for (const item of items) {
+    const value = item[field];
+
+    if (Number.isFinite(value)) {
+      total += value;
+      hasValue = true;
+    }
+  }
+
+  return hasValue ? normalizeMacro(total) : null;
 }

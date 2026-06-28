@@ -55,8 +55,15 @@
         "confidence": "high",
         "source": "codex",
         "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-06-28T17:55:01+10:00",
-        "inputHash": "codex:breakfast:man-shake-wpi:v3-man-shake-label"
+        "updatedAt": "2026-06-29T08:53:45+10:00",
+        "inputHash": "codex:breakfast:man-shake-wpi:v4-macros",
+        "nutrition": {
+          "proteinGrams": 53.4,
+          "carbohydrateGrams": 11.7,
+          "fatGrams": 4.3,
+          "sugarGrams": 4.1,
+          "fibreGrams": 6.9
+        }
       }
     },
     {
@@ -86,8 +93,15 @@
         "confidence": "medium",
         "source": "codex",
         "notes": "Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.",
-        "updatedAt": "2026-06-28T17:55:01+10:00",
-        "inputHash": "codex:lunch:paul-lunch-shake:v2-recipe-quantities"
+        "updatedAt": "2026-06-29T08:53:45+10:00",
+        "inputHash": "codex:lunch:paul-lunch-shake:v3-recipe-macros",
+        "nutrition": {
+          "proteinGrams": 27,
+          "carbohydrateGrams": 40,
+          "fatGrams": 25,
+          "sugarGrams": 8,
+          "fibreGrams": 15
+        }
       }
     },
     {
@@ -122,8 +136,15 @@
         "confidence": "high",
         "source": "codex",
         "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-06-28T17:55:01+10:00",
-        "inputHash": "codex:evening-meal:man-shake-wpi:v3-man-shake-label"
+        "updatedAt": "2026-06-29T08:53:45+10:00",
+        "inputHash": "codex:evening-meal:man-shake-wpi:v4-macros",
+        "nutrition": {
+          "proteinGrams": 53.4,
+          "carbohydrateGrams": 11.7,
+          "fatGrams": 4.3,
+          "sugarGrams": 4.1,
+          "fibreGrams": 6.9
+        }
       }
     }
   ],
@@ -138,8 +159,15 @@
         "confidence": "medium",
         "source": "codex",
         "notes": "Medium banana estimate; useful carb top-up, but easy to undercount snacks if portions vary.",
-        "updatedAt": "2026-06-29T08:50:55+10:00",
-        "inputHash": "codex:2026-06-28:snack-1:banana:v1"
+        "updatedAt": "2026-06-29T08:53:45+10:00",
+        "inputHash": "codex:2026-06-28:snack-1:banana:v2-macros",
+        "nutrition": {
+          "proteinGrams": 1.3,
+          "carbohydrateGrams": 27,
+          "fatGrams": 0.4,
+          "sugarGrams": 14.4,
+          "fibreGrams": 3.1
+        }
       }
     },
     {
@@ -152,12 +180,19 @@
         "confidence": "medium",
         "source": "codex",
         "notes": "One kiwifruit estimate; light snack, portion count is the main uncertainty.",
-        "updatedAt": "2026-06-29T08:50:55+10:00",
-        "inputHash": "codex:2026-06-28:snack-2:kiwifruit:v1"
+        "updatedAt": "2026-06-29T08:53:45+10:00",
+        "inputHash": "codex:2026-06-28:snack-2:kiwifruit:v2-macros",
+        "nutrition": {
+          "proteinGrams": 0.8,
+          "carbohydrateGrams": 10.1,
+          "fatGrams": 0.4,
+          "sugarGrams": 6.2,
+          "fibreGrams": 2.1
+        }
       }
     }
   ],
   "dailyNotes": "",
   "createdAt": "2026-06-28T17:55:01+10:00",
-  "updatedAt": "2026-06-29T08:03:23+10:00"
+  "updatedAt": "2026-06-29T08:53:45+10:00"
 }

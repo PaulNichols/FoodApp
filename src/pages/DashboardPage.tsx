@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { DashboardSummary } from '../components/DashboardSummary';
-import type { FoodLogDay, StorageSettings } from '../models/foodLog';
+import type { FoodLogDay, FoodNutritionBreakdown, StorageSettings } from '../models/foodLog';
 import { normalizeFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
@@ -83,6 +83,7 @@ export function DashboardPage({ settings, githubToken, localRepository }: Dashbo
                 ).length
               : 0;
             const estimatedCalories = day ? getEstimatedCalories(day) : null;
+            const nutrition = day ? getNutritionBreakdown(day) : null;
 
             return (
               <article className="day-row" key={date}>
@@ -117,6 +118,26 @@ export function DashboardPage({ settings, githubToken, localRepository }: Dashbo
                       <dt>Calories</dt>
                       <dd>{formatCalories(estimatedCalories)}</dd>
                     </div>
+                    <div>
+                      <dt>Protein</dt>
+                      <dd>{formatGrams(nutrition?.proteinGrams ?? null)}</dd>
+                    </div>
+                    <div>
+                      <dt>Carbs</dt>
+                      <dd>{formatGrams(nutrition?.carbohydrateGrams ?? null)}</dd>
+                    </div>
+                    <div>
+                      <dt>Fat</dt>
+                      <dd>{formatGrams(nutrition?.fatGrams ?? null)}</dd>
+                    </div>
+                    <div>
+                      <dt>Sugar</dt>
+                      <dd>{formatGrams(nutrition?.sugarGrams ?? null)}</dd>
+                    </div>
+                    <div>
+                      <dt>Fibre</dt>
+                      <dd>{formatGrams(nutrition?.fibreGrams ?? null)}</dd>
+                    </div>
                   </dl>
                 ) : (
                   <p className="muted">No saved log.</p>
@@ -144,3 +165,41 @@ const getEstimatedCalories = (day: FoodLogDay): number | null => {
 
 const formatCalories = (calories: number | null): string =>
   calories === null ? 'No estimate' : Math.round(calories).toLocaleString('en-AU');
+
+const getNutritionBreakdown = (day: FoodLogDay): FoodNutritionBreakdown | null => {
+  const items = [...day.meals, ...day.snacks];
+  const nutritionItems = items.map((item) => item.analysis?.nutrition).filter(isNutritionBreakdown);
+
+  if (nutritionItems.length === 0) {
+    return null;
+  }
+
+  return {
+    proteinGrams: sumNutrition(nutritionItems, 'proteinGrams'),
+    carbohydrateGrams: sumNutrition(nutritionItems, 'carbohydrateGrams'),
+    fatGrams: sumNutrition(nutritionItems, 'fatGrams'),
+    sugarGrams: sumNutrition(nutritionItems, 'sugarGrams'),
+    fibreGrams: sumNutrition(nutritionItems, 'fibreGrams'),
+  };
+};
+
+const isNutritionBreakdown = (value: unknown): value is FoodNutritionBreakdown =>
+  Boolean(value && typeof value === 'object');
+
+const sumNutrition = (
+  items: FoodNutritionBreakdown[],
+  field: keyof FoodNutritionBreakdown,
+): number | null => {
+  const values = items.map((item) => item[field]).filter((value): value is number => Number.isFinite(value));
+
+  if (values.length === 0) {
+    return null;
+  }
+
+  return values.reduce((total, value) => total + value, 0);
+};
+
+const formatGrams = (value: number | null): string =>
+  value === null ? 'No estimate' : `${roundMacro(value).toLocaleString('en-AU')} g`;
+
+const roundMacro = (value: number): number => Math.round(value * 10) / 10;

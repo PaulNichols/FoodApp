@@ -50,6 +50,7 @@ for (const filePath of dataFiles) {
     const nextAnalysis = {
       itemName: normalizeText(result.itemName),
       calories: normalizeCalories(result.calories),
+      nutrition: normalizeNutrition(result.nutrition),
       confidence: normalizeConfidence(result.confidence),
       source: 'openai',
       notes: normalizeText(result.notes),
@@ -260,10 +261,22 @@ async function analyseDay(day, candidates) {
                     id: { type: 'string' },
                     itemName: { type: 'string' },
                     calories: { type: ['integer', 'null'] },
+                    nutrition: {
+                      type: 'object',
+                      additionalProperties: false,
+                      properties: {
+                        proteinGrams: { type: ['number', 'null'] },
+                        carbohydrateGrams: { type: ['number', 'null'] },
+                        fatGrams: { type: ['number', 'null'] },
+                        sugarGrams: { type: ['number', 'null'] },
+                        fibreGrams: { type: ['number', 'null'] },
+                      },
+                      required: ['proteinGrams', 'carbohydrateGrams', 'fatGrams', 'sugarGrams', 'fibreGrams'],
+                    },
                     confidence: { type: 'string', enum: ['low', 'medium', 'high'] },
                     notes: { type: 'string' },
                   },
-                  required: ['id', 'itemName', 'calories', 'confidence', 'notes'],
+                  required: ['id', 'itemName', 'calories', 'nutrition', 'confidence', 'notes'],
                 },
               },
             },
@@ -290,9 +303,10 @@ async function analyseDay(day, candidates) {
 function createPrompt(day, candidates) {
   return [
     'Estimate the food item name and calories for each food log entry.',
+    'Also estimate protein, carbohydrate, fat, sugar, and fibre grams for the same serving.',
     'Use the photo when supplied. If no photo is supplied, infer from the entry notes, template, and ingredients.',
     'Return conservative approximate calories for the visible or described serving only.',
-    'If calories cannot be estimated, use null and low confidence.',
+    'If calories or nutrition cannot be estimated, use null values and low confidence.',
     'Do not include medical advice.',
     '',
     `Date: ${day.date}`,
@@ -336,6 +350,30 @@ function normalizeText(value) {
 
 function normalizeCalories(value) {
   return Number.isInteger(value) && value >= 0 ? value : null;
+}
+
+function normalizeNutrition(value) {
+  if (!value || typeof value !== 'object') {
+    return {
+      proteinGrams: null,
+      carbohydrateGrams: null,
+      fatGrams: null,
+      sugarGrams: null,
+      fibreGrams: null,
+    };
+  }
+
+  return {
+    proteinGrams: normalizeMacro(value.proteinGrams),
+    carbohydrateGrams: normalizeMacro(value.carbohydrateGrams),
+    fatGrams: normalizeMacro(value.fatGrams),
+    sugarGrams: normalizeMacro(value.sugarGrams),
+    fibreGrams: normalizeMacro(value.fibreGrams),
+  };
+}
+
+function normalizeMacro(value) {
+  return Number.isFinite(value) && value >= 0 ? Math.round(value * 10) / 10 : null;
 }
 
 function normalizeConfidence(value) {

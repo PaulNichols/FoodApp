@@ -99,6 +99,11 @@ Meal and snack entries may also include editable analysis fields:
 
 - `analysis.itemName`
 - `analysis.calories`
+- `analysis.nutrition.proteinGrams`
+- `analysis.nutrition.carbohydrateGrams`
+- `analysis.nutrition.fatGrams`
+- `analysis.nutrition.sugarGrams`
+- `analysis.nutrition.fibreGrams`
 - `analysis.confidence`
 - `analysis.source`
 - `analysis.notes`
@@ -113,7 +118,7 @@ The automation-readable summary is generated at:
 data/codex-food-summary.json
 ```
 
-It contains the latest 31-day window by default, including logged/missing days, supplement completion, default meal adherence, replaced meals, snack count, photo count, estimated calories when available, and per-day meal/snack analysis metadata.
+It contains the latest 31-day window by default, including logged/missing days, supplement completion, default meal adherence, replaced meals, snack count, photo count, estimated calories and nutrition macros when available, and per-day meal/snack analysis metadata.
 
 The summary deliberately avoids copying raw daily notes or supplement notes. Those remain in the dated JSON files when deeper manual review is needed.
 
