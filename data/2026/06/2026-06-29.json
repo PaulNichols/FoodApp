@@ -131,12 +131,30 @@
     {
       "id": "snack-1",
       "notes": "Kiwi fruit",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Kiwifruit",
+        "calories": 45,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "One kiwifruit estimate; light snack, portion count is the main uncertainty.",
+        "updatedAt": "2026-06-29T08:50:55+10:00",
+        "inputHash": "codex:2026-06-29:snack-1:kiwifruit:v1"
+      }
     },
     {
       "id": "snack-2",
       "notes": "Banana",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Banana",
+        "calories": 105,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Medium banana estimate; useful carb top-up, but easy to undercount snacks if portions vary.",
+        "updatedAt": "2026-06-29T08:50:55+10:00",
+        "inputHash": "codex:2026-06-29:snack-2:banana:v1"
+      }
     }
   ],
   "dailyNotes": "",
