@@ -42,7 +42,21 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
         </button>
       </div>
 
-      <p className="template-name">{meal.templateName}</p>
+      <label className="default-meal-row">
+        <input
+          type="checkbox"
+          checked={meal.usedDefault}
+          aria-label={`${meal.label}: ${meal.templateName}`}
+          onChange={(event) =>
+            onChange({
+              ...meal,
+              usedDefault: event.target.checked,
+              photoPath: event.target.checked ? null : meal.photoPath,
+            })
+          }
+        />
+        <span>{meal.templateName}</span>
+      </label>
 
       {meal.ingredients && (
         <details className="ingredients">
@@ -54,21 +68,6 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
           </ul>
         </details>
       )}
-
-      <label className="check-row primary-check">
-        <input
-          type="checkbox"
-          checked={meal.usedDefault}
-          onChange={(event) =>
-            onChange({
-              ...meal,
-              usedDefault: event.target.checked,
-              photoPath: event.target.checked ? null : meal.photoPath,
-            })
-          }
-        />
-        <span>Had default</span>
-      </label>
 
       {!meal.usedDefault && (
         <div className="replacement-fields">

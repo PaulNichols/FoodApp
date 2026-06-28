@@ -262,10 +262,22 @@ button.secondary {
   background: #eef8f5;
 }
 
-.template-name {
-  margin: 0 0 10px;
+.default-meal-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 48px;
+  margin-bottom: 10px;
   color: #34443d;
+  font-size: 1.05rem;
   font-weight: 800;
+}
+
+.default-meal-row input {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  accent-color: #0f766e;
 }
 
 .ingredients {
