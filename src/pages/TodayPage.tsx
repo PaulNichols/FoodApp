@@ -26,7 +26,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
   const [date, setDate] = useState(getTodayInBrisbane);
   const [day, setDay] = useState<FoodLogDay>(() => createDefaultFoodLogDay(date, toBrisbaneTimestamp()));
   const [photos, setPhotos] = useState<FoodPhoto[]>([]);
-  const [status, setStatus] = useState('Ready.');
+  const [status, setStatus] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
   const githubRepository = useMemo(
@@ -39,7 +39,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
 
     const loadDay = async () => {
       setIsLoading(true);
-      setStatus('Loading day...');
+      setStatus('');
       setPhotos([]);
 
       try {
@@ -47,7 +47,6 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
 
         if (isActive) {
           setDay(normalizeFoodLogDay(savedDay ?? createDefaultFoodLogDay(date, toBrisbaneTimestamp())));
-          setStatus(savedDay ? 'Loaded local day.' : 'Using default day.');
         }
       } catch (error) {
         if (isActive) {
@@ -174,9 +173,11 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
       </section>
 
       <section className="panel save-panel">
-        <p role="status" className="status">
-          {status}
-        </p>
+        {status && (
+          <p role="status" className="status">
+            {status}
+          </p>
+        )}
 
         <button type="button" className="save-button" onClick={() => void save()} disabled={isLoading}>
           Save
