@@ -81,34 +81,31 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
       const nextDay = { ...day, updatedAt: toBrisbaneTimestamp() };
       await localRepository.saveDay(nextDay, photos);
       const cutoffDate = getOneMonthAgoDate();
-      const localCleanupCount = await localRepository.cleanupOlderThan(cutoffDate);
+      const localCleanup = await runCleanup(() => localRepository.cleanupOlderThan(cutoffDate));
 
       if (settings.mode === 'github') {
         if (!githubToken.trim()) {
           setDay(nextDay);
           setStatus(
-            `Saved locally only. Cleaned up ${localCleanupCount} old local item${
-              localCleanupCount === 1 ? '' : 's'
-            }. Add your GitHub token in Settings so Save can update this repo.`,
+            `Saved locally only. ${getCleanupMessage(localCleanup, 'local')} Add your GitHub token in Settings so Save can update this repo.`,
           );
           return;
         }
 
         await githubRepository.saveDay(nextDay, photos);
-        const githubCleanupCount = await githubRepository.cleanupOlderThan(cutoffDate);
+        const githubCleanup = await runCleanup(() => githubRepository.cleanupOlderThan(cutoffDate));
         const photoCount = photos.length;
         setStatus(
           `Saved to GitHub: ${getFoodLogJsonPath(nextDay.date)}${
             photoCount > 0 ? ` and ${photoCount} photo${photoCount === 1 ? '' : 's'}` : ''
-          }. Removed ${githubCleanupCount} old GitHub item${
-            githubCleanupCount === 1 ? '' : 's'
-          } before ${cutoffDate}. Codex can read /data and /photos from this repo.`,
+          }. ${getCleanupMessage(githubCleanup, 'GitHub', cutoffDate)} Codex can read /data and /photos from this repo.`,
         );
       } else {
         setStatus(
-          `Saved locally only and cleaned up ${localCleanupCount} old item${
-            localCleanupCount === 1 ? '' : 's'
-          }. Switch Settings to GitHub repo when this day should update repository JSON.`,
+          `Saved locally only. ${getCleanupMessage(
+            localCleanup,
+            'local',
+          )} Switch Settings to GitHub repo when this day should update repository JSON.`,
         );
       }
 
@@ -198,3 +195,26 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
     </div>
   );
 }
+
+interface CleanupResult {
+  count: number;
+  error: string | null;
+}
+
+const runCleanup = async (cleanup: () => Promise<number>): Promise<CleanupResult> => {
+  try {
+    return { count: await cleanup(), error: null };
+  } catch (error) {
+    return { count: 0, error: error instanceof Error ? error.message : 'Cleanup failed.' };
+  }
+};
+
+const getCleanupMessage = (cleanup: CleanupResult, label: string, cutoffDate?: string): string => {
+  if (cleanup.error) {
+    return `Cleanup warning: ${cleanup.error}.`;
+  }
+
+  const cutoffMessage = cutoffDate ? ` before ${cutoffDate}` : '';
+
+  return `Removed ${cleanup.count} old ${label} item${cleanup.count === 1 ? '' : 's'}${cutoffMessage}.`;
+};
