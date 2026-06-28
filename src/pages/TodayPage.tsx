@@ -177,7 +177,7 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
         </p>
 
         <button type="button" className="save-button" onClick={() => void save()} disabled={isLoading}>
-          {settings.mode === 'github' ? 'Save to GitHub' : 'Save locally'}
+          Save
         </button>
       </section>
     </div>
