@@ -80,15 +80,17 @@ export interface FoodLogRepository {
 export const TIMEZONE = 'Australia/Brisbane';
 
 export const lunchShakeIngredients = [
-  'spinach or kale',
-  'oats',
-  'ground flaxseed or walnuts',
-  'avocado',
-  'frozen berries',
-  'soy milk',
-  'water',
-  'cinnamon',
-  'optional psyllium husk',
+  'spinach or kale: 1 cup',
+  'avocado: 1/2',
+  'frozen mixed berries: 1/2 cup',
+  'oats: 1/4 cup',
+  'ground flaxseeds or walnuts: 2 tbsp',
+  'protein powder: 1 scoop',
+  'soy milk: 1 cup',
+  'cinnamon powder: 1/2 tsp',
+  'cacao nibs: 1 tsp',
+  'plant sterol powder: 1 tsp optional',
+  'Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this',
 ];
 
 export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides'];
@@ -120,19 +122,36 @@ export const manShakeServingNutrition = [
 const manShakeWpiIngredients = [...manShakeServingNutrition, ...wpiProteinServingNutrition];
 
 export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): FoodItemAnalysis | undefined => {
-  if (!meal.usedDefault || meal.templateId !== 'man-shake-wpi') {
+  if (!meal.usedDefault) {
     return undefined;
   }
 
-  return {
-    itemName: meal.templateName,
-    calories: 327,
-    confidence: 'high',
-    source: 'codex',
-    notes: 'Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.',
-    updatedAt,
-    inputHash: `codex:${meal.slot}:man-shake-wpi:v3-man-shake-label`,
-  };
+  if (meal.templateId === 'man-shake-wpi') {
+    return {
+      itemName: meal.templateName,
+      calories: 327,
+      confidence: 'high',
+      source: 'codex',
+      notes: 'Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.',
+      updatedAt,
+      inputHash: `codex:${meal.slot}:man-shake-wpi:v3-man-shake-label`,
+    };
+  }
+
+  if (meal.templateId === 'paul-lunch-shake') {
+    return {
+      itemName: meal.templateName,
+      calories: 500,
+      confidence: 'medium',
+      source: 'codex',
+      notes:
+        'Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.',
+      updatedAt,
+      inputHash: `codex:${meal.slot}:paul-lunch-shake:v2-recipe-quantities`,
+    };
+  }
+
+  return undefined;
 };
 
 export const mealTemplates: MealLog[] = [

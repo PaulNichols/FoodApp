@@ -68,16 +68,27 @@
       "notes": "",
       "photoPath": null,
       "ingredients": [
-        "spinach or kale",
-        "oats",
-        "ground flaxseed or walnuts",
-        "avocado",
-        "frozen berries",
-        "soy milk",
-        "water",
-        "cinnamon",
-        "optional psyllium husk"
-      ]
+        "spinach or kale: 1 cup",
+        "avocado: 1/2",
+        "frozen mixed berries: 1/2 cup",
+        "oats: 1/4 cup",
+        "ground flaxseeds or walnuts: 2 tbsp",
+        "protein powder: 1 scoop",
+        "soy milk: 1 cup",
+        "cinnamon powder: 1/2 tsp",
+        "cacao nibs: 1 tsp",
+        "plant sterol powder: 1 tsp optional",
+        "Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this"
+      ],
+      "analysis": {
+        "itemName": "Paul's lunch shake",
+        "calories": 500,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.",
+        "updatedAt": "2026-06-28T17:35:18+10:00",
+        "inputHash": "codex:2026-06-29:lunch:paul-lunch-shake:v2-recipe-quantities"
+      }
     },
     {
       "slot": "evening-meal",
@@ -119,5 +130,5 @@
   "snacks": [],
   "dailyNotes": "",
   "createdAt": "2026-06-28T16:09:52+10:00",
-  "updatedAt": "2026-06-28T17:30:32+10:00"
+  "updatedAt": "2026-06-28T17:35:18+10:00"
 }
