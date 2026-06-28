@@ -6,7 +6,7 @@ The default day is optimised for a routine of morning supplements, Man Shake + W
 
 ## Privacy Warning
 
-Food photos, diet notes, supplement notes, training hunger notes, and health-related observations are personal data. Treat exported zip files and committed `/data` and `/photos` files as sensitive.
+Food photos, diet notes, supplement notes, training hunger notes, and health-related observations are personal data. Treat committed `/data` and `/photos` files as sensitive.
 
 This app does not include analytics, CDN scripts, or a backend. It does not bundle a GitHub token and does not contain any hardcoded token.
 
@@ -54,7 +54,7 @@ If this app is moved to a different repository, update the local fallback and ma
 
 Local-only mode is the default. It stores daily JSON and compressed photos in IndexedDB on the current device. It works offline after the app has loaded, but clearing browser website data can remove local logs and photos.
 
-Use manual exports only as a backup. The normal workflow is to save into GitHub repo mode so the repository contains the daily JSON and photos for later Codex analysis.
+The normal workflow is to save into GitHub repo mode so the repository contains the daily JSON and photos for later Codex analysis.
 
 ### GitHub Repo
 
@@ -78,23 +78,7 @@ When saving in GitHub mode, the app saves locally first, then commits:
 Existing files are updated by fetching the current file SHA first.
 Each save also removes repository `/data` and `/photos` files with path dates more than one month older than the current Brisbane date.
 
-Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; you should not need to export zip files for routine weekly analysis.
-
-## Exporting
-
-The Today page includes manual backup exports:
-
-- **Export day zip**
-- **Export week zip**
-
-Zip structure:
-
-```text
-data/yyyy/mm/yyyy-mm-dd.json
-photos/yyyy/mm/yyyy-mm-dd/*.webp
-```
-
-Exports work without GitHub storage because they read from the browser's local IndexedDB data.
+Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; there is no manual export step in the app.
 
 ## Daily JSON
 

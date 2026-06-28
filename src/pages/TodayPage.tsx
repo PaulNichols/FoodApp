@@ -14,7 +14,6 @@ import {
   getTodayInBrisbane,
   toBrisbaneTimestamp,
 } from '../services/dateService';
-import { exportCurrentDay, exportLast7Days } from '../services/exportService';
 
 interface TodayPageProps {
   settings: StorageSettings;
@@ -173,24 +172,9 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
       </section>
 
       <section className="panel save-panel">
-        <div>
-          <p role="status" className="status">
-            {status}
-          </p>
-          <p className="muted">Repository path: {getFoodLogJsonPath(day.date)}</p>
-        </div>
-
-        <details className="backup-actions">
-          <summary>Manual backup exports</summary>
-          <div className="action-grid">
-            <button type="button" className="secondary" onClick={() => void exportCurrentDay(day, photos)}>
-              Export day zip
-            </button>
-            <button type="button" className="secondary" onClick={() => void exportLast7Days(localRepository)}>
-              Export week zip
-            </button>
-          </div>
-        </details>
+        <p role="status" className="status">
+          {status}
+        </p>
 
         <button type="button" className="save-button" onClick={() => void save()} disabled={isLoading}>
           {settings.mode === 'github' ? 'Save to GitHub' : 'Save locally'}
