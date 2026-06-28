@@ -3,6 +3,7 @@ import { DateSelector } from '../components/DateSelector';
 import { MealCard } from '../components/MealCard';
 import { SnackList } from '../components/SnackList';
 import { SupplementCard } from '../components/SupplementCard';
+import { WaterIntakeCard } from '../components/WaterIntakeCard';
 import type { FoodLogDay, FoodPhoto, MealLog, MealSlot, StorageSettings } from '../models/foodLog';
 import { createDefaultFoodLogDay, normalizeFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
@@ -194,6 +195,11 @@ export function TodayPage({
         onChange={(snacks) => updateDay({ ...day, snacks })}
         onPhotoSelected={upsertPhoto}
         onError={setStatus}
+      />
+
+      <WaterIntakeCard
+        waterIntake={day.waterIntake}
+        onChange={(waterIntake) => updateDay({ ...day, waterIntake })}
       />
 
       <section className="panel">

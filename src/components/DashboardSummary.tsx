@@ -1,4 +1,5 @@
 import type { FoodLogDay } from '../models/foodLog';
+import { getWaterIntakeTotalMl } from '../models/foodLog';
 import { getLastNDates } from '../services/dateService';
 
 interface DashboardSummaryProps {
@@ -17,6 +18,11 @@ export function DashboardSummary({ days }: DashboardSummaryProps) {
   const photoCount = days
     .flatMap((day) => [...day.meals.map((meal) => meal.photoPath), ...day.snacks.map((snack) => snack.photoPath)])
     .filter(Boolean).length;
+  const waterDays = days
+    .map((day) => getWaterIntakeTotalMl(day.waterIntake))
+    .filter((value): value is number => value !== null);
+  const averageWaterMl =
+    waterDays.length === 0 ? null : waterDays.reduce((total, value) => total + value, 0) / waterDays.length;
 
   return (
     <section className="panel">
@@ -30,6 +36,10 @@ export function DashboardSummary({ days }: DashboardSummaryProps) {
         <Metric label="Lunch consistency" value={`${lunchDays}/${completedDays || 0}`} />
         <Metric label="Evening default" value={`${eveningDefaultDays}/${completedDays || 0}`} />
         <Metric label="Snack count" value={String(snackCount)} />
+        <Metric
+          label="Water avg"
+          value={averageWaterMl === null ? 'No estimate' : `${Math.round(averageWaterMl).toLocaleString('en-AU')} ml`}
+        />
         <Metric label="Replacement meals" value={String(replacementMeals)} />
         <Metric label="Photos added" value={String(photoCount)} />
       </div>

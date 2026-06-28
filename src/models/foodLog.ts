@@ -54,12 +54,24 @@ export interface SnackLog {
   analysis?: FoodItemAnalysis;
 }
 
+export interface WaterIntakeEntry {
+  id: string;
+  label: string;
+  amountMl: string;
+  consumed: boolean;
+}
+
+export interface WaterIntakeLog {
+  entries: WaterIntakeEntry[];
+}
+
 export interface FoodLogDay {
   date: string;
   timezone: string;
   supplements: SupplementLog;
   meals: MealLog[];
   snacks: SnackLog[];
+  waterIntake: WaterIntakeLog;
   dailyNotes: string;
   createdAt: string;
   updatedAt: string;
@@ -105,6 +117,13 @@ export const lunchShakeIngredients = [
 export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides'];
 
 const deprecatedSupplementNames = new Set(['Other daily supplements']);
+
+export const defaultWaterIntakeEntries: WaterIntakeEntry[] = [
+  { id: 'coffee', label: 'Coffee', amountMl: '400', consumed: true },
+  { id: 'water-bottle', label: 'Bottle of water', amountMl: '700', consumed: true },
+  { id: 'agemate', label: 'AgeMate', amountMl: '240', consumed: true },
+  { id: 'water-glass', label: 'Glass of water', amountMl: '400', consumed: true },
+];
 
 export const wpiProteinServingNutrition = [
   'WPI protein serving: 2 scoops = 30 g',
@@ -224,6 +243,9 @@ export const createDefaultFoodLogDay = (date: string, now: string): FoodLogDay =
     analysis: createDefaultMealAnalysis(meal, now),
   })),
   snacks: [],
+  waterIntake: {
+    entries: defaultWaterIntakeEntries.map((entry) => ({ ...entry })),
+  },
   dailyNotes: '',
   createdAt: now,
   updatedAt: now,
@@ -235,7 +257,44 @@ export const normalizeFoodLogDay = (day: FoodLogDay): FoodLogDay => ({
     ...day.supplements,
     items: day.supplements.items.filter((item) => !deprecatedSupplementNames.has(item.name)),
   },
+  waterIntake: normalizeWaterIntake(day.waterIntake),
 });
+
+export const parseWaterAmountMl = (amountMl: string): number | null => {
+  const match = amountMl.replace(',', '').match(/\d+(\.\d+)?/);
+  const value = match ? Number(match[0]) : Number.NaN;
+
+  return Number.isFinite(value) && value >= 0 ? value : null;
+};
+
+export const getWaterIntakeTotalMl = (waterIntake: WaterIntakeLog | undefined): number | null => {
+  const values = (waterIntake?.entries ?? [])
+    .filter((entry) => entry.consumed)
+    .map((entry) => parseWaterAmountMl(entry.amountMl))
+    .filter((value): value is number => value !== null);
+
+  if (values.length === 0) {
+    return null;
+  }
+
+  return values.reduce((total, value) => total + value, 0);
+};
+
+const normalizeWaterIntake = (waterIntake: WaterIntakeLog | undefined): WaterIntakeLog => {
+  const existingEntries = Array.isArray(waterIntake?.entries) ? waterIntake.entries : [];
+  const entriesById = new Map(existingEntries.map((entry) => [entry.id, entry]));
+  const defaults = defaultWaterIntakeEntries.map((entry) => ({ ...entry, ...entriesById.get(entry.id) }));
+  const extraEntries = existingEntries.filter((entry) => !defaultWaterIntakeEntries.some((item) => item.id === entry.id));
+
+  return {
+    entries: [...defaults, ...extraEntries].map((entry) => ({
+      id: entry.id,
+      label: entry.label,
+      amountMl: entry.amountMl,
+      consumed: Boolean(entry.consumed),
+    })),
+  };
+};
 
 export const getMeal = (day: FoodLogDay, slot: MealSlot): MealLog => {
   const meal = day.meals.find((item) => item.slot === slot);

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { DashboardSummary } from '../components/DashboardSummary';
 import type { FoodLogDay, FoodNutritionBreakdown, StorageSettings } from '../models/foodLog';
-import { normalizeFoodLogDay } from '../models/foodLog';
+import { getWaterIntakeTotalMl, normalizeFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
 import { getLastNDates } from '../services/dateService';
@@ -84,6 +84,7 @@ export function DashboardPage({ settings, githubToken, localRepository }: Dashbo
               : 0;
             const estimatedCalories = day ? getEstimatedCalories(day) : null;
             const nutrition = day ? getNutritionBreakdown(day) : null;
+            const waterMl = day ? getWaterIntakeTotalMl(day.waterIntake) : null;
 
             return (
               <article className="day-row" key={date}>
@@ -117,6 +118,10 @@ export function DashboardPage({ settings, githubToken, localRepository }: Dashbo
                     <div>
                       <dt>Calories</dt>
                       <dd>{formatCalories(estimatedCalories)}</dd>
+                    </div>
+                    <div>
+                      <dt>Water</dt>
+                      <dd>{formatMl(waterMl)}</dd>
                     </div>
                     <div>
                       <dt>Protein</dt>
@@ -203,3 +208,6 @@ const formatGrams = (value: number | null): string =>
   value === null ? 'No estimate' : `${roundMacro(value).toLocaleString('en-AU')} g`;
 
 const roundMacro = (value: number): number => Math.round(value * 10) / 10;
+
+const formatMl = (value: number | null): string =>
+  value === null ? 'No estimate' : `${Math.round(value).toLocaleString('en-AU')} ml`;

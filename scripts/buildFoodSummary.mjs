@@ -44,6 +44,8 @@ const summary = {
     replacedMealCount: sum(loggedDays, (day) => day.meals.filter((meal) => !meal.usedDefault).length),
     snackCount: sum(loggedDays, (day) => day.snackCount),
     photoCount: sum(loggedDays, (day) => day.photoCount),
+    waterMl: sumNullable(loggedDays, (day) => day.waterIntake.totalMl),
+    daysWithWaterEstimate: loggedDays.filter((day) => day.waterIntake.totalMl !== null).length,
     estimatedCalories: sumNullable(loggedDays, (day) => day.estimatedCalories),
     nutrition: sumNutrition(loggedDays.map((day) => day.nutrition)),
     daysWithEstimatedCalories: loggedDays.filter((day) => day.estimatedCalories !== null).length,
@@ -93,6 +95,7 @@ function summarizeDay(date, day) {
   const allItems = [...meals, ...snacks];
   const estimatedCalories = sumNullable(allItems, (item) => item.analysis.calories);
   const nutrition = sumNutrition(allItems.map((item) => item.analysis.nutrition));
+  const waterIntake = summarizeWaterIntake(day.waterIntake);
 
   return {
     date,
@@ -103,6 +106,7 @@ function summarizeDay(date, day) {
     snackCount: snacks.length,
     snacks,
     photoCount: allItems.filter((item) => item.hasPhoto).length,
+    waterIntake,
     estimatedCalories,
     nutrition,
     dailyNotesPresent: hasText(day.dailyNotes),
@@ -147,6 +151,22 @@ function summarizeSnack(snack) {
     hasNotes: hasText(snack.notes),
     hasPhoto: hasText(snack.photoPath),
     analysis: summarizeFoodAnalysis(snack.analysis),
+  };
+}
+
+function summarizeWaterIntake(waterIntake) {
+  const entries = Array.isArray(waterIntake?.entries) ? waterIntake.entries : [];
+  const summarizedEntries = entries.map((entry) => ({
+    id: normalizeString(entry.id),
+    label: normalizeString(entry.label),
+    amountMl: normalizeString(entry.amountMl),
+    consumed: Boolean(entry.consumed),
+    parsedMl: entry.consumed ? parseWaterAmountMl(entry.amountMl) : null,
+  }));
+
+  return {
+    totalMl: sumNullable(summarizedEntries, (entry) => entry.parsedMl),
+    entries: summarizedEntries,
   };
 }
 
@@ -238,6 +258,13 @@ function normalizeString(value) {
 
 function normalizeCalories(value) {
   return Number.isFinite(value) && value >= 0 ? Math.round(value) : null;
+}
+
+function parseWaterAmountMl(value) {
+  const match = normalizeString(value).replace(',', '').match(/\d+(\.\d+)?/);
+  const parsed = match ? Number(match[0]) : Number.NaN;
+
+  return Number.isFinite(parsed) && parsed >= 0 ? Math.round(parsed) : null;
 }
 
 function summarizeNutrition(nutrition) {

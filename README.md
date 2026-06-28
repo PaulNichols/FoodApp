@@ -13,6 +13,7 @@ Known default nutrition context:
 - Default Man Shake + WPI meal: 327 Cal before any added milk, fruit, or other extras.
 - Paul's lunch shake recipe: 1 cup spinach or kale, 1/2 avocado, 1/2 cup frozen mixed berries, 1/4 cup oats, 2 tbsp ground flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, 1/2 tsp cinnamon, 1 tsp cacao nibs, and optional 1 tsp plant sterol powder.
 - Default Paul's lunch shake estimate: about 500 Cal; this may move with walnut vs flaxseed choice, soy milk brand, avocado size, protein powder brand, and optional plant sterol powder.
+- Default water intake: coffee 400 ml, bottle of water 700 ml, AgeMate 240 ml, and glass of water 400 ml. Amount fields are free text, and dashboard totals use the first number found in each consumed entry.
 
 ## Public Data
 
@@ -93,7 +94,14 @@ One JSON file is stored per day:
 data/yyyy/mm/yyyy-mm-dd.json
 ```
 
-The JSON includes supplements, default meals, replacement meal notes/photos, snacks, daily notes, and Brisbane timestamps.
+The JSON includes supplements, default meals, replacement meal notes/photos, snacks, water intake, daily notes, and Brisbane timestamps.
+
+Water intake is stored as `waterIntake.entries`, with each entry containing:
+
+- `id`
+- `label`
+- `amountMl`
+- `consumed`
 
 Meal and snack entries may also include editable analysis fields:
 
@@ -118,7 +126,7 @@ The automation-readable summary is generated at:
 data/codex-food-summary.json
 ```
 
-It contains the latest 31-day window by default, including logged/missing days, supplement completion, default meal adherence, replaced meals, snack count, photo count, estimated calories and nutrition macros when available, and per-day meal/snack analysis metadata.
+It contains the latest 31-day window by default, including logged/missing days, supplement completion, default meal adherence, replaced meals, snack count, photo count, water intake, estimated calories and nutrition macros when available, and per-day meal/snack analysis metadata.
 
 The summary deliberately avoids copying raw daily notes or supplement notes. Those remain in the dated JSON files when deeper manual review is needed.
 

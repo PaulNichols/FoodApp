@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-29T08:53:45+10:00",
+  "sourceUpdatedAt": "2026-06-29T09:01:03+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
@@ -16,6 +16,8 @@
     "replacedMealCount": 0,
     "snackCount": 4,
     "photoCount": 0,
+    "waterMl": 3480,
+    "daysWithWaterEstimate": 2,
     "estimatedCalories": 2608,
     "nutrition": {
       "proteinGrams": 271.8,
@@ -35,7 +37,7 @@
     {
       "date": "2026-06-29",
       "logged": true,
-      "updatedAt": "2026-06-29T08:53:45+10:00",
+      "updatedAt": "2026-06-29T09:01:03+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -208,6 +210,39 @@
         }
       ],
       "photoCount": 0,
+      "waterIntake": {
+        "totalMl": 1740,
+        "entries": [
+          {
+            "id": "coffee",
+            "label": "Coffee",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          },
+          {
+            "id": "water-bottle",
+            "label": "Bottle of water",
+            "amountMl": "700",
+            "consumed": true,
+            "parsedMl": 700
+          },
+          {
+            "id": "agemate",
+            "label": "AgeMate",
+            "amountMl": "240",
+            "consumed": true,
+            "parsedMl": 240
+          },
+          {
+            "id": "water-glass",
+            "label": "Glass of water",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          }
+        ]
+      },
       "estimatedCalories": 1304,
       "nutrition": {
         "proteinGrams": 135.9,
@@ -227,7 +262,7 @@
     {
       "date": "2026-06-28",
       "logged": true,
-      "updatedAt": "2026-06-29T08:53:45+10:00",
+      "updatedAt": "2026-06-29T09:01:03+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -400,6 +435,39 @@
         }
       ],
       "photoCount": 0,
+      "waterIntake": {
+        "totalMl": 1740,
+        "entries": [
+          {
+            "id": "coffee",
+            "label": "Coffee",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          },
+          {
+            "id": "water-bottle",
+            "label": "Bottle of water",
+            "amountMl": "700",
+            "consumed": true,
+            "parsedMl": 700
+          },
+          {
+            "id": "agemate",
+            "label": "AgeMate",
+            "amountMl": "240",
+            "consumed": true,
+            "parsedMl": 240
+          },
+          {
+            "id": "water-glass",
+            "label": "Glass of water",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          }
+        ]
+      },
       "estimatedCalories": 1304,
       "nutrition": {
         "proteinGrams": 135.9,

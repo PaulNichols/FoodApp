@@ -194,5 +194,33 @@
   ],
   "dailyNotes": "",
   "createdAt": "2026-06-28T17:55:01+10:00",
-  "updatedAt": "2026-06-29T08:53:45+10:00"
+  "updatedAt": "2026-06-29T09:01:03+10:00",
+  "waterIntake": {
+    "entries": [
+      {
+        "id": "coffee",
+        "label": "Coffee",
+        "amountMl": "400",
+        "consumed": true
+      },
+      {
+        "id": "water-bottle",
+        "label": "Bottle of water",
+        "amountMl": "700",
+        "consumed": true
+      },
+      {
+        "id": "agemate",
+        "label": "AgeMate",
+        "amountMl": "240",
+        "consumed": true
+      },
+      {
+        "id": "water-glass",
+        "label": "Glass of water",
+        "amountMl": "400",
+        "consumed": true
+      }
+    ]
+  }
 }

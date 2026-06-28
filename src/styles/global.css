@@ -347,6 +347,48 @@ button.secondary {
   padding-top: 12px;
 }
 
+.water-list {
+  display: grid;
+  gap: 10px;
+}
+
+.water-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(82px, 0.45fr);
+  gap: 8px;
+  align-items: end;
+}
+
+.water-consumed {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  align-items: center;
+  column-gap: 10px;
+  min-height: 44px;
+  color: #25312c;
+  font-weight: 800;
+}
+
+.water-consumed input {
+  justify-self: center;
+  width: 24px;
+  height: 24px;
+  margin: 0;
+  accent-color: #0f766e;
+}
+
+.water-amount span {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .action-grid {
   display: grid;
   grid-template-columns: 1fr;
