@@ -54,7 +54,7 @@ If this app is moved to a different repository, update the local fallback and ma
 
 Local-only mode is the default. It stores daily JSON and compressed photos in IndexedDB on the current device. It works offline after the app has loaded, but clearing browser website data can remove local logs and photos.
 
-Use **Export day zip** or **Export week zip** to back up local data.
+Use manual exports only as a backup. The normal workflow is to save into GitHub repo mode so the repository contains the daily JSON and photos for later Codex analysis.
 
 ### GitHub Repo
 
@@ -77,9 +77,11 @@ When saving in GitHub mode, the app saves locally first, then commits:
 
 Existing files are updated by fetching the current file SHA first.
 
+Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; you should not need to export zip files for routine weekly analysis.
+
 ## Exporting
 
-The Today page includes:
+The Today page includes manual backup exports:
 
 - **Export day zip**
 - **Export week zip**

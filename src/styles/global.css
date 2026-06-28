@@ -118,6 +118,34 @@ button.secondary {
   gap: 10px;
 }
 
+.save-panel {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.save-button {
+  width: 100%;
+  min-height: 54px;
+  font-size: 1.05rem;
+}
+
+.backup-actions {
+  border-top: 1px solid #ece7df;
+  padding-top: 10px;
+}
+
+.backup-actions summary {
+  min-height: 36px;
+  cursor: pointer;
+  color: #516059;
+  font-weight: 800;
+}
+
+.backup-actions .action-grid {
+  margin-top: 8px;
+}
+
 .panel-title {
   display: flex;
   align-items: center;

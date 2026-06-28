@@ -81,8 +81,8 @@ export function SettingsPage({ settings, githubToken, localRepository, onSave }:
         </fieldset>
 
         <p className="privacy-note">
-          Local-only mode keeps data on this device unless you export it. GitHub mode commits files to this repository
-          only after you manually enter your own token.
+          GitHub repo mode is the normal path for weekly Codex analysis because every save updates repository JSON and
+          photos. Local-only mode keeps data on this device for offline drafting or backup use.
         </p>
       </section>
 

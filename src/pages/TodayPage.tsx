@@ -7,7 +7,7 @@ import type { FoodLogDay, FoodPhoto, MealLog, MealSlot, StorageSettings } from '
 import { createDefaultFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
-import { getTodayInBrisbane, toBrisbaneTimestamp } from '../services/dateService';
+import { getFoodLogJsonPath, getTodayInBrisbane, toBrisbaneTimestamp } from '../services/dateService';
 import { exportCurrentDay, exportLast7Days } from '../services/exportService';
 
 interface TodayPageProps {
@@ -82,10 +82,21 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
       await localRepository.saveDay(nextDay, photos);
 
       if (settings.mode === 'github') {
+        if (!githubToken.trim()) {
+          setDay(nextDay);
+          setStatus('Saved locally only. Add your GitHub token in Settings so Save can update this repo.');
+          return;
+        }
+
         await githubRepository.saveDay(nextDay, photos);
-        setStatus('Saved locally and committed to GitHub.');
+        const photoCount = photos.length;
+        setStatus(
+          `Saved to GitHub: ${getFoodLogJsonPath(nextDay.date)}${
+            photoCount > 0 ? ` and ${photoCount} photo${photoCount === 1 ? '' : 's'}` : ''
+          }. Codex can read /data and /photos from this repo.`,
+        );
       } else {
-        setStatus('Saved locally on this device.');
+        setStatus('Saved locally only. Switch Settings to GitHub repo when this day should update repository JSON.');
       }
 
       setDay(nextDay);
@@ -101,19 +112,9 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
       <section className="panel hero-panel">
         <DateSelector value={date} onChange={setDate} />
         <p className="muted">Timezone: Australia/Brisbane</p>
-        <div className="action-grid">
-          <button type="button" onClick={() => void save()} disabled={isLoading}>
-            Save day
-          </button>
-          <button type="button" className="secondary" onClick={() => void exportCurrentDay(day, photos)}>
-            Export day zip
-          </button>
-          <button type="button" className="secondary" onClick={() => void exportLast7Days(localRepository)}>
-            Export week zip
-          </button>
-        </div>
-        <p role="status" className="status">
-          {status}
+        <p className="muted">
+          In GitHub repo mode, Save writes the daily JSON and any new photos into this repository for later Codex
+          analysis.
         </p>
       </section>
 
@@ -155,6 +156,31 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
             onChange={(event) => updateDay({ ...day, dailyNotes: event.target.value })}
           />
         </label>
+      </section>
+
+      <section className="panel save-panel">
+        <div>
+          <p role="status" className="status">
+            {status}
+          </p>
+          <p className="muted">Repository path: {getFoodLogJsonPath(day.date)}</p>
+        </div>
+
+        <details className="backup-actions">
+          <summary>Manual backup exports</summary>
+          <div className="action-grid">
+            <button type="button" className="secondary" onClick={() => void exportCurrentDay(day, photos)}>
+              Export day zip
+            </button>
+            <button type="button" className="secondary" onClick={() => void exportLast7Days(localRepository)}>
+              Export week zip
+            </button>
+          </div>
+        </details>
+
+        <button type="button" className="save-button" onClick={() => void save()} disabled={isLoading}>
+          {settings.mode === 'github' ? 'Save to GitHub' : 'Save locally'}
+        </button>
       </section>
     </div>
   );

@@ -10,7 +10,7 @@ const SETTINGS_KEY = 'foodTracker.storageSettings';
 const TOKEN_KEY = 'foodTracker.githubToken';
 
 const defaultSettings: StorageSettings = {
-  mode: 'local',
+  mode: 'github',
   githubOwner: 'PaulNichols',
   githubRepo: 'FoodApp',
   branch: 'main',
