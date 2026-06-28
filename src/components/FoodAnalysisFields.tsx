@@ -60,7 +60,7 @@ export function FoodAnalysisFields({ label, analysis, onChange }: FoodAnalysisFi
 
       {analysis && (
         <div className="analysis-meta">
-          <span>{analysis.source === 'openai' ? 'AI estimate' : 'Manual edit'}</span>
+          <span>{getAnalysisSourceLabel(analysis.source)}</span>
           {analysis.confidence && <span>Confidence: {analysis.confidence}</span>}
           <button type="button" className="text-button" onClick={() => onChange(undefined)}>
             Clear analysis
@@ -70,3 +70,15 @@ export function FoodAnalysisFields({ label, analysis, onChange }: FoodAnalysisFi
     </fieldset>
   );
 }
+
+const getAnalysisSourceLabel = (source: FoodItemAnalysis['source']): string => {
+  if (source === 'openai') {
+    return 'AI estimate';
+  }
+
+  if (source === 'codex') {
+    return 'Codex estimate';
+  }
+
+  return 'Manual edit';
+};

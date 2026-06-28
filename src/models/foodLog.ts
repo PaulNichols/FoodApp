@@ -12,7 +12,7 @@ export interface SupplementLog {
   notes: string;
 }
 
-export type FoodAnalysisSource = 'manual' | 'openai';
+export type FoodAnalysisSource = 'manual' | 'openai' | 'codex';
 
 export type FoodAnalysisConfidence = 'low' | 'medium' | 'high';
 

@@ -48,6 +48,7 @@ const summary = {
     daysWithEstimatedCalories: loggedDays.filter((day) => day.estimatedCalories !== null).length,
     manualAnalysisItems: sum(loggedDays, (day) => day.analysis.manualItems),
     openAiAnalysisItems: sum(loggedDays, (day) => day.analysis.openAiItems),
+    codexAnalysisItems: sum(loggedDays, (day) => day.analysis.codexItems),
     unanalysedItems: sum(loggedDays, (day) => day.analysis.unanalysedItems),
     daysWithDailyNotes: loggedDays.filter((day) => day.dailyNotesPresent).length,
   },
@@ -157,7 +158,7 @@ function summarizeFoodAnalysis(analysis) {
     itemName: normalizeString(analysis.itemName),
     calories: normalizeCalories(analysis.calories),
     confidence: ['low', 'medium', 'high'].includes(analysis.confidence) ? analysis.confidence : null,
-    source: ['manual', 'openai'].includes(analysis.source) ? analysis.source : null,
+    source: ['manual', 'openai', 'codex'].includes(analysis.source) ? analysis.source : null,
     notesPresent: hasText(analysis.notes),
     updatedAt: normalizeString(analysis.updatedAt),
   };
@@ -167,6 +168,7 @@ function summarizeAnalysis(items) {
   return {
     manualItems: items.filter((item) => item.analysis.source === 'manual').length,
     openAiItems: items.filter((item) => item.analysis.source === 'openai').length,
+    codexItems: items.filter((item) => item.analysis.source === 'codex').length,
     unanalysedItems: items.filter((item) => item.analysis.source === null).length,
   };
 }

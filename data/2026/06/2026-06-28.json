@@ -30,7 +30,16 @@
       "templateName": "Man Shake + 2 scoops WPI protein",
       "usedDefault": true,
       "notes": "",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Man Shake + 2 scoops WPI protein",
+        "calories": 430,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Template estimate; high protein, but confirm powder scoop size if weight loss stalls.",
+        "updatedAt": "2026-06-28T16:09:04+10:00",
+        "inputHash": "codex:2026-06-28:breakfast:man-shake-wpi:v1"
+      }
     },
     {
       "slot": "lunch",
@@ -50,7 +59,16 @@
         "water",
         "cinnamon",
         "optional psyllium husk"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Paul's lunch shake",
+        "calories": 650,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Nutrient-dense shake; calories mainly depend on oats, avocado, nuts/flax, and soy milk quantities.",
+        "updatedAt": "2026-06-28T16:09:04+10:00",
+        "inputHash": "codex:2026-06-28:lunch:paul-lunch-shake:v1"
+      }
     },
     {
       "slot": "evening-meal",
@@ -59,7 +77,16 @@
       "templateName": "Man Shake + 2 scoops WPI protein",
       "usedDefault": true,
       "notes": "",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Man Shake + 2 scoops WPI protein",
+        "calories": 430,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Template estimate; useful controlled dinner if training recovery and hunger are acceptable.",
+        "updatedAt": "2026-06-28T16:09:04+10:00",
+        "inputHash": "codex:2026-06-28:evening-meal:man-shake-wpi:v1"
+      }
     }
   ],
   "snacks": [],

@@ -93,7 +93,7 @@ Meal and snack entries may also include editable analysis fields:
 - `analysis.source`
 - `analysis.notes`
 
-If you edit the analysis fields in the app, the entry is marked as `source: "manual"` so the scheduled analyser will not overwrite it.
+If you edit the analysis fields in the app, the entry is marked as `source: "manual"` so the scheduled analyser will not overwrite it. Automated estimates may use `source: "codex"` or `source: "openai"` depending on which analyser created them.
 
 ## Codex Food Summary
 
@@ -141,11 +141,17 @@ Optional environment variable:
 
 ## Scheduled Food Analysis
 
-This repository includes `.github/workflows/analyse-food.yml`.
+The active scheduled analyser is the Codex automation:
 
-The workflow runs each day at `10:30 UTC`, which is `8:30 PM Australia/Brisbane`, and can also be run manually from the GitHub Actions tab.
+```text
+FoodApp Daily Food Analysis
+```
 
-To enable it:
+It runs daily at 8:35 PM Australia/Brisbane, reads recent `/data` JSON files and matching `/photos` files, estimates meal/snack names and calories, runs retention cleanup, rebuilds `data/codex-food-summary.json`, and commits updated data back to the repository.
+
+The older GitHub Actions workflow `.github/workflows/analyse-food.yml` is currently disabled manually because its OpenAI API key run failed with quota. Do not re-enable it unless you want GitHub Actions to take over this job again.
+
+To re-enable the GitHub Actions workflow later:
 
 1. In GitHub, open repository **Settings**.
 2. Go to **Secrets and variables**.
