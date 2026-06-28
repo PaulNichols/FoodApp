@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import type { FoodPhoto, SnackLog } from '../models/foodLog';
 import { getFoodPhotoPath } from '../services/dateService';
 import { createObjectUrl } from '../services/photoCompression';
+import { FoodAnalysisFields } from './FoodAnalysisFields';
 import { PhotoPicker } from './PhotoPicker';
 
 interface SnackListProps {
@@ -16,7 +17,7 @@ interface SnackListProps {
 export function SnackList({ date, snacks, photos, onChange, onPhotoSelected, onError }: SnackListProps) {
   const addSnack = () => {
     const id = `snack-${snacks.length + 1}`;
-    onChange([...snacks, { id, notes: '', photoPath: null }]);
+    onChange([...snacks, { id, notes: '', photoPath: null, analysis: undefined }]);
   };
 
   return (
@@ -108,6 +109,12 @@ function SnackItem({ date, snack, index, photo, onChange, onRemove, onPhotoSelec
 
       {previewUrl && <img className="photo-preview" src={previewUrl} alt={`Snack ${index + 1} preview`} />}
       {!previewUrl && snack.photoPath && <p className="muted">Saved photo: {snack.photoPath}</p>}
+
+      <FoodAnalysisFields
+        label={`Snack ${index + 1} analysis`}
+        analysis={snack.analysis}
+        onChange={(analysis) => onChange({ ...snack, analysis })}
+      />
     </article>
   );
 }

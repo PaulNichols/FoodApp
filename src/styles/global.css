@@ -289,6 +289,41 @@ button.secondary {
   padding-top: 4px;
 }
 
+.analysis-fields {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0;
+  padding: 10px;
+  border: 1px solid #e3ddd4;
+  border-radius: 8px;
+}
+
+.analysis-fields legend {
+  padding: 0 4px;
+  color: #405048;
+  font-weight: 800;
+}
+
+.analysis-fields .field {
+  margin-bottom: 0;
+}
+
+.analysis-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(96px, 0.6fr);
+  gap: 8px;
+}
+
+.analysis-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  align-items: center;
+  color: #5f6b64;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .photo-preview {
   display: block;
   width: 100%;

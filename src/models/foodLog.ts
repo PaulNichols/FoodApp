@@ -12,6 +12,20 @@ export interface SupplementLog {
   notes: string;
 }
 
+export type FoodAnalysisSource = 'manual' | 'openai';
+
+export type FoodAnalysisConfidence = 'low' | 'medium' | 'high';
+
+export interface FoodItemAnalysis {
+  itemName: string;
+  calories: number | null;
+  confidence: FoodAnalysisConfidence | null;
+  source: FoodAnalysisSource;
+  notes: string;
+  updatedAt: string;
+  inputHash?: string;
+}
+
 export interface MealLog {
   slot: MealSlot;
   label: string;
@@ -20,6 +34,7 @@ export interface MealLog {
   usedDefault: boolean;
   notes: string;
   photoPath: string | null;
+  analysis?: FoodItemAnalysis;
   ingredients?: string[];
 }
 
@@ -27,6 +42,7 @@ export interface SnackLog {
   id: string;
   notes: string;
   photoPath: string | null;
+  analysis?: FoodItemAnalysis;
 }
 
 export interface FoodLogDay {

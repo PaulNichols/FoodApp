@@ -52,7 +52,7 @@ If this app is moved to a different repository, update the local fallback and ma
 
 ### Local Only
 
-Local-only mode is the default. It stores daily JSON and compressed photos in IndexedDB on the current device. It works offline after the app has loaded, but clearing browser website data can remove local logs and photos.
+Local-only mode stores daily JSON and compressed photos in IndexedDB on the current device. It works offline after the app has loaded, but clearing browser website data can remove local logs and photos.
 
 The normal workflow is to save into GitHub repo mode so the repository contains the daily JSON and photos for later Codex analysis.
 
@@ -89,6 +89,33 @@ data/yyyy/mm/yyyy-mm-dd.json
 ```
 
 The JSON includes supplements, default meals, replacement meal notes/photos, snacks, daily notes, and Brisbane timestamps.
+
+Meal and snack entries may also include editable analysis fields:
+
+- `analysis.itemName`
+- `analysis.calories`
+- `analysis.confidence`
+- `analysis.source`
+- `analysis.notes`
+
+If you edit the analysis fields in the app, the entry is marked as `source: "manual"` so the scheduled analyser will not overwrite it.
+
+## Scheduled Food Analysis
+
+This repository includes `.github/workflows/analyse-food.yml`.
+
+The workflow runs each day at `10:30 UTC`, which is `8:30 PM Australia/Brisbane`, and can also be run manually from the GitHub Actions tab.
+
+To enable it:
+
+1. In GitHub, open repository **Settings**.
+2. Go to **Secrets and variables**.
+3. Add an Actions secret named `OPENAI_API_KEY`.
+4. Optionally add an Actions variable named `OPENAI_FOOD_ANALYSIS_MODEL`; otherwise the workflow uses `gpt-4.1-mini`.
+
+The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, then commits the updated JSON back into `/data`.
+
+Privacy note: when this workflow runs, food photos and related notes are sent to OpenAI for analysis. Keep the repository and workflow secrets private.
 
 ## Weekly Codex Analysis
 

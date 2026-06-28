@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import type { FoodPhoto, MealLog } from '../models/foodLog';
 import { getFoodPhotoPath } from '../services/dateService';
 import { createObjectUrl } from '../services/photoCompression';
+import { FoodAnalysisFields } from './FoodAnalysisFields';
 import { PhotoPicker } from './PhotoPicker';
 
 interface MealCardProps {
@@ -30,7 +31,7 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
   }, [photo]);
 
   const resetMeal = () => {
-    onChange({ ...meal, usedDefault: true, notes: '', photoPath: null });
+    onChange({ ...meal, usedDefault: true, notes: '', photoPath: null, analysis: undefined });
   };
 
   return (
@@ -57,6 +58,12 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
         />
         <span>{meal.templateName}</span>
       </label>
+
+      <FoodAnalysisFields
+        label={`${meal.label} analysis`}
+        analysis={meal.analysis}
+        onChange={(analysis) => onChange({ ...meal, analysis })}
+      />
 
       {meal.ingredients && (
         <details className="ingredients">

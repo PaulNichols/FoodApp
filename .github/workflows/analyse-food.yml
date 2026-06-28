@@ -1,0 +1,48 @@
+name: Analyse food logs
+
+on:
+  schedule:
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: food-analysis
+  cancel-in-progress: false
+
+jobs:
+  analyse:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Analyse food logs
+        run: npm run analyse:food
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          OPENAI_FOOD_ANALYSIS_MODEL: ${{ vars.OPENAI_FOOD_ANALYSIS_MODEL || 'gpt-4.1-mini' }}
+
+      - name: Commit analysis updates
+        run: |
+          if git diff --quiet -- data; then
+            echo "No food analysis updates to commit."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          git commit -m "Update food log analysis"
+          git push
