@@ -99,15 +99,17 @@ export function ProgramPage({ program, onBack, onComplete }: ProgramPageProps) {
       {program.trainingNote && <p className="program-note">{program.trainingNote}</p>}
 
       <section className="exercise-card">
-        <ExerciseImage exercise={exercise} />
-        <p className="equipment">{exercise.equipment}</p>
-        <h1>{exercise.name}</h1>
+        <header className="exercise-heading">
+          <p className="equipment">{exercise.equipment}</p>
+          <h1>{exercise.name}</h1>
+        </header>
         {exercise.swimDescription && (
           <section className="swim-description" aria-label="Swimming benefit">
             <strong>Swimming transfer</strong>
             <p>{exercise.swimDescription}</p>
           </section>
         )}
+        <ExerciseImage exercise={exercise} />
         <p className="last-time">
           {latestEntry && latestEntry.value ? `Last time: ${latestEntry.value} ${latestEntry.unit}` : 'No previous entry'}
         </p>

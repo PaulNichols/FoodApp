@@ -200,13 +200,19 @@ progress::-moz-progress-bar {
 
 .exercise-card {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   padding: 16px;
+}
+
+.exercise-heading {
+  display: grid;
+  gap: 6px;
 }
 
 .exercise-card h1 {
   margin-bottom: 0;
-  font-size: 1.95rem;
+  font-size: 1.72rem;
+  line-height: 1.08;
 }
 
 .equipment {
@@ -249,77 +255,9 @@ progress::-moz-progress-bar {
 
 .exercise-guide {
   display: grid;
-  overflow: hidden;
   border: 1px solid #d5dedb;
   border-radius: 8px;
   background: #fff;
-}
-
-.exercise-image {
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-}
-
-.exercise-placeholder {
-  width: 100%;
-  min-height: 170px;
-}
-
-.exercise-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 18px;
-  color: #fff;
-  background: #0f766e;
-}
-
-.exercise-placeholder div:first-child {
-  display: grid;
-  gap: 6px;
-}
-
-.exercise-placeholder span {
-  font-size: 0.86rem;
-  font-weight: 900;
-  opacity: 0.8;
-  text-transform: uppercase;
-}
-
-.exercise-placeholder strong {
-  max-width: 220px;
-  font-size: 1.42rem;
-  line-height: 1.05;
-}
-
-.exercise-placeholder-row {
-  background: #2563eb;
-}
-
-.exercise-placeholder-legs {
-  background: #7c3aed;
-}
-
-.exercise-placeholder-core {
-  background: #334155;
-}
-
-.exercise-placeholder-shoulders {
-  background: #be123c;
-}
-
-.exercise-placeholder-power {
-  background: #b45309;
-}
-
-.exercise-placeholder-arms {
-  background: #0e7490;
-}
-
-.exercise-placeholder-mobility {
-  background: #047857;
 }
 
 .program-note {
@@ -331,51 +269,9 @@ progress::-moz-progress-bar {
   line-height: 1.38;
 }
 
-.motion-diagram {
-  position: relative;
-  flex: 0 0 96px;
-  width: 96px;
-  height: 96px;
-  border: 3px solid rgba(255, 255, 255, 0.68);
-  border-radius: 999px;
-}
-
-.motion-diagram b,
-.motion-diagram i,
-.motion-diagram em {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.86);
-}
-
-.motion-diagram i {
-  top: 22px;
-  left: 37px;
-  width: 22px;
-  height: 22px;
-  border-radius: 999px;
-}
-
-.motion-diagram b {
-  top: 45px;
-  left: 28px;
-  width: 42px;
-  height: 12px;
-  border-radius: 999px;
-  transform: rotate(-18deg);
-}
-
-.motion-diagram em {
-  top: 58px;
-  left: 26px;
-  width: 48px;
-  height: 10px;
-  border-radius: 999px;
-  transform: rotate(22deg);
-}
-
 .guide-details {
   display: grid;
-  gap: 10px;
+  gap: 9px;
   padding: 12px;
   background: #fff;
 }
@@ -393,7 +289,7 @@ progress::-moz-progress-bar {
 
 .guide-details ul {
   display: grid;
-  gap: 7px;
+  gap: 5px;
   margin: 0;
   padding-left: 20px;
 }
