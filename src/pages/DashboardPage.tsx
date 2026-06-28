@@ -1,14 +1,18 @@
 import { useEffect, useState } from 'react';
 import { DashboardSummary } from '../components/DashboardSummary';
-import type { FoodLogDay } from '../models/foodLog';
+import type { FoodLogDay, StorageSettings } from '../models/foodLog';
+import { normalizeFoodLogDay } from '../models/foodLog';
+import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
 import { getLastNDates } from '../services/dateService';
 
 interface DashboardPageProps {
-  repository: LocalFoodLogRepository;
+  settings: StorageSettings;
+  githubToken: string;
+  localRepository: LocalFoodLogRepository;
 }
 
-export function DashboardPage({ repository }: DashboardPageProps) {
+export function DashboardPage({ settings, githubToken, localRepository }: DashboardPageProps) {
   const [days, setDays] = useState<FoodLogDay[]>([]);
   const [status, setStatus] = useState('Loading dashboard...');
 
@@ -17,11 +21,27 @@ export function DashboardPage({ repository }: DashboardPageProps) {
 
     const load = async () => {
       try {
-        const recentDays = await repository.getRecentDays(7);
+        const localDays = await localRepository.getRecentDays(7);
+        let recentDays = localDays;
+        let nextStatus = recentDays.length > 0 ? 'Last 7 days loaded.' : 'No saved days yet.';
+
+        if (githubToken.trim()) {
+          try {
+            const githubRepository = new GitHubFoodLogRepository(settings, githubToken);
+            const githubDays = (await githubRepository.getRecentDays(7)).map(normalizeFoodLogDay);
+            recentDays = githubDays;
+            nextStatus = recentDays.length > 0 ? 'Last 7 days loaded.' : 'No saved days yet.';
+
+            await Promise.all(githubDays.map((day) => localRepository.saveDay(day, [])));
+          } catch (error) {
+            const message = error instanceof Error ? error.message : 'Unable to load GitHub dashboard data.';
+            nextStatus = `Last 7 days loaded. GitHub refresh failed: ${message}`;
+          }
+        }
 
         if (isActive) {
           setDays(recentDays);
-          setStatus(recentDays.length > 0 ? 'Last 7 days loaded.' : 'No saved days yet.');
+          setStatus(nextStatus);
         }
       } catch (error) {
         if (isActive) {
@@ -35,7 +55,7 @@ export function DashboardPage({ repository }: DashboardPageProps) {
     return () => {
       isActive = false;
     };
-  }, [repository]);
+  }, [githubToken, localRepository, settings]);
 
   const byDate = new Map(days.map((day) => [day.date, day]));
 
@@ -62,6 +82,7 @@ export function DashboardPage({ repository }: DashboardPageProps) {
                   Boolean,
                 ).length
               : 0;
+            const estimatedCalories = day ? getEstimatedCalories(day) : null;
 
             return (
               <article className="day-row" key={date}>
@@ -92,6 +113,10 @@ export function DashboardPage({ repository }: DashboardPageProps) {
                       <dt>Photos</dt>
                       <dd>{photoCount > 0 ? 'Yes' : 'No'}</dd>
                     </div>
+                    <div>
+                      <dt>Calories</dt>
+                      <dd>{formatCalories(estimatedCalories)}</dd>
+                    </div>
                   </dl>
                 ) : (
                   <p className="muted">No saved log.</p>
@@ -104,3 +129,18 @@ export function DashboardPage({ repository }: DashboardPageProps) {
     </div>
   );
 }
+
+const getEstimatedCalories = (day: FoodLogDay): number | null => {
+  const calories = [...day.meals, ...day.snacks]
+    .map((item) => item.analysis?.calories)
+    .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));
+
+  if (calories.length === 0) {
+    return null;
+  }
+
+  return calories.reduce((total, value) => total + value, 0);
+};
+
+const formatCalories = (calories: number | null): string =>
+  calories === null ? 'No estimate' : Math.round(calories).toLocaleString('en-AU');

@@ -59,7 +59,13 @@ export function App() {
             onForgetGitHubToken={() => saveGitHubToken('')}
           />
         )}
-        {route === 'dashboard' && <DashboardPage repository={localRepository} />}
+        {route === 'dashboard' && (
+          <DashboardPage
+            settings={foodAppRepositorySettings}
+            githubToken={githubToken}
+            localRepository={localRepository}
+          />
+        )}
       </main>
 
       <nav className="bottom-nav" aria-label="Primary navigation">
