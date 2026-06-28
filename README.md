@@ -93,6 +93,29 @@ Meal and snack entries may also include editable analysis fields:
 
 If you edit the analysis fields in the app, the entry is marked as `source: "manual"` so the scheduled analyser will not overwrite it.
 
+## Codex Food Summary
+
+The automation-readable summary is generated at:
+
+```text
+data/codex-food-summary.json
+```
+
+It contains the latest 31-day window by default, including logged/missing days, supplement completion, default meal adherence, replaced meals, snack count, photo count, estimated calories when available, and per-day meal/snack analysis metadata.
+
+The summary deliberately avoids copying raw daily notes or supplement notes. Those remain in the dated JSON files when deeper manual review is needed.
+
+Run it locally with:
+
+```bash
+npm run summarise:food
+```
+
+Optional environment variables:
+
+- `FOOD_SUMMARY_DAYS` controls the window length.
+- `FOOD_SUMMARY_END_DATE` sets the end date as `yyyy-mm-dd` for repeatable checks.
+
 ## Scheduled Food Analysis
 
 This repository includes `.github/workflows/analyse-food.yml`.
@@ -106,7 +129,7 @@ To enable it:
 3. Add an Actions secret named `OPENAI_API_KEY`.
 4. Optionally add an Actions variable named `OPENAI_FOOD_ANALYSIS_MODEL`; otherwise the workflow uses `gpt-4.1-mini`.
 
-The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, then commits the updated JSON back into `/data`.
+The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, rebuilds `data/codex-food-summary.json`, then commits the updated JSON back into `/data`.
 
 Privacy note: when this workflow runs, food photos and related notes are sent to OpenAI for analysis. Keep the repository and workflow secrets private.
 
@@ -114,6 +137,7 @@ Privacy note: when this workflow runs, food photos and related notes are sent to
 
 A later Codex job can read repository files directly from:
 
+- `/data/codex-food-summary.json`
 - `/data`
 - `/photos`
 

@@ -34,15 +34,18 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_FOOD_ANALYSIS_MODEL: ${{ vars.OPENAI_FOOD_ANALYSIS_MODEL || 'gpt-4.1-mini' }}
 
+      - name: Build Codex food summary
+        run: npm run summarise:food
+
       - name: Commit analysis updates
         run: |
           if git diff --quiet -- data; then
-            echo "No food analysis updates to commit."
+            echo "No food data or summary updates to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data
-          git commit -m "Update food log analysis"
+          git commit -m "Update food log analysis summary"
           git push
