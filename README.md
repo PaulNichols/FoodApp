@@ -1,12 +1,12 @@
 # Food Log
 
-A private mobile-first daily food tracker built with React, Vite, and TypeScript for GitHub Pages.
+A mobile-first daily food tracker built with React, Vite, and TypeScript for GitHub Pages.
 
 The default day is optimised for a routine of morning supplements, Man Shake + WPI breakfast, Paul's lunch shake, Man Shake + WPI evening meal, optional snacks, and daily notes.
 
-## Privacy Warning
+## Public Data
 
-Food photos, diet notes, supplement notes, training hunger notes, and health-related observations are personal data. Treat committed `/data` and `/photos` files as sensitive.
+This repository is intentionally public for the personal fitness workflow, so committed `/data` and `/photos` files are public too.
 
 This app does not include analytics, CDN scripts, or a backend. It does not bundle a GitHub token and does not contain any hardcoded token.
 
@@ -154,7 +154,7 @@ To enable it:
 
 The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, removes dated JSON/photos older than one month, rebuilds `data/codex-food-summary.json`, then commits the updated files back into the repository.
 
-Privacy note: when this workflow runs, food photos and related notes are sent to OpenAI for analysis. Keep the repository and workflow secrets private.
+Analysis note: when this workflow runs, food photos and related notes are sent to OpenAI for analysis. Keep workflow secrets private.
 
 ## Weekly Codex Analysis
 
