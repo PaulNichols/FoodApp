@@ -71,6 +71,7 @@ When saving, the app commits:
 Existing files are updated by fetching the current file SHA first.
 When a session token is available, opening a date loads the saved GitHub JSON back into the form so you can edit and save that day again.
 Each save also removes repository `/data` and `/photos` files with path dates more than one month older than the current Brisbane date.
+The scheduled analysis workflow applies the same one-month retention, so old dated JSON and photo files are cleaned even if you do not save from the phone that day.
 
 Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; there is no manual export step in the app.
 
@@ -117,6 +118,27 @@ Optional environment variables:
 - `FOOD_SUMMARY_DAYS` controls the window length.
 - `FOOD_SUMMARY_END_DATE` sets the end date as `yyyy-mm-dd` for repeatable checks.
 
+## Food Data Retention
+
+FoodApp keeps one Brisbane calendar month of dated repository data.
+
+Retention removes old files that match:
+
+- `data/yyyy/mm/yyyy-mm-dd.json`
+- `photos/yyyy/mm/yyyy-mm-dd/*`
+
+It does not remove `data/codex-food-summary.json`.
+
+Run the same cleanup locally with:
+
+```bash
+npm run cleanup:food
+```
+
+Optional environment variable:
+
+- `FOOD_RETENTION_END_DATE` sets the end date as `yyyy-mm-dd` for repeatable checks.
+
 ## Scheduled Food Analysis
 
 This repository includes `.github/workflows/analyse-food.yml`.
@@ -130,7 +152,7 @@ To enable it:
 3. Add an Actions secret named `OPENAI_API_KEY`.
 4. Optionally add an Actions variable named `OPENAI_FOOD_ANALYSIS_MODEL`; otherwise the workflow uses `gpt-4.1-mini`.
 
-The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, rebuilds `data/codex-food-summary.json`, then commits the updated JSON back into `/data`.
+The workflow scans recent `/data` JSON files and matching `/photos` files, estimates the meal or snack name and calories, removes dated JSON/photos older than one month, rebuilds `data/codex-food-summary.json`, then commits the updated files back into the repository.
 
 Privacy note: when this workflow runs, food photos and related notes are sent to OpenAI for analysis. Keep the repository and workflow secrets private.
 

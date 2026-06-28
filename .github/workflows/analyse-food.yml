@@ -34,18 +34,24 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           OPENAI_FOOD_ANALYSIS_MODEL: ${{ vars.OPENAI_FOOD_ANALYSIS_MODEL || 'gpt-4.1-mini' }}
 
+      - name: Apply food data retention
+        run: npm run cleanup:food
+
       - name: Build Codex food summary
         run: npm run summarise:food
 
       - name: Commit analysis updates
         run: |
-          if git diff --quiet -- data; then
+          if git diff --quiet -- data photos; then
             echo "No food data or summary updates to commit."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
+          git add -A -- data
+          if [ -d photos ] || [ -n "$(git ls-files photos)" ]; then
+            git add -A -- photos
+          fi
           git commit -m "Update food log analysis summary"
           git push
