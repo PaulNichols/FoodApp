@@ -1,0 +1,69 @@
+{
+  "date": "2026-06-28",
+  "timezone": "Australia/Brisbane",
+  "supplements": {
+    "morningSupplementsTaken": true,
+    "items": [
+      {
+        "name": "Creatine",
+        "taken": true,
+        "notes": ""
+      },
+      {
+        "name": "AgeMate",
+        "taken": true,
+        "notes": ""
+      },
+      {
+        "name": "Collagen peptides",
+        "taken": true,
+        "notes": ""
+      }
+    ],
+    "notes": ""
+  },
+  "meals": [
+    {
+      "slot": "breakfast",
+      "label": "Breakfast",
+      "templateId": "man-shake-wpi",
+      "templateName": "Man Shake + 2 scoops WPI protein",
+      "usedDefault": true,
+      "notes": "",
+      "photoPath": null
+    },
+    {
+      "slot": "lunch",
+      "label": "Lunch",
+      "templateId": "paul-lunch-shake",
+      "templateName": "Paul's lunch shake",
+      "usedDefault": true,
+      "notes": "",
+      "photoPath": null,
+      "ingredients": [
+        "spinach or kale",
+        "oats",
+        "ground flaxseed or walnuts",
+        "avocado",
+        "frozen berries",
+        "soy milk",
+        "water",
+        "cinnamon",
+        "optional psyllium husk"
+      ]
+    },
+    {
+      "slot": "evening-meal",
+      "label": "Evening meal",
+      "templateId": "man-shake-wpi",
+      "templateName": "Man Shake + 2 scoops WPI protein",
+      "usedDefault": true,
+      "notes": "",
+      "photoPath": null
+    }
+  ],
+  "snacks": [],
+  "dailyNotes": "",
+  "createdAt": "2026-06-28T15:31:17+10:00",
+  "updatedAt": "2026-06-28T15:44:22+10:00"
+}
