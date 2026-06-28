@@ -9,7 +9,7 @@ interface AdminPageProps {
   onBack: () => void;
 }
 
-const categories: ExerciseCategory[] = ['pull', 'row', 'legs', 'core', 'shoulders', 'power', 'arms'];
+const categories: ExerciseCategory[] = ['pull', 'row', 'legs', 'core', 'shoulders', 'power', 'arms', 'mobility'];
 
 const emptyExercise = (): Exercise => ({
   id: createId('exercise'),

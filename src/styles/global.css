@@ -318,6 +318,19 @@ progress::-moz-progress-bar {
   background: #0e7490;
 }
 
+.exercise-placeholder-mobility {
+  background: #047857;
+}
+
+.program-note {
+  margin: -2px 0 14px;
+  padding: 12px;
+  border-radius: 8px;
+  color: #14532d;
+  background: #dcfce7;
+  line-height: 1.38;
+}
+
 .motion-diagram {
   position: relative;
   flex: 0 0 96px;

@@ -1,6 +1,6 @@
 export type Page = 'home' | 'program' | 'complete' | 'history' | 'admin' | 'data';
 
-export type ExerciseCategory = 'pull' | 'row' | 'legs' | 'core' | 'shoulders' | 'power' | 'arms';
+export type ExerciseCategory = 'pull' | 'row' | 'legs' | 'core' | 'shoulders' | 'power' | 'arms' | 'mobility';
 
 export interface Exercise {
   id: string;
@@ -18,6 +18,7 @@ export interface Program {
   id: string;
   name: string;
   description: string;
+  trainingNote?: string;
   exercises: Exercise[];
 }
 

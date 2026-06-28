@@ -1,6 +1,6 @@
-# Swim Gym Tracker
+# Swim Land Training
 
-A super simple mobile-first gym tracker for Program A and Program B. It is a static React + Vite + TypeScript app designed to run for free on GitHub Pages with all version 1 data stored in browser `localStorage`.
+A super simple mobile-first land training tracker for gym, mobility, and flexibility work. It is a static React + Vite + TypeScript app designed to run for free on GitHub Pages with all version 1 data stored in browser `localStorage`.
 
 ## Tech Stack
 
@@ -73,7 +73,7 @@ All data is stored in the browser on the device using `localStorage`.
 
 The app stores:
 
-- Program definitions
+- Program definitions, including Program A, Program B, and Flexibility
 - Exercise definitions
 - Workout history
 - Most recent value per exercise
@@ -85,7 +85,7 @@ Important limitation: clearing Safari website data, switching phones, or using a
 ## Use the App
 
 1. Open the app on your phone.
-2. Choose **Program A** or **Program B**.
+2. Choose **Program A**, **Program B**, or **Flexibility**.
 3. Work through one exercise at a time.
 4. Check the visual cue card or tap **Watch form videos** for YouTube form search results.
 5. Enter today’s value and optional notes.
@@ -135,6 +135,8 @@ The app validates the basic shape of the file and asks for confirmation before r
 Program A is Pull, legs, core.
 
 Program B is Swim power, back, hips, shoulders.
+
+Flexibility is a 10-15 minute land mobility routine for evenings, after a walk, or after a shower. It includes cat-camel, child's pose, lower-back rotations, hip flexor, glute, hamstring, calf, forward fold, and thoracic rotation work.
 
 The included default exercises match the first version requirements and use sensible default units such as `kg` and `seconds`.
 

@@ -4,14 +4,16 @@ import type { ExportData, Program, WorkoutEntry } from '../types';
 const APP_VERSION = '0.1.0';
 const PROGRAMS_KEY = 'swimGymTracker.programs';
 const HISTORY_KEY = 'swimGymTracker.history';
-const CATEGORIES = new Set(['pull', 'row', 'legs', 'core', 'shoulders', 'power', 'arms']);
+const CATEGORIES = new Set(['pull', 'row', 'legs', 'core', 'shoulders', 'power', 'arms', 'mobility']);
 
 const cloneDefaults = (): Program[] => structuredClone(defaultPrograms);
 const defaultExercises = new Map(defaultPrograms.flatMap((program) => program.exercises.map((exercise) => [exercise.id, exercise])));
+const defaultProgramsById = new Map(defaultPrograms.map((program) => [program.id, program]));
 
 const enrichPrograms = (programs: Program[]): Program[] =>
   programs.map((program) => ({
     ...program,
+    trainingNote: program.trainingNote || defaultProgramsById.get(program.id)?.trainingNote,
     exercises: program.exercises.map((exercise) => {
       const defaults = defaultExercises.get(exercise.id);
 
@@ -23,6 +25,13 @@ const enrichPrograms = (programs: Program[]): Program[] =>
       };
     }),
   }));
+
+const appendMissingDefaultPrograms = (programs: Program[]): Program[] => {
+  const existingProgramIds = new Set(programs.map((program) => program.id));
+  const missingPrograms = defaultPrograms.filter((program) => !existingProgramIds.has(program.id));
+
+  return missingPrograms.length > 0 ? [...programs, ...structuredClone(missingPrograms)] : programs;
+};
 
 const readJson = <T,>(key: string, fallback: T): T => {
   try {
@@ -49,6 +58,7 @@ const hasValidProgramShape = (programs: unknown): programs is Program[] =>
       typeof program.name === 'string' &&
       'description' in program &&
       typeof program.description === 'string' &&
+      (program.trainingNote === undefined || typeof program.trainingNote === 'string') &&
       'exercises' in program &&
       Array.isArray((program as Program).exercises) &&
       (program as Program).exercises.every(
@@ -98,7 +108,7 @@ export const storageService = {
       return defaults;
     }
 
-    const enriched = enrichPrograms(programs);
+    const enriched = appendMissingDefaultPrograms(enrichPrograms(programs));
     writeJson(PROGRAMS_KEY, enriched);
     return enriched;
   },

@@ -129,4 +129,63 @@ export const defaultPrograms: Program[] = [
       ]),
     ],
   },
+  {
+    id: 'flexibility',
+    name: 'Flexibility',
+    description: '10-15 minute land mobility routine',
+    trainingNote:
+      "Aim for 10-15 minutes total. Best after a shower, after a walk, or in the evening. For a stiff morning back, keep it gentle and don't force the toe-touch first thing.",
+    exercises: [
+      exercise('cat-camel', 'Cat-camel', 'mat or floor', 'reps', 'mobility', 'Gently moves the spine through flexion and extension, useful for loosening the back before land training and improving body awareness for all strokes.', [
+        'Move slowly from tailbone to neck',
+        'Use smooth breathing',
+        'Stop before any pinching',
+      ]),
+      exercise('childs-pose', "Child's pose", 'mat or floor', 'seconds', 'mobility', 'Opens the lats, shoulders, and lower back after swim training, helping freestyle and butterfly overhead reach feel less restricted.', [
+        'Reach hands forward',
+        'Let hips settle back',
+        'Breathe into the back ribs',
+      ]),
+      exercise('lower-back-rotations', 'Knees side-to-side / lower back rotations', 'mat or floor', 'reps each side', 'mobility', 'Restores gentle trunk rotation for freestyle and backstroke while reducing lower-back stiffness from kicking, sitting, or gym work.', [
+        'Keep shoulders relaxed on the floor',
+        'Let knees move side to side',
+        'Keep the range easy and controlled',
+      ]),
+      exercise('knee-to-chest-stretch', 'Knee-to-chest stretch', 'mat or floor', 'seconds each side', 'mobility', 'Relieves lower-back and glute tightness so streamline, turns, and body position feel easier across all strokes.', [
+        'Pull one knee toward chest',
+        'Keep the other leg relaxed',
+        'Breathe and avoid yanking',
+      ]),
+      exercise('hip-flexor-stretch', 'Hip flexor stretch', 'mat or floor', 'seconds each side', 'mobility', 'Opens the front of the hips for better streamline, flutter kick, dolphin kick, and breaststroke body position.', [
+        'Tuck pelvis slightly under',
+        'Keep ribs stacked over hips',
+        'Shift forward gently',
+      ]),
+      exercise('figure-four-stretch', 'Glute / figure-four stretch', 'mat, floor, or chair', 'seconds each side', 'mobility', 'Improves hip rotation and glute comfort for starts, turns, and breaststroke kick setup without forcing the lower back.', [
+        'Cross ankle over opposite knee',
+        'Keep the stretch in the glute',
+        'Relax the shoulders and jaw',
+      ]),
+      exercise('chair-hamstring-stretch', 'Hamstring stretch on chair', 'chair', 'seconds each side', 'mobility', 'Improves posterior-chain flexibility for starts, turns, and a cleaner streamline line without aggressively forcing a toe touch.', [
+        'Place heel on chair',
+        'Keep knee softly straight',
+        'Hinge forward with a long back',
+      ]),
+      exercise('wall-calf-stretch', 'Calf stretch against wall', 'wall', 'seconds each side', 'mobility', 'Targets straight-knee and bent-knee calf mobility for stronger push-offs, better ankle position, and more relaxed flutter and dolphin kick.', [
+        'Do straight knee each side',
+        'Then repeat with bent knee',
+        'Keep heel heavy toward the floor',
+      ]),
+      exercise('bent-knee-forward-fold', 'Standing forward fold with bent knees', 'bodyweight', 'seconds', 'mobility', 'Lets the back and hamstrings relax gently, supporting starts, turns, and everyday recovery without forcing morning stiffness.', [
+        'Bend knees and let back relax',
+        'Slowly straighten legs a little',
+        "Don't force the range",
+      ]),
+      exercise('open-book-thoracic-rotations', 'Open-book thoracic rotations', 'mat or floor', 'reps each side', 'mobility', 'Improves upper-back rotation for freestyle and backstroke, helping the shoulder move from a better rib-cage position.', [
+        'Stack knees and hips',
+        'Open the top arm slowly',
+        'Follow the hand with your eyes',
+      ]),
+    ],
+  },
 ];

@@ -10,8 +10,8 @@ export function HomePage({ programs, onStartProgram, onNavigate }: HomePageProps
   return (
     <main className="screen home-screen">
       <header className="app-header">
-        <p className="eyebrow">Simple gym session tracker</p>
-        <h1>Swim Gym Tracker</h1>
+        <p className="eyebrow">Gym, mobility, and flexibility tracker</p>
+        <h1>Swim Land Training</h1>
       </header>
 
       <section className="program-actions" aria-label="Choose a program">

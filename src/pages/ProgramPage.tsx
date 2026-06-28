@@ -96,6 +96,8 @@ export function ProgramPage({ program, onBack, onComplete }: ProgramPageProps) {
         <progress value={index + 1} max={program.exercises.length} />
       </section>
 
+      {program.trainingNote && <p className="program-note">{program.trainingNote}</p>}
+
       <section className="exercise-card">
         <ExerciseImage exercise={exercise} />
         <p className="equipment">{exercise.equipment}</p>

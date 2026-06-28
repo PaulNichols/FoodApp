@@ -8,6 +8,7 @@ const labels: Record<Exercise['category'], string> = {
   shoulders: 'Shoulders',
   power: 'Power',
   arms: 'Arms',
+  mobility: 'Mobility',
 };
 
 export function ExerciseImage({ exercise }: { exercise: Exercise }) {
