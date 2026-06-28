@@ -7,7 +7,13 @@ import type { FoodLogDay, FoodPhoto, MealLog, MealSlot, StorageSettings } from '
 import { createDefaultFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
-import { getFoodLogJsonPath, getOneMonthAgoDate, getTodayInBrisbane, toBrisbaneTimestamp } from '../services/dateService';
+import {
+  addDays,
+  getFoodLogJsonPath,
+  getOneMonthAgoDate,
+  getTodayInBrisbane,
+  toBrisbaneTimestamp,
+} from '../services/dateService';
 import { exportCurrentDay, exportLast7Days } from '../services/exportService';
 
 interface TodayPageProps {
@@ -119,14 +125,12 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
 
   return (
     <div className="page-stack">
-      <section className="panel hero-panel">
-        <DateSelector value={date} onChange={setDate} />
-        <p className="muted">Timezone: Australia/Brisbane</p>
-        <p className="muted">
-          In GitHub repo mode, Save writes the daily JSON and any new photos into this repository for later Codex
-          analysis.
-        </p>
-      </section>
+      <DateSelector
+        value={date}
+        onChange={setDate}
+        onPrevious={() => setDate(addDays(date, -1))}
+        onNext={() => setDate(addDays(date, 1))}
+      />
 
       <SupplementCard
         supplements={day.supplements}

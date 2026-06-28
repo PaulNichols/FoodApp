@@ -51,6 +51,15 @@ export const getLastNDates = (days: number, fromDate = getTodayInBrisbane()): st
   });
 };
 
+export const addDays = (date: string, days: number): string => {
+  const [year, month, day] = date.split('-').map(Number);
+  const utcDate = new Date(Date.UTC(year, month - 1, day));
+
+  utcDate.setUTCDate(utcDate.getUTCDate() + days);
+
+  return utcDate.toISOString().slice(0, 10);
+};
+
 export const getFoodLogJsonPath = (date: string): string => {
   const [year, month] = date.split('-');
   return `data/${year}/${month}/${date}.json`;
