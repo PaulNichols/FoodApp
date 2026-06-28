@@ -52,14 +52,14 @@ If this app is moved to a different repository, update the local fallback and ma
 
 The app is fixed to save into this repository so another Codex session can read daily JSON and photos at any time.
 
-Saving uses the GitHub REST API from the browser. On the first save in a browser session, the app asks for your fine-grained personal access token, stores it in `sessionStorage`, and then writes to `PaulNichols/FoodApp` on `main`.
+Saving uses the GitHub REST API from the browser. On the first save on a device, the app asks for your fine-grained personal access token, stores it in that browser's local storage, and then writes to `PaulNichols/FoodApp` on `main`.
 
 Token rules:
 
 - No token is hardcoded in the app, workflow, source, README examples, or environment files.
-- The token is stored in `sessionStorage`, not `localStorage`.
+- The token is stored only in the browser on that device, not in the repository.
 - The token is never logged.
-- Close the browser tab/session to forget the token.
+- Use **Forget token** in the app if you want that browser to remove the saved token.
 
 Create a fine-grained GitHub token scoped to this single repository only with minimum **Contents: Read and write** permission. Do not grant broad account or organization permissions.
 

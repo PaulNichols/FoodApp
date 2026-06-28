@@ -170,6 +170,20 @@ button.secondary {
   font-size: 1.05rem;
 }
 
+.token-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: #5f6b64;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.token-actions span {
+  min-width: 0;
+}
+
 .panel-title {
   display: flex;
   align-items: center;

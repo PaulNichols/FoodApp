@@ -16,15 +16,26 @@ const foodAppRepositorySettings: StorageSettings = {
 
 export function App() {
   const [route, setRoute] = useState<AppRoute>('today');
-  const [githubToken, setGithubToken] = useState(() => sessionStorage.getItem(TOKEN_KEY) ?? '');
+  const [githubToken, setGithubToken] = useState(() => {
+    const storedToken = localStorage.getItem(TOKEN_KEY) ?? sessionStorage.getItem(TOKEN_KEY) ?? '';
+
+    if (storedToken) {
+      localStorage.setItem(TOKEN_KEY, storedToken);
+      sessionStorage.removeItem(TOKEN_KEY);
+    }
+
+    return storedToken;
+  });
   const localRepository = useMemo(() => new LocalFoodLogRepository(), []);
 
   const saveGitHubToken = (nextToken: string) => {
     setGithubToken(nextToken);
 
     if (nextToken) {
-      sessionStorage.setItem(TOKEN_KEY, nextToken);
+      localStorage.setItem(TOKEN_KEY, nextToken);
+      sessionStorage.removeItem(TOKEN_KEY);
     } else {
+      localStorage.removeItem(TOKEN_KEY);
       sessionStorage.removeItem(TOKEN_KEY);
     }
   };
@@ -45,6 +56,7 @@ export function App() {
             githubToken={githubToken}
             localRepository={localRepository}
             onGitHubTokenChange={saveGitHubToken}
+            onForgetGitHubToken={() => saveGitHubToken('')}
           />
         )}
         {route === 'dashboard' && <DashboardPage repository={localRepository} />}

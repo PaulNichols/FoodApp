@@ -20,9 +20,16 @@ interface TodayPageProps {
   githubToken: string;
   localRepository: LocalFoodLogRepository;
   onGitHubTokenChange: (token: string) => void;
+  onForgetGitHubToken: () => void;
 }
 
-export function TodayPage({ settings, githubToken, localRepository, onGitHubTokenChange }: TodayPageProps) {
+export function TodayPage({
+  settings,
+  githubToken,
+  localRepository,
+  onGitHubTokenChange,
+  onForgetGitHubToken,
+}: TodayPageProps) {
   const [date, setDate] = useState(getTodayInBrisbane);
   const [day, setDay] = useState<FoodLogDay>(() => createDefaultFoodLogDay(date, toBrisbaneTimestamp()));
   const [photos, setPhotos] = useState<FoodPhoto[]>([]);
@@ -104,7 +111,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
 
       if (!tokenForSave) {
         const enteredToken = window.prompt(
-          'Enter your fine-grained GitHub token for FoodApp. It is stored in this browser session only.',
+          'Enter your fine-grained GitHub token for FoodApp. It will be remembered on this device until you forget it.',
         );
 
         tokenForSave = enteredToken?.trim() ?? '';
@@ -208,6 +215,15 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
           <p role="status" className="status">
             {status}
           </p>
+        )}
+
+        {githubToken.trim() && (
+          <div className="token-actions">
+            <span>GitHub saving is ready on this device.</span>
+            <button type="button" className="text-button danger" onClick={onForgetGitHubToken} disabled={isLoading}>
+              Forget token
+            </button>
+          </div>
         )}
 
         <button type="button" className="save-button" onClick={() => void save()} disabled={isLoading}>
