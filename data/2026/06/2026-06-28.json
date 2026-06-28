@@ -55,8 +55,8 @@
         "confidence": "high",
         "source": "codex",
         "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-06-28T17:30:32+10:00",
-        "inputHash": "codex:2026-06-28:breakfast:man-shake-wpi:v3-man-shake-label"
+        "updatedAt": "2026-06-28T17:55:01+10:00",
+        "inputHash": "codex:breakfast:man-shake-wpi:v3-man-shake-label"
       }
     },
     {
@@ -86,8 +86,8 @@
         "confidence": "medium",
         "source": "codex",
         "notes": "Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.",
-        "updatedAt": "2026-06-28T17:35:18+10:00",
-        "inputHash": "codex:2026-06-28:lunch:paul-lunch-shake:v2-recipe-quantities"
+        "updatedAt": "2026-06-28T17:55:01+10:00",
+        "inputHash": "codex:lunch:paul-lunch-shake:v2-recipe-quantities"
       }
     },
     {
@@ -122,13 +122,24 @@
         "confidence": "high",
         "source": "codex",
         "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-06-28T17:30:32+10:00",
-        "inputHash": "codex:2026-06-28:evening-meal:man-shake-wpi:v3-man-shake-label"
+        "updatedAt": "2026-06-28T17:55:01+10:00",
+        "inputHash": "codex:evening-meal:man-shake-wpi:v3-man-shake-label"
       }
     }
   ],
-  "snacks": [],
+  "snacks": [
+    {
+      "id": "snack-1",
+      "notes": "Banana",
+      "photoPath": null
+    },
+    {
+      "id": "snack-2",
+      "notes": "Kiwifruit",
+      "photoPath": null
+    }
+  ],
   "dailyNotes": "",
-  "createdAt": "2026-06-28T15:31:17+10:00",
-  "updatedAt": "2026-06-28T17:35:18+10:00"
+  "createdAt": "2026-06-28T17:55:01+10:00",
+  "updatedAt": "2026-06-28T17:55:38+10:00"
 }
