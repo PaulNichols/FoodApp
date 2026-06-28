@@ -43,14 +43,30 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
       setPhotos([]);
 
       try {
-        const savedDay = await localRepository.getDay(date);
+        const localDay = await localRepository.getDay(date);
+        let nextDay = localDay ?? createDefaultFoodLogDay(date, toBrisbaneTimestamp());
+
+        try {
+          if (githubToken.trim()) {
+            const githubDay = await githubRepository.getDay(date);
+
+            if (githubDay) {
+              nextDay = githubDay;
+              await localRepository.saveDay(normalizeFoodLogDay(githubDay), []);
+            }
+          }
+        } catch (error) {
+          if (isActive) {
+            setStatus(error instanceof Error ? error.message : 'Unable to load saved GitHub day.');
+          }
+        }
 
         if (isActive) {
-          setDay(normalizeFoodLogDay(savedDay ?? createDefaultFoodLogDay(date, toBrisbaneTimestamp())));
+          setDay(normalizeFoodLogDay(nextDay));
         }
       } catch (error) {
         if (isActive) {
-          setStatus(error instanceof Error ? error.message : 'Unable to load this day.');
+          setStatus(error instanceof Error ? error.message : 'Unable to load saved day.');
         }
       } finally {
         if (isActive) {
@@ -64,7 +80,7 @@ export function TodayPage({ settings, githubToken, localRepository, onGitHubToke
     return () => {
       isActive = false;
     };
-  }, [date, localRepository]);
+  }, [date, githubRepository, githubToken, localRepository]);
 
   const updateDay = (nextDay: FoodLogDay) => {
     setDay(normalizeFoodLogDay({ ...nextDay, updatedAt: toBrisbaneTimestamp() }));

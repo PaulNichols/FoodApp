@@ -69,6 +69,7 @@ When saving, the app commits:
 - `photos/yyyy/mm/yyyy-mm-dd/*.webp`
 
 Existing files are updated by fetching the current file SHA first.
+When a session token is available, opening a date loads the saved GitHub JSON back into the form so you can edit and save that day again.
 Each save also removes repository `/data` and `/photos` files with path dates more than one month older than the current Brisbane date.
 
 Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; there is no manual export step in the app.
