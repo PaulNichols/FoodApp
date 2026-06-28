@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": null,
+  "sourceUpdatedAt": "2026-06-28T15:44:22+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
@@ -9,10 +9,10 @@
     "endDate": "2026-06-28"
   },
   "totals": {
-    "loggedDays": 0,
-    "missingDays": 31,
-    "supplementCompleteDays": 0,
-    "defaultMealCount": 0,
+    "loggedDays": 1,
+    "missingDays": 30,
+    "supplementCompleteDays": 1,
+    "defaultMealCount": 3,
     "replacedMealCount": 0,
     "snackCount": 0,
     "photoCount": 0,
@@ -20,13 +20,82 @@
     "daysWithEstimatedCalories": 0,
     "manualAnalysisItems": 0,
     "openAiAnalysisItems": 0,
-    "unanalysedItems": 0,
+    "unanalysedItems": 3,
     "daysWithDailyNotes": 0
   },
   "days": [
     {
       "date": "2026-06-28",
-      "logged": false
+      "logged": true,
+      "updatedAt": "2026-06-28T15:44:22+10:00",
+      "supplements": {
+        "morningSupplementsTaken": true,
+        "takenCount": 3,
+        "totalCount": 3,
+        "complete": true,
+        "missedItems": [],
+        "notesPresent": false
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "label": "Breakfast",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "",
+            "calories": null,
+            "confidence": null,
+            "source": null,
+            "notesPresent": false,
+            "updatedAt": ""
+          }
+        },
+        {
+          "slot": "lunch",
+          "label": "Lunch",
+          "usedDefault": true,
+          "templateName": "Paul's lunch shake",
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "",
+            "calories": null,
+            "confidence": null,
+            "source": null,
+            "notesPresent": false,
+            "updatedAt": ""
+          }
+        },
+        {
+          "slot": "evening-meal",
+          "label": "Evening meal",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "",
+            "calories": null,
+            "confidence": null,
+            "source": null,
+            "notesPresent": false,
+            "updatedAt": ""
+          }
+        }
+      ],
+      "snackCount": 0,
+      "snacks": [],
+      "photoCount": 0,
+      "estimatedCalories": null,
+      "dailyNotesPresent": false,
+      "analysis": {
+        "manualItems": 0,
+        "openAiItems": 0,
+        "unanalysedItems": 3
+      }
     },
     {
       "date": "2026-06-27",
