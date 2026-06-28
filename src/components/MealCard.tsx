@@ -65,17 +65,6 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
         onChange={(analysis) => onChange({ ...meal, analysis })}
       />
 
-      {meal.ingredients && (
-        <details className="ingredients">
-          <summary>Lunch shake ingredients</summary>
-          <ul>
-            {meal.ingredients.map((ingredient) => (
-              <li key={ingredient}>{ingredient}</li>
-            ))}
-          </ul>
-        </details>
-      )}
-
       {!meal.usedDefault && (
         <div className="replacement-fields">
           <PhotoPicker
