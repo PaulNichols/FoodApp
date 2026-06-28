@@ -12,6 +12,17 @@ interface GitHubContentResponse {
   encoding?: string;
 }
 
+export interface GitHubTreeItem {
+  path: string;
+  sha: string;
+  type: 'blob' | 'tree' | string;
+}
+
+interface GitHubTreeResponse {
+  tree: GitHubTreeItem[];
+  truncated: boolean;
+}
+
 const apiUrl = (settings: StorageSettings, path = ''): string => {
   const encodedPath = path
     .split('/')
@@ -77,6 +88,51 @@ export const putContentFile = async (
     method: 'PUT',
     headers: githubHeaders(token),
     body: JSON.stringify(payload),
+  });
+
+  if (!response.ok) {
+    throw createGitHubError(response.status);
+  }
+};
+
+export const listRepositoryTree = async (settings: StorageSettings, token: string): Promise<GitHubTreeItem[]> => {
+  const response = await fetch(
+    `https://api.github.com/repos/${encodeURIComponent(settings.githubOwner)}/${encodeURIComponent(
+      settings.githubRepo,
+    )}/git/trees/${encodeURIComponent(settings.branch)}?recursive=1`,
+    {
+      headers: githubHeaders(token),
+    },
+  );
+
+  if (!response.ok) {
+    throw createGitHubError(response.status);
+  }
+
+  const body = (await response.json()) as GitHubTreeResponse;
+
+  if (body.truncated) {
+    throw new Error('GitHub returned a truncated repository tree. Cleanup could not run safely.');
+  }
+
+  return body.tree;
+};
+
+export const deleteContentFile = async (
+  settings: StorageSettings,
+  token: string,
+  path: string,
+  sha: string,
+  message: string,
+): Promise<void> => {
+  const response = await fetch(apiUrl(settings, path), {
+    method: 'DELETE',
+    headers: githubHeaders(token),
+    body: JSON.stringify({
+      message,
+      sha,
+      branch: settings.branch,
+    }),
   });
 
   if (!response.ok) {

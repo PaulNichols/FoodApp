@@ -7,7 +7,7 @@ import type { FoodLogDay, FoodPhoto, MealLog, MealSlot, StorageSettings } from '
 import { createDefaultFoodLogDay } from '../models/foodLog';
 import { GitHubFoodLogRepository } from '../repositories/GitHubFoodLogRepository';
 import type { LocalFoodLogRepository } from '../repositories/LocalFoodLogRepository';
-import { getFoodLogJsonPath, getTodayInBrisbane, toBrisbaneTimestamp } from '../services/dateService';
+import { getFoodLogJsonPath, getOneMonthAgoDate, getTodayInBrisbane, toBrisbaneTimestamp } from '../services/dateService';
 import { exportCurrentDay, exportLast7Days } from '../services/exportService';
 
 interface TodayPageProps {
@@ -80,23 +80,36 @@ export function TodayPage({ settings, githubToken, localRepository }: TodayPageP
     try {
       const nextDay = { ...day, updatedAt: toBrisbaneTimestamp() };
       await localRepository.saveDay(nextDay, photos);
+      const cutoffDate = getOneMonthAgoDate();
+      const localCleanupCount = await localRepository.cleanupOlderThan(cutoffDate);
 
       if (settings.mode === 'github') {
         if (!githubToken.trim()) {
           setDay(nextDay);
-          setStatus('Saved locally only. Add your GitHub token in Settings so Save can update this repo.');
+          setStatus(
+            `Saved locally only. Cleaned up ${localCleanupCount} old local item${
+              localCleanupCount === 1 ? '' : 's'
+            }. Add your GitHub token in Settings so Save can update this repo.`,
+          );
           return;
         }
 
         await githubRepository.saveDay(nextDay, photos);
+        const githubCleanupCount = await githubRepository.cleanupOlderThan(cutoffDate);
         const photoCount = photos.length;
         setStatus(
           `Saved to GitHub: ${getFoodLogJsonPath(nextDay.date)}${
             photoCount > 0 ? ` and ${photoCount} photo${photoCount === 1 ? '' : 's'}` : ''
-          }. Codex can read /data and /photos from this repo.`,
+          }. Removed ${githubCleanupCount} old GitHub item${
+            githubCleanupCount === 1 ? '' : 's'
+          } before ${cutoffDate}. Codex can read /data and /photos from this repo.`,
         );
       } else {
-        setStatus('Saved locally only. Switch Settings to GitHub repo when this day should update repository JSON.');
+        setStatus(
+          `Saved locally only and cleaned up ${localCleanupCount} old item${
+            localCleanupCount === 1 ? '' : 's'
+          }. Switch Settings to GitHub repo when this day should update repository JSON.`,
+        );
       }
 
       setDay(nextDay);

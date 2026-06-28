@@ -1,5 +1,5 @@
 import type { FoodLogDay, FoodLogRepository, FoodPhoto } from '../models/foodLog';
-import { getLastNDates } from '../services/dateService';
+import { getFoodDateFromPath, getLastNDates } from '../services/dateService';
 
 interface StoredPhoto {
   path: string;
@@ -102,5 +102,40 @@ export class LocalFoodLogRepository implements FoodLogRepository {
 
     await transactionDone(transaction);
     db.close();
+  }
+
+  async cleanupOlderThan(cutoffDate: string): Promise<number> {
+    const db = await openDatabase();
+    const transaction = db.transaction([DAYS_STORE, PHOTOS_STORE], 'readwrite');
+    const dayStore = transaction.objectStore(DAYS_STORE);
+    const photoStore = transaction.objectStore(PHOTOS_STORE);
+    let deletedCount = 0;
+
+    const dayKeys = await requestToPromise<IDBValidKey[]>(dayStore.getAllKeys());
+    for (const key of dayKeys) {
+      if (typeof key === 'string' && key < cutoffDate) {
+        dayStore.delete(key);
+        deletedCount += 1;
+      }
+    }
+
+    const photoKeys = await requestToPromise<IDBValidKey[]>(photoStore.getAllKeys());
+    for (const key of photoKeys) {
+      if (typeof key !== 'string') {
+        continue;
+      }
+
+      const photoDate = getFoodDateFromPath(key);
+
+      if (photoDate && photoDate < cutoffDate) {
+        photoStore.delete(key);
+        deletedCount += 1;
+      }
+    }
+
+    await transactionDone(transaction);
+    db.close();
+
+    return deletedCount;
   }
 }

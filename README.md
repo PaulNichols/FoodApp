@@ -76,6 +76,7 @@ When saving in GitHub mode, the app saves locally first, then commits:
 - `photos/yyyy/mm/yyyy-mm-dd/*.webp`
 
 Existing files are updated by fetching the current file SHA first.
+Each save also removes repository `/data` and `/photos` files with path dates more than one month older than the current Brisbane date.
 
 Another Codex session can analyse the saved repository files directly from `/data` and `/photos`; you should not need to export zip files for routine weekly analysis.
 

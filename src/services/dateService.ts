@@ -60,3 +60,24 @@ export const getFoodPhotoPath = (date: string, name: string): string => {
   const [year, month] = date.split('-');
   return `photos/${year}/${month}/${date}/${name}.webp`;
 };
+
+export const getOneMonthAgoDate = (fromDate = getTodayInBrisbane()): string => {
+  const [year, month, day] = fromDate.split('-').map(Number);
+  const targetMonthIndex = month - 2;
+  const targetYear = targetMonthIndex < 0 ? year - 1 : year;
+  const normalizedTargetMonthIndex = (targetMonthIndex + 12) % 12;
+  const lastDayInTargetMonth = new Date(Date.UTC(targetYear, normalizedTargetMonthIndex + 1, 0)).getUTCDate();
+  const targetDay = Math.min(day, lastDayInTargetMonth);
+
+  return new Date(Date.UTC(targetYear, normalizedTargetMonthIndex, targetDay)).toISOString().slice(0, 10);
+};
+
+export const getFoodDateFromPath = (path: string): string | null => {
+  const dataMatch = /^data\/\d{4}\/\d{2}\/(\d{4}-\d{2}-\d{2})\.json$/.exec(path);
+
+  if (dataMatch) {
+    return dataMatch[1];
+  }
+
+  return /^photos\/\d{4}\/\d{2}\/(\d{4}-\d{2}-\d{2})\//.exec(path)?.[1] ?? null;
+};

@@ -1,6 +1,12 @@
 import type { FoodLogDay, FoodLogRepository, FoodPhoto, StorageSettings } from '../models/foodLog';
-import { getLastNDates } from '../services/dateService';
-import { getContentJson, putContentFile, testRepositoryAccess } from '../services/githubContentApi';
+import { getFoodDateFromPath, getLastNDates } from '../services/dateService';
+import {
+  deleteContentFile,
+  getContentJson,
+  listRepositoryTree,
+  putContentFile,
+  testRepositoryAccess,
+} from '../services/githubContentApi';
 
 export class GitHubFoodLogRepository implements FoodLogRepository {
   constructor(
@@ -53,6 +59,31 @@ export class GitHubFoodLogRepository implements FoodLogRepository {
     const results = await Promise.all(dates.map((date) => this.getDay(date)));
 
     return results.filter((day): day is FoodLogDay => day !== null);
+  }
+
+  async cleanupOlderThan(cutoffDate: string): Promise<number> {
+    const tree = await listRepositoryTree(this.settings, this.token);
+    const oldFoodFiles = tree.filter((item) => {
+      if (item.type !== 'blob') {
+        return false;
+      }
+
+      const fileDate = getFoodDateFromPath(item.path);
+
+      return fileDate !== null && fileDate < cutoffDate;
+    });
+
+    for (const file of oldFoodFiles) {
+      await deleteContentFile(
+        this.settings,
+        this.token,
+        file.path,
+        file.sha,
+        `Remove old food log data before ${cutoffDate}`,
+      );
+    }
+
+    return oldFoodFiles.length;
   }
 }
 
