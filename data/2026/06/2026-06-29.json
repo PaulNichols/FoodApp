@@ -195,11 +195,16 @@
       "id": "snack-3",
       "notes": "Chobani raspberry Greek yoghurt",
       "photoPath": "photos/2026/06/2026-06-29/snack-3.webp"
+    },
+    {
+      "id": "snack-4",
+      "notes": "Kiwi fruit",
+      "photoPath": null
     }
   ],
   "dailyNotes": "",
   "createdAt": "2026-06-28T16:09:52+10:00",
-  "updatedAt": "2026-06-29T11:54:37+10:00",
+  "updatedAt": "2026-06-29T13:16:26+10:00",
   "waterIntake": {
     "entries": [
       {
