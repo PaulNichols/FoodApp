@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-29T09:01:03+10:00",
+  "sourceUpdatedAt": "2026-06-29T15:04:05+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
     "days": 31,
-    "startDate": "2026-05-30",
-    "endDate": "2026-06-29"
+    "startDate": "2026-05-31",
+    "endDate": "2026-06-30"
   },
   "totals": {
     "loggedDays": 2,
@@ -14,30 +14,34 @@
     "supplementCompleteDays": 2,
     "defaultMealCount": 6,
     "replacedMealCount": 0,
-    "snackCount": 4,
-    "photoCount": 0,
-    "waterMl": 3480,
+    "snackCount": 8,
+    "photoCount": 3,
+    "waterMl": 4180,
     "daysWithWaterEstimate": 2,
-    "estimatedCalories": 2608,
+    "estimatedCalories": 3092,
     "nutrition": {
-      "proteinGrams": 271.8,
-      "carbohydrateGrams": 201,
-      "fatGrams": 68.8,
-      "sugarGrams": 73.6,
-      "fibreGrams": 68
+      "proteinGrams": 295.3,
+      "carbohydrateGrams": 256.3,
+      "fatGrams": 87.3,
+      "sugarGrams": 100.1,
+      "fibreGrams": 75.7
     },
     "daysWithEstimatedCalories": 2,
     "manualAnalysisItems": 0,
     "openAiAnalysisItems": 0,
-    "codexAnalysisItems": 10,
+    "codexAnalysisItems": 14,
     "unanalysedItems": 0,
     "daysWithDailyNotes": 0
   },
   "days": [
     {
+      "date": "2026-06-30",
+      "logged": false
+    },
+    {
       "date": "2026-06-29",
       "logged": true,
-      "updatedAt": "2026-06-29T09:01:03+10:00",
+      "updatedAt": "2026-06-29T15:04:05+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -166,7 +170,7 @@
           }
         }
       ],
-      "snackCount": 2,
+      "snackCount": 6,
       "snacks": [
         {
           "id": "snack-1",
@@ -207,11 +211,91 @@
             "notesPresent": true,
             "updatedAt": "2026-06-29T08:53:45+10:00"
           }
+        },
+        {
+          "id": "snack-3",
+          "hasNotes": true,
+          "hasPhoto": true,
+          "analysis": {
+            "itemName": "Chobani raspberry low fat blended Greek yoghurt",
+            "calories": 125,
+            "nutrition": {
+              "proteinGrams": 10.7,
+              "carbohydrateGrams": 15,
+              "fatGrams": 2.3,
+              "sugarGrams": 13.9,
+              "fibreGrams": 0.4
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-06-30T08:14:00+10:00"
+          }
+        },
+        {
+          "id": "snack-4",
+          "hasNotes": true,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Kiwifruit",
+            "calories": 45,
+            "nutrition": {
+              "proteinGrams": 0.8,
+              "carbohydrateGrams": 10.1,
+              "fatGrams": 0.4,
+              "sugarGrams": 6.2,
+              "fibreGrams": 2.1
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-06-30T08:14:00+10:00"
+          }
+        },
+        {
+          "id": "snack-5",
+          "hasNotes": true,
+          "hasPhoto": true,
+          "analysis": {
+            "itemName": "Carman's protein bar",
+            "calories": 196,
+            "nutrition": {
+              "proteinGrams": 10.4,
+              "carbohydrateGrams": 16.6,
+              "fatGrams": 10,
+              "sugarGrams": 5.9,
+              "fibreGrams": 2.7
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-06-30T08:14:00+10:00"
+          }
+        },
+        {
+          "id": "snack-6",
+          "hasNotes": true,
+          "hasPhoto": true,
+          "analysis": {
+            "itemName": "Snack Right crackers",
+            "calories": 118,
+            "nutrition": {
+              "proteinGrams": 1.6,
+              "carbohydrateGrams": 13.6,
+              "fatGrams": 5.8,
+              "sugarGrams": 0.5,
+              "fibreGrams": 2.5
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-06-30T08:14:00+10:00"
+          }
         }
       ],
-      "photoCount": 0,
+      "photoCount": 3,
       "waterIntake": {
-        "totalMl": 1740,
+        "totalMl": 2440,
         "entries": [
           {
             "id": "coffee",
@@ -240,22 +324,29 @@
             "amountMl": "400",
             "consumed": true,
             "parsedMl": 400
+          },
+          {
+            "id": "drink-1",
+            "label": "Extra drink",
+            "amountMl": "700",
+            "consumed": true,
+            "parsedMl": 700
           }
         ]
       },
-      "estimatedCalories": 1304,
+      "estimatedCalories": 1788,
       "nutrition": {
-        "proteinGrams": 135.9,
-        "carbohydrateGrams": 100.5,
-        "fatGrams": 34.4,
-        "sugarGrams": 36.8,
-        "fibreGrams": 34
+        "proteinGrams": 159.4,
+        "carbohydrateGrams": 155.8,
+        "fatGrams": 52.9,
+        "sugarGrams": 63.3,
+        "fibreGrams": 41.7
       },
       "dailyNotesPresent": false,
       "analysis": {
         "manualItems": 0,
         "openAiItems": 0,
-        "codexItems": 5,
+        "codexItems": 9,
         "unanalysedItems": 0
       }
     },
@@ -594,10 +685,6 @@
     },
     {
       "date": "2026-05-31",
-      "logged": false
-    },
-    {
-      "date": "2026-05-30",
       "logged": false
     }
   ]

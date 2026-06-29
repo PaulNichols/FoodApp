@@ -194,22 +194,86 @@
     {
       "id": "snack-3",
       "notes": "Chobani raspberry Greek yoghurt",
-      "photoPath": "photos/2026/06/2026-06-29/snack-3.webp"
+      "photoPath": "photos/2026/06/2026-06-29/snack-3.webp",
+      "analysis": {
+        "itemName": "Chobani raspberry low fat blended Greek yoghurt",
+        "calories": 125,
+        "confidence": "high",
+        "source": "codex",
+        "notes": "Photo label shows 140 g pack at 125 Cal with 10.7 g protein; useful protein snack.",
+        "updatedAt": "2026-06-30T08:14:00+10:00",
+        "inputHash": "codex:2026-06-29:snack-3:chobani-raspberry-greek-yoghurt-140g:photo-label-v1",
+        "nutrition": {
+          "proteinGrams": 10.7,
+          "carbohydrateGrams": 15,
+          "fatGrams": 2.3,
+          "sugarGrams": 13.9,
+          "fibreGrams": 0.4
+        }
+      }
     },
     {
       "id": "snack-4",
       "notes": "Kiwi fruit",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Kiwifruit",
+        "calories": 45,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "One kiwifruit estimate; light snack, portion count is the main uncertainty.",
+        "updatedAt": "2026-06-30T08:14:00+10:00",
+        "inputHash": "codex:2026-06-29:snack-4:kiwifruit:v2-macros",
+        "nutrition": {
+          "proteinGrams": 0.8,
+          "carbohydrateGrams": 10.1,
+          "fatGrams": 0.4,
+          "sugarGrams": 6.2,
+          "fibreGrams": 2.1
+        }
+      }
     },
     {
       "id": "snack-5",
       "notes": "Carmans protein bar",
-      "photoPath": "photos/2026/06/2026-06-29/snack-5.webp"
+      "photoPath": "photos/2026/06/2026-06-29/snack-5.webp",
+      "analysis": {
+        "itemName": "Carman's protein bar",
+        "calories": 196,
+        "confidence": "high",
+        "source": "codex",
+        "notes": "Photo label shows one 40 g bar at 196 Cal and 10.4 g protein; calorie-dense for its size.",
+        "updatedAt": "2026-06-30T08:14:00+10:00",
+        "inputHash": "codex:2026-06-29:snack-5:carmans-protein-bar-40g:photo-label-v1",
+        "nutrition": {
+          "proteinGrams": 10.4,
+          "carbohydrateGrams": 16.6,
+          "fatGrams": 10,
+          "sugarGrams": 5.9,
+          "fibreGrams": 2.7
+        }
+      }
     },
     {
       "id": "snack-6",
       "notes": "Snack right crackers",
-      "photoPath": "photos/2026/06/2026-06-29/snack-6.webp"
+      "photoPath": "photos/2026/06/2026-06-29/snack-6.webp",
+      "analysis": {
+        "itemName": "Snack Right crackers",
+        "calories": 118,
+        "confidence": "high",
+        "source": "codex",
+        "notes": "Photo label shows one 25 g pack at 118 Cal; mostly carbohydrate and fat, low protein.",
+        "updatedAt": "2026-06-30T08:14:00+10:00",
+        "inputHash": "codex:2026-06-29:snack-6:snack-right-crackers-25g:photo-label-v1",
+        "nutrition": {
+          "proteinGrams": 1.6,
+          "carbohydrateGrams": 13.6,
+          "fatGrams": 5.8,
+          "sugarGrams": 0.5,
+          "fibreGrams": 2.5
+        }
+      }
     }
   ],
   "dailyNotes": "",
