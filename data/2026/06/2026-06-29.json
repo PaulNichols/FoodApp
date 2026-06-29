@@ -200,11 +200,16 @@
       "id": "snack-4",
       "notes": "Kiwi fruit",
       "photoPath": null
+    },
+    {
+      "id": "snack-5",
+      "notes": "Carmans protein bar",
+      "photoPath": "photos/2026/06/2026-06-29/snack-5.webp"
     }
   ],
   "dailyNotes": "",
   "createdAt": "2026-06-28T16:09:52+10:00",
-  "updatedAt": "2026-06-29T13:16:26+10:00",
+  "updatedAt": "2026-06-29T14:54:19+10:00",
   "waterIntake": {
     "entries": [
       {
@@ -229,6 +234,12 @@
         "id": "water-glass",
         "label": "Glass of water",
         "amountMl": "400",
+        "consumed": true
+      },
+      {
+        "id": "drink-1",
+        "label": "Extra drink",
+        "amountMl": "700",
         "consumed": true
       }
     ]
