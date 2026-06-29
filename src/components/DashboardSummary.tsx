@@ -23,6 +23,9 @@ export function DashboardSummary({ days }: DashboardSummaryProps) {
     .filter((value): value is number => value !== null);
   const averageWaterMl =
     waterDays.length === 0 ? null : waterDays.reduce((total, value) => total + value, 0) / waterDays.length;
+  const calorieDays = days.map(getEstimatedCalories).filter((value): value is number => value !== null);
+  const averageCalories =
+    calorieDays.length === 0 ? null : calorieDays.reduce((total, value) => total + value, 0) / calorieDays.length;
 
   return (
     <section className="panel">
@@ -36,6 +39,7 @@ export function DashboardSummary({ days }: DashboardSummaryProps) {
         <Metric label="Lunch consistency" value={`${lunchDays}/${completedDays || 0}`} />
         <Metric label="Evening default" value={`${eveningDefaultDays}/${completedDays || 0}`} />
         <Metric label="Snack count" value={String(snackCount)} />
+        <Metric label="Calories avg" value={formatCalories(averageCalories)} />
         <Metric
           label="Water avg"
           value={averageWaterMl === null ? 'No estimate' : `${Math.round(averageWaterMl).toLocaleString('en-AU')} ml`}
@@ -58,3 +62,18 @@ function Metric({ label, value }: { label: string; value: string }) {
 
 const countDefault = (days: FoodLogDay[], slot: string): number =>
   days.filter((day) => day.meals.find((meal) => meal.slot === slot)?.usedDefault).length;
+
+const getEstimatedCalories = (day: FoodLogDay): number | null => {
+  const calories = [...day.meals, ...day.snacks]
+    .map((item) => item.analysis?.calories)
+    .filter((value): value is number => typeof value === 'number' && Number.isFinite(value));
+
+  if (calories.length === 0) {
+    return null;
+  }
+
+  return calories.reduce((total, value) => total + value, 0);
+};
+
+const formatCalories = (calories: number | null): string =>
+  calories === null ? 'No estimate' : Math.round(calories).toLocaleString('en-AU');
