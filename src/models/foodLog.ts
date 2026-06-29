@@ -41,6 +41,7 @@ export interface MealLog {
   templateId: string;
   templateName: string;
   usedDefault: boolean;
+  servingDescription: string;
   notes: string;
   photoPath: string | null;
   analysis?: FoodItemAnalysis;
@@ -49,6 +50,7 @@ export interface MealLog {
 
 export interface SnackLog {
   id: string;
+  servingDescription: string;
   notes: string;
   photoPath: string | null;
   analysis?: FoodItemAnalysis;
@@ -203,6 +205,7 @@ export const mealTemplates: MealLog[] = [
     templateId: 'man-shake-wpi',
     templateName: 'Man Shake + 2 scoops WPI protein',
     usedDefault: true,
+    servingDescription: '',
     notes: '',
     photoPath: null,
     ingredients: manShakeWpiIngredients,
@@ -213,6 +216,7 @@ export const mealTemplates: MealLog[] = [
     templateId: 'paul-lunch-shake',
     templateName: "Paul's lunch shake",
     usedDefault: true,
+    servingDescription: '',
     notes: '',
     photoPath: null,
     ingredients: lunchShakeIngredients,
@@ -223,6 +227,7 @@ export const mealTemplates: MealLog[] = [
     templateId: 'man-shake-wpi',
     templateName: 'Man Shake + 2 scoops WPI protein',
     usedDefault: true,
+    servingDescription: '',
     notes: '',
     photoPath: null,
     ingredients: manShakeWpiIngredients,
@@ -257,6 +262,14 @@ export const normalizeFoodLogDay = (day: FoodLogDay): FoodLogDay => ({
     ...day.supplements,
     items: day.supplements.items.filter((item) => !deprecatedSupplementNames.has(item.name)),
   },
+  meals: day.meals.map((meal) => ({
+    ...meal,
+    servingDescription: meal.servingDescription ?? '',
+  })),
+  snacks: day.snacks.map((snack) => ({
+    ...snack,
+    servingDescription: snack.servingDescription ?? '',
+  })),
   waterIntake: normalizeWaterIntake(day.waterIntake),
 });
 

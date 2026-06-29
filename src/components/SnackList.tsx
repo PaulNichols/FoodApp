@@ -17,7 +17,7 @@ interface SnackListProps {
 export function SnackList({ date, snacks, photos, onChange, onPhotoSelected, onError }: SnackListProps) {
   const addSnack = () => {
     const id = `snack-${snacks.length + 1}`;
-    onChange([...snacks, { id, notes: '', photoPath: null, analysis: undefined }]);
+    onChange([...snacks, { id, servingDescription: '', notes: '', photoPath: null, analysis: undefined }]);
   };
 
   return (
@@ -94,6 +94,15 @@ function SnackItem({ date, snack, index, photo, onChange, onRemove, onPhotoSelec
           value={snack.notes}
           placeholder="Greek yoghurt, fruit, social meal..."
           onChange={(event) => onChange({ ...snack, notes: event.target.value })}
+        />
+      </label>
+
+      <label className="field">
+        <span>Amount / portion</span>
+        <input
+          value={snack.servingDescription}
+          placeholder="Banana 120g, yoghurt 200g, handful of nuts..."
+          onChange={(event) => onChange({ ...snack, servingDescription: event.target.value })}
         />
       </label>
 

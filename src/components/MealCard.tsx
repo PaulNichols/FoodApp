@@ -33,7 +33,7 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
   }, [photo]);
 
   const resetMeal = () => {
-    const nextMeal = { ...meal, usedDefault: true, notes: '', photoPath: null };
+    const nextMeal = { ...meal, usedDefault: true, servingDescription: '', notes: '', photoPath: null };
     onChange({ ...nextMeal, analysis: createDefaultMealAnalysis(nextMeal, toBrisbaneTimestamp()) });
   };
 
@@ -55,6 +55,7 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
             const nextMeal = {
               ...meal,
               usedDefault: event.target.checked,
+              servingDescription: event.target.checked ? '' : meal.servingDescription,
               photoPath: event.target.checked ? null : meal.photoPath,
             };
 
@@ -87,6 +88,15 @@ export function MealCard({ date, meal, photo, onChange, onPhotoSelected, onError
 
           {previewUrl && <img className="photo-preview" src={previewUrl} alt={`${meal.label} replacement preview`} />}
           {!previewUrl && meal.photoPath && <p className="muted">Saved photo: {meal.photoPath}</p>}
+
+          <label className="field">
+            <span>Amount / portion</span>
+            <input
+              value={meal.servingDescription}
+              placeholder="Chicken 180g, rice 1 cup, vegetables 2 cups..."
+              onChange={(event) => onChange({ ...meal, servingDescription: event.target.value })}
+            />
+          </label>
 
           <label className="field">
             <span>{meal.label} notes</span>

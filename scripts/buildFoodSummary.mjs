@@ -135,6 +135,7 @@ function summarizeMeal(meal) {
     usedDefault: Boolean(meal.usedDefault),
     templateName: normalizeString(meal.templateName),
     ingredients: summarizeIngredients(meal.ingredients),
+    servingDetailPresent: hasText(meal.servingDescription),
     hasNotes: hasText(meal.notes),
     hasPhoto: hasText(meal.photoPath),
     analysis: summarizeFoodAnalysis(meal.analysis),
@@ -148,6 +149,7 @@ function summarizeIngredients(ingredients) {
 function summarizeSnack(snack) {
   return {
     id: normalizeString(snack.id),
+    servingDetailPresent: hasText(snack.servingDescription),
     hasNotes: hasText(snack.notes),
     hasPhoto: hasText(snack.photoPath),
     analysis: summarizeFoodAnalysis(snack.analysis),

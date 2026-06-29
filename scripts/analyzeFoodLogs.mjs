@@ -110,6 +110,7 @@ async function getCandidates(day) {
         label: meal.label,
         templateName: meal.templateName,
         usedDefault: meal.usedDefault,
+        servingDescription: meal.servingDescription,
         notes: meal.notes,
         ingredients: meal.ingredients,
       },
@@ -131,6 +132,7 @@ async function getCandidates(day) {
       label: snack.id,
       textContext: {
         id: snack.id,
+        servingDescription: snack.servingDescription,
         notes: snack.notes,
       },
       photoPath: snack.photoPath,
@@ -304,7 +306,9 @@ function createPrompt(day, candidates) {
   return [
     'Estimate the food item name and calories for each food log entry.',
     'Also estimate protein, carbohydrate, fat, sugar, and fibre grams for the same serving.',
-    'Use the photo when supplied. If no photo is supplied, infer from the entry notes, template, and ingredients.',
+    'Use exact servingDescription amounts first when supplied, then notes/template/ingredients, then the photo.',
+    'Photos are useful for identifying foods, but serving weights, cups, scoops, packets, or counts should drive calories.',
+    'If no photo is supplied, infer from the entry notes, template, ingredients, and servingDescription.',
     'Return conservative approximate calories for the visible or described serving only.',
     'If calories or nutrition cannot be estimated, use null values and low confidence.',
     'Do not include medical advice.',

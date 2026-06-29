@@ -94,7 +94,15 @@ One JSON file is stored per day:
 data/yyyy/mm/yyyy-mm-dd.json
 ```
 
-The JSON includes supplements, default meals, replacement meal notes/photos, snacks, water intake, daily notes, and Brisbane timestamps.
+The JSON includes supplements, default meals, replacement meal notes/photos, snacks, serving details, water intake, daily notes, and Brisbane timestamps.
+
+For more accurate calorie estimates, replacement meals and snacks can include `servingDescription`, such as:
+
+- `banana 120g`
+- `Greek yoghurt 200g`
+- `chicken 180g, rice 1 cup, vegetables 2 cups`
+
+Photos help identify food, but serving sizes drive calorie accuracy.
 
 Water intake is stored as `waterIntake.entries`, with each entry containing:
 
