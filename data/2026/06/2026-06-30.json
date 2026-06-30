@@ -176,7 +176,7 @@
       {
         "id": "water-bottle",
         "label": "Bottle of water",
-        "amountMl": "1400",
+        "amountMl": "2100",
         "consumed": true
       },
       {
@@ -195,5 +195,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-06-30T08:35:51+10:00",
-  "updatedAt": "2026-06-30T15:55:30+10:00"
+  "updatedAt": "2026-06-30T18:48:14+10:00"
 }
