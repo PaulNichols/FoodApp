@@ -156,13 +156,45 @@
       "id": "snack-1",
       "notes": "Kiwifruit",
       "photoPath": null,
-      "servingDescription": ""
+      "servingDescription": "",
+      "analysis": {
+        "itemName": "Kiwifruit",
+        "calories": 45,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "One kiwifruit estimate; light snack, portion count is the main uncertainty.",
+        "updatedAt": "2026-07-01T09:06:00+10:00",
+        "inputHash": "codex:2026-06-30:snack-1:kiwifruit:v2-macros",
+        "nutrition": {
+          "proteinGrams": 0.8,
+          "carbohydrateGrams": 10.1,
+          "fatGrams": 0.4,
+          "sugarGrams": 6.2,
+          "fibreGrams": 2.1
+        }
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Apple",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Apple",
+        "calories": 95,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Medium apple estimate; mostly carbohydrate with useful fibre, portion size is the main uncertainty.",
+        "updatedAt": "2026-07-01T09:06:00+10:00",
+        "inputHash": "codex:2026-06-30:snack-2:apple:v1-macros",
+        "nutrition": {
+          "proteinGrams": 0.5,
+          "carbohydrateGrams": 25.1,
+          "fatGrams": 0.3,
+          "sugarGrams": 18.9,
+          "fibreGrams": 4.4
+        }
+      }
     },
     {
       "id": "snack-3",

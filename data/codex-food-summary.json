@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-30T08:36:26+10:00",
+  "sourceUpdatedAt": "2026-06-30T18:51:00+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
     "days": 31,
-    "startDate": "2026-05-31",
-    "endDate": "2026-06-30"
+    "startDate": "2026-06-01",
+    "endDate": "2026-07-01"
   },
   "totals": {
     "loggedDays": 3,
@@ -14,30 +14,34 @@
     "supplementCompleteDays": 3,
     "defaultMealCount": 9,
     "replacedMealCount": 0,
-    "snackCount": 9,
+    "snackCount": 11,
     "photoCount": 3,
-    "waterMl": 5920,
+    "waterMl": 7320,
     "daysWithWaterEstimate": 3,
-    "estimatedCalories": 4246,
+    "estimatedCalories": 4516,
     "nutrition": {
-      "proteinGrams": 429.1,
-      "carbohydrateGrams": 319.7,
-      "fatGrams": 120.9,
-      "sugarGrams": 116.3,
-      "fibreGrams": 104.5
+      "proteinGrams": 430.4,
+      "carbohydrateGrams": 354.9,
+      "fatGrams": 121.6,
+      "sugarGrams": 141.4,
+      "fibreGrams": 111
     },
     "daysWithEstimatedCalories": 3,
-    "manualAnalysisItems": 0,
+    "manualAnalysisItems": 1,
     "openAiAnalysisItems": 0,
-    "codexAnalysisItems": 17,
-    "unanalysedItems": 1,
+    "codexAnalysisItems": 19,
+    "unanalysedItems": 0,
     "daysWithDailyNotes": 0
   },
   "days": [
     {
+      "date": "2026-07-01",
+      "logged": false
+    },
+    {
       "date": "2026-06-30",
       "logged": true,
-      "updatedAt": "2026-06-30T08:36:26+10:00",
+      "updatedAt": "2026-06-30T18:51:00+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -169,7 +173,7 @@
           }
         }
       ],
-      "snackCount": 1,
+      "snackCount": 3,
       "snacks": [
         {
           "id": "snack-1",
@@ -177,8 +181,50 @@
           "hasNotes": true,
           "hasPhoto": false,
           "analysis": {
+            "itemName": "Kiwifruit",
+            "calories": 45,
+            "nutrition": {
+              "proteinGrams": 0.8,
+              "carbohydrateGrams": 10.1,
+              "fatGrams": 0.4,
+              "sugarGrams": 6.2,
+              "fibreGrams": 2.1
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-01T09:06:00+10:00"
+          }
+        },
+        {
+          "id": "snack-2",
+          "servingDetailPresent": false,
+          "hasNotes": true,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Apple",
+            "calories": 95,
+            "nutrition": {
+              "proteinGrams": 0.5,
+              "carbohydrateGrams": 25.1,
+              "fatGrams": 0.3,
+              "sugarGrams": 18.9,
+              "fibreGrams": 4.4
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-01T09:06:00+10:00"
+          }
+        },
+        {
+          "id": "snack-3",
+          "servingDetailPresent": false,
+          "hasNotes": true,
+          "hasPhoto": false,
+          "analysis": {
             "itemName": "",
-            "calories": null,
+            "calories": 130,
             "nutrition": {
               "proteinGrams": null,
               "carbohydrateGrams": null,
@@ -187,29 +233,29 @@
               "fibreGrams": null
             },
             "confidence": null,
-            "source": null,
+            "source": "manual",
             "notesPresent": false,
-            "updatedAt": ""
+            "updatedAt": "2026-06-30T18:50:55+10:00"
           }
         }
       ],
       "photoCount": 0,
       "waterIntake": {
-        "totalMl": 1740,
+        "totalMl": 3140,
         "entries": [
           {
             "id": "coffee",
             "label": "Coffee",
-            "amountMl": "400",
+            "amountMl": "800",
             "consumed": true,
-            "parsedMl": 400
+            "parsedMl": 800
           },
           {
             "id": "water-bottle",
             "label": "Bottle of water",
-            "amountMl": "700",
+            "amountMl": "2100",
             "consumed": true,
-            "parsedMl": 700
+            "parsedMl": 2100
           },
           {
             "id": "agemate",
@@ -222,25 +268,25 @@
             "id": "water-glass",
             "label": "Glass of water",
             "amountMl": "400",
-            "consumed": true,
-            "parsedMl": 400
+            "consumed": false,
+            "parsedMl": null
           }
         ]
       },
-      "estimatedCalories": 1154,
+      "estimatedCalories": 1424,
       "nutrition": {
-        "proteinGrams": 133.8,
-        "carbohydrateGrams": 63.4,
-        "fatGrams": 33.6,
-        "sugarGrams": 16.2,
-        "fibreGrams": 28.8
+        "proteinGrams": 135.1,
+        "carbohydrateGrams": 98.6,
+        "fatGrams": 34.3,
+        "sugarGrams": 41.3,
+        "fibreGrams": 35.3
       },
       "dailyNotesPresent": false,
       "analysis": {
-        "manualItems": 0,
+        "manualItems": 1,
         "openAiItems": 0,
-        "codexItems": 3,
-        "unanalysedItems": 1
+        "codexItems": 5,
+        "unanalysedItems": 0
       }
     },
     {
@@ -900,10 +946,6 @@
     },
     {
       "date": "2026-06-01",
-      "logged": false
-    },
-    {
-      "date": "2026-05-31",
       "logged": false
     }
   ]
