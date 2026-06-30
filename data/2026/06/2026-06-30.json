@@ -163,6 +163,20 @@
       "servingDescription": "",
       "notes": "Apple",
       "photoPath": null
+    },
+    {
+      "id": "snack-3",
+      "servingDescription": "",
+      "notes": "Dairyworks cheese & rice crackers snack pack.",
+      "photoPath": null,
+      "analysis": {
+        "itemName": "",
+        "calories": 130,
+        "confidence": null,
+        "notes": "",
+        "source": "manual",
+        "updatedAt": "2026-06-30T18:50:55+10:00"
+      }
     }
   ],
   "waterIntake": {
@@ -195,5 +209,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-06-30T08:35:51+10:00",
-  "updatedAt": "2026-06-30T18:48:14+10:00"
+  "updatedAt": "2026-06-30T18:51:00+10:00"
 }
