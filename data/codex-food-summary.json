@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-06-30T18:51:00+10:00",
+  "sourceUpdatedAt": "2026-07-01T09:32:15+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
@@ -18,7 +18,7 @@
     "photoCount": 3,
     "waterMl": 7320,
     "daysWithWaterEstimate": 3,
-    "estimatedCalories": 4516,
+    "estimatedCalories": 4816,
     "nutrition": {
       "proteinGrams": 430.4,
       "carbohydrateGrams": 354.9,
@@ -41,7 +41,7 @@
     {
       "date": "2026-06-30",
       "logged": true,
-      "updatedAt": "2026-06-30T18:51:00+10:00",
+      "updatedAt": "2026-07-01T09:32:15+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -109,14 +109,14 @@
             "cinnamon powder: 1/2 tsp",
             "cacao nibs: 1 tsp",
             "plant sterol powder: 1 tsp optional",
-            "Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this"
+            "Default lunch shake calories: 600 Cal"
           ],
           "servingDetailPresent": false,
           "hasNotes": false,
           "hasPhoto": false,
           "analysis": {
             "itemName": "Paul's lunch shake",
-            "calories": 500,
+            "calories": 600,
             "nutrition": {
               "proteinGrams": 27,
               "carbohydrateGrams": 40,
@@ -124,10 +124,10 @@
               "sugarGrams": 8,
               "fibreGrams": 15
             },
-            "confidence": "medium",
+            "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-30T08:35:51+10:00"
+            "updatedAt": "2026-07-01T09:32:15+10:00"
           }
         },
         {
@@ -273,7 +273,7 @@
           }
         ]
       },
-      "estimatedCalories": 1424,
+      "estimatedCalories": 1524,
       "nutrition": {
         "proteinGrams": 135.1,
         "carbohydrateGrams": 98.6,
@@ -292,7 +292,7 @@
     {
       "date": "2026-06-29",
       "logged": true,
-      "updatedAt": "2026-06-29T15:04:05+10:00",
+      "updatedAt": "2026-07-01T09:32:15+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -360,14 +360,14 @@
             "cinnamon powder: 1/2 tsp",
             "cacao nibs: 1 tsp",
             "plant sterol powder: 1 tsp optional",
-            "Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this"
+            "Default lunch shake calories: 600 Cal"
           ],
           "servingDetailPresent": false,
           "hasNotes": false,
           "hasPhoto": false,
           "analysis": {
             "itemName": "Paul's lunch shake",
-            "calories": 500,
+            "calories": 600,
             "nutrition": {
               "proteinGrams": 27,
               "carbohydrateGrams": 40,
@@ -375,10 +375,10 @@
               "sugarGrams": 8,
               "fibreGrams": 15
             },
-            "confidence": "medium",
+            "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:53:45+10:00"
+            "updatedAt": "2026-07-01T09:32:15+10:00"
           }
         },
         {
@@ -594,7 +594,7 @@
           }
         ]
       },
-      "estimatedCalories": 1788,
+      "estimatedCalories": 1888,
       "nutrition": {
         "proteinGrams": 159.4,
         "carbohydrateGrams": 155.8,
@@ -613,7 +613,7 @@
     {
       "date": "2026-06-28",
       "logged": true,
-      "updatedAt": "2026-06-29T09:01:03+10:00",
+      "updatedAt": "2026-07-01T09:32:15+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -681,14 +681,14 @@
             "cinnamon powder: 1/2 tsp",
             "cacao nibs: 1 tsp",
             "plant sterol powder: 1 tsp optional",
-            "Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this"
+            "Default lunch shake calories: 600 Cal"
           ],
           "servingDetailPresent": false,
           "hasNotes": false,
           "hasPhoto": false,
           "analysis": {
             "itemName": "Paul's lunch shake",
-            "calories": 500,
+            "calories": 600,
             "nutrition": {
               "proteinGrams": 27,
               "carbohydrateGrams": 40,
@@ -696,10 +696,10 @@
               "sugarGrams": 8,
               "fibreGrams": 15
             },
-            "confidence": "medium",
+            "confidence": "high",
             "source": "codex",
             "notesPresent": true,
-            "updatedAt": "2026-06-29T08:53:45+10:00"
+            "updatedAt": "2026-07-01T09:32:15+10:00"
           }
         },
         {
@@ -824,7 +824,7 @@
           }
         ]
       },
-      "estimatedCalories": 1304,
+      "estimatedCalories": 1404,
       "nutrition": {
         "proteinGrams": 135.9,
         "carbohydrateGrams": 100.5,

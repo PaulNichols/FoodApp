@@ -113,7 +113,7 @@ export const lunchShakeIngredients = [
   'cinnamon powder: 1/2 tsp',
   'cacao nibs: 1 tsp',
   'plant sterol powder: 1 tsp optional',
-  'Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this',
+  'Default lunch shake calories: 600 Cal',
 ];
 
 export const supplementNames = ['Creatine', 'AgeMate', 'Collagen peptides'];
@@ -178,7 +178,7 @@ export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): Foo
   if (meal.templateId === 'paul-lunch-shake') {
     return {
       itemName: meal.templateName,
-      calories: 500,
+      calories: 600,
       nutrition: {
         proteinGrams: 27,
         carbohydrateGrams: 40,
@@ -189,9 +189,9 @@ export const createDefaultMealAnalysis = (meal: MealLog, updatedAt: string): Foo
       confidence: 'medium',
       source: 'codex',
       notes:
-        'Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.',
+        'User-confirmed default lunch shake calories: 600 Cal for the saved recipe quantities.',
       updatedAt,
-      inputHash: `codex:${meal.slot}:paul-lunch-shake:v2-recipe-quantities`,
+      inputHash: `codex:${meal.slot}:paul-lunch-shake:v4-user-confirmed-600-cal`,
     };
   }
 

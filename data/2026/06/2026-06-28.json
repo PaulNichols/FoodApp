@@ -85,23 +85,23 @@
         "cinnamon powder: 1/2 tsp",
         "cacao nibs: 1 tsp",
         "plant sterol powder: 1 tsp optional",
-        "Default lunch shake calories: about 500 Cal with flaxseeds and WPI; walnuts, soy milk brand, avocado size, and plant sterol powder may change this"
+        "Default lunch shake calories: 600 Cal"
       ],
       "analysis": {
         "itemName": "Paul's lunch shake",
-        "calories": 500,
-        "confidence": "medium",
-        "source": "codex",
-        "notes": "Recipe-based estimate from saved quantities: 1 cup greens, 1/2 avocado, 1/2 cup berries, 1/4 cup oats, 2 tbsp flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, cinnamon, cacao nibs, optional plant sterol powder.",
-        "updatedAt": "2026-06-29T08:53:45+10:00",
-        "inputHash": "codex:lunch:paul-lunch-shake:v3-recipe-macros",
+        "calories": 600,
         "nutrition": {
           "proteinGrams": 27,
           "carbohydrateGrams": 40,
           "fatGrams": 25,
           "sugarGrams": 8,
           "fibreGrams": 15
-        }
+        },
+        "confidence": "high",
+        "source": "codex",
+        "notes": "User-confirmed default lunch shake calories: 600 Cal for the saved recipe quantities.",
+        "updatedAt": "2026-07-01T09:32:15+10:00",
+        "inputHash": "codex:lunch:paul-lunch-shake:v4-user-confirmed-600-cal"
       }
     },
     {
@@ -194,7 +194,7 @@
   ],
   "dailyNotes": "",
   "createdAt": "2026-06-28T17:55:01+10:00",
-  "updatedAt": "2026-06-29T09:01:03+10:00",
+  "updatedAt": "2026-07-01T09:32:15+10:00",
   "waterIntake": {
     "entries": [
       {

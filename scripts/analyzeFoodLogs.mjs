@@ -308,6 +308,7 @@ function createPrompt(day, candidates) {
     'Also estimate protein, carbohydrate, fat, sugar, and fibre grams for the same serving.',
     'Use exact servingDescription amounts first when supplied, then notes/template/ingredients, then the photo.',
     'Photos are useful for identifying foods, but serving weights, cups, scoops, packets, or counts should drive calories.',
+    'Respect explicit known default calories in the entry context; do not override them unless notes or servingDescription describe a different serving.',
     'If no photo is supplied, infer from the entry notes, template, ingredients, and servingDescription.',
     'Return conservative approximate calories for the visible or described serving only.',
     'If calories or nutrition cannot be estimated, use null values and low confidence.',

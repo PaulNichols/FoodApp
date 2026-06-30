@@ -12,7 +12,7 @@ Known default nutrition context:
 - Per WPI serving: 124 Cal, 24 g protein, 1.8 g fat, 1.8 g carbohydrate, 0 g fibre, 93 mg sodium, and 123 mg calcium.
 - Default Man Shake + WPI meal: 327 Cal before any added milk, fruit, or other extras.
 - Paul's lunch shake recipe: 1 cup spinach or kale, 1/2 avocado, 1/2 cup frozen mixed berries, 1/4 cup oats, 2 tbsp ground flaxseeds or walnuts, 1 scoop protein powder, 1 cup soy milk, 1/2 tsp cinnamon, 1 tsp cacao nibs, and optional 1 tsp plant sterol powder.
-- Default Paul's lunch shake estimate: about 500 Cal; this may move with walnut vs flaxseed choice, soy milk brand, avocado size, protein powder brand, and optional plant sterol powder.
+- Default Paul's lunch shake: 600 Cal.
 - Default water intake: coffee 400 ml, bottle of water 700 ml, AgeMate 240 ml, and glass of water 400 ml. Amount fields are free text, and dashboard totals use the first number found in each consumed entry.
 
 ## Public Data
