@@ -157,6 +157,12 @@
       "servingDescription": "",
       "notes": "Roasted salted nuts",
       "photoPath": "photos/2026/07/2026-07-02/snack-1.webp"
+    },
+    {
+      "id": "snack-2",
+      "servingDescription": "",
+      "notes": "2 cheese slices ",
+      "photoPath": null
     }
   ],
   "waterIntake": {
@@ -170,7 +176,7 @@
       {
         "id": "water-bottle",
         "label": "Bottle of water",
-        "amountMl": "1400",
+        "amountMl": "2100",
         "consumed": true
       },
       {
@@ -189,5 +195,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-02T11:53:21+10:00",
-  "updatedAt": "2026-07-02T11:54:36+10:00"
+  "updatedAt": "2026-07-02T17:54:12+10:00"
 }
