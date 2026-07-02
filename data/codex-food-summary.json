@@ -1,47 +1,460 @@
 {
   "schemaVersion": 1,
-  "sourceUpdatedAt": "2026-07-01T21:08:05+10:00",
+  "sourceUpdatedAt": "2026-07-02T17:58:27+10:00",
   "timezone": "Australia/Brisbane",
   "source": "FoodApp repository data",
   "window": {
     "days": 31,
-    "startDate": "2026-06-02",
-    "endDate": "2026-07-02"
+    "startDate": "2026-06-03",
+    "endDate": "2026-07-03"
   },
   "totals": {
-    "loggedDays": 4,
-    "missingDays": 27,
-    "supplementCompleteDays": 4,
-    "defaultMealCount": 12,
+    "loggedDays": 6,
+    "missingDays": 25,
+    "supplementCompleteDays": 6,
+    "defaultMealCount": 18,
     "replacedMealCount": 0,
-    "snackCount": 13,
-    "photoCount": 3,
-    "waterMl": 9060,
-    "daysWithWaterEstimate": 4,
-    "estimatedCalories": 6405,
+    "snackCount": 15,
+    "photoCount": 4,
+    "waterMl": 14340,
+    "daysWithWaterEstimate": 6,
+    "estimatedCalories": 9232,
     "nutrition": {
-      "proteinGrams": 590.5,
-      "carbohydrateGrams": 476.3,
-      "fatGrams": 165.6,
-      "sugarGrams": 176,
-      "fibreGrams": 146.9
+      "proteinGrams": 858.1,
+      "carbohydrateGrams": 603.1,
+      "fatGrams": 232.8,
+      "sugarGrams": 208.4,
+      "fibreGrams": 204.5
     },
-    "daysWithEstimatedCalories": 4,
+    "daysWithEstimatedCalories": 6,
     "manualAnalysisItems": 1,
     "openAiAnalysisItems": 0,
-    "codexAnalysisItems": 24,
+    "codexAnalysisItems": 32,
     "unanalysedItems": 0,
     "daysWithDailyNotes": 0
   },
   "days": [
     {
+      "date": "2026-07-03",
+      "logged": true,
+      "updatedAt": "2026-07-02T17:57:41+10:00",
+      "supplements": {
+        "morningSupplementsTaken": true,
+        "takenCount": 3,
+        "totalCount": 3,
+        "complete": true,
+        "missedItems": [],
+        "notesPresent": false
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "label": "Breakfast",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "ingredients": [
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+            "WPI protein serving: 2 scoops = 30 g",
+            "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+            "WPI protein per 30 g serving: 24 g protein",
+            "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+            "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+            "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Man Shake + 2 scoops WPI protein",
+            "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T17:57:38+10:00"
+          }
+        },
+        {
+          "slot": "lunch",
+          "label": "Lunch",
+          "usedDefault": true,
+          "templateName": "Paul's lunch shake",
+          "ingredients": [
+            "spinach or kale: 1 cup",
+            "avocado: 1/2",
+            "frozen mixed berries: 1/2 cup",
+            "oats: 1/4 cup",
+            "ground flaxseeds or walnuts: 2 tbsp",
+            "protein powder: 1 scoop",
+            "soy milk: 1 cup",
+            "cinnamon powder: 1/2 tsp",
+            "cacao nibs: 1 tsp",
+            "plant sterol powder: 1 tsp optional",
+            "Default lunch shake calories: 600 Cal"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Paul's lunch shake",
+            "calories": 600,
+            "nutrition": {
+              "proteinGrams": 27,
+              "carbohydrateGrams": 40,
+              "fatGrams": 25,
+              "sugarGrams": 8,
+              "fibreGrams": 15
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T17:57:38+10:00"
+          }
+        },
+        {
+          "slot": "evening-meal",
+          "label": "Evening meal",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "ingredients": [
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+            "WPI protein serving: 2 scoops = 30 g",
+            "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+            "WPI protein per 30 g serving: 24 g protein",
+            "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+            "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+            "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Man Shake + 2 scoops WPI protein",
+            "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T17:57:38+10:00"
+          }
+        }
+      ],
+      "snackCount": 0,
+      "snacks": [],
+      "photoCount": 0,
+      "waterIntake": {
+        "totalMl": 1740,
+        "entries": [
+          {
+            "id": "coffee",
+            "label": "Coffee",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          },
+          {
+            "id": "water-bottle",
+            "label": "Bottle of water",
+            "amountMl": "700",
+            "consumed": true,
+            "parsedMl": 700
+          },
+          {
+            "id": "agemate",
+            "label": "AgeMate",
+            "amountMl": "240",
+            "consumed": true,
+            "parsedMl": 240
+          },
+          {
+            "id": "water-glass",
+            "label": "Glass of water",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          }
+        ]
+      },
+      "estimatedCalories": 1254,
+      "nutrition": {
+        "proteinGrams": 133.8,
+        "carbohydrateGrams": 63.4,
+        "fatGrams": 33.6,
+        "sugarGrams": 16.2,
+        "fibreGrams": 28.8
+      },
+      "dailyNotesPresent": false,
+      "analysis": {
+        "manualItems": 0,
+        "openAiItems": 0,
+        "codexItems": 3,
+        "unanalysedItems": 0
+      }
+    },
+    {
       "date": "2026-07-02",
-      "logged": false
+      "logged": true,
+      "updatedAt": "2026-07-02T17:57:37+10:00",
+      "supplements": {
+        "morningSupplementsTaken": true,
+        "takenCount": 3,
+        "totalCount": 3,
+        "complete": true,
+        "missedItems": [],
+        "notesPresent": false
+      },
+      "meals": [
+        {
+          "slot": "breakfast",
+          "label": "Breakfast",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "ingredients": [
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+            "WPI protein serving: 2 scoops = 30 g",
+            "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+            "WPI protein per 30 g serving: 24 g protein",
+            "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+            "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+            "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Man Shake + 2 scoops WPI protein",
+            "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T11:53:21+10:00"
+          }
+        },
+        {
+          "slot": "lunch",
+          "label": "Lunch",
+          "usedDefault": true,
+          "templateName": "Paul's lunch shake",
+          "ingredients": [
+            "spinach or kale: 1 cup",
+            "avocado: 1/2",
+            "frozen mixed berries: 1/2 cup",
+            "oats: 1/4 cup",
+            "ground flaxseeds or walnuts: 2 tbsp",
+            "protein powder: 1 scoop",
+            "soy milk: 1 cup",
+            "cinnamon powder: 1/2 tsp",
+            "cacao nibs: 1 tsp",
+            "plant sterol powder: 1 tsp optional",
+            "Default lunch shake calories: 600 Cal"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Paul's lunch shake",
+            "calories": 600,
+            "nutrition": {
+              "proteinGrams": 27,
+              "carbohydrateGrams": 40,
+              "fatGrams": 25,
+              "sugarGrams": 8,
+              "fibreGrams": 15
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T11:53:21+10:00"
+          }
+        },
+        {
+          "slot": "evening-meal",
+          "label": "Evening meal",
+          "usedDefault": true,
+          "templateName": "Man Shake + 2 scoops WPI protein",
+          "ingredients": [
+            "Man Shake serving: 56 g",
+            "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+            "Man Shake per 56 g serving: 29.4 g protein",
+            "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+            "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+            "Man Shake per 56 g serving: 6.9 g dietary fibre",
+            "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+            "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+            "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+            "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+            "WPI protein serving: 2 scoops = 30 g",
+            "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+            "WPI protein per 30 g serving: 24 g protein",
+            "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+            "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+            "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+          ],
+          "servingDetailPresent": false,
+          "hasNotes": false,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "Man Shake + 2 scoops WPI protein",
+            "calories": 327,
+            "nutrition": {
+              "proteinGrams": 53.4,
+              "carbohydrateGrams": 11.7,
+              "fatGrams": 4.3,
+              "sugarGrams": 4.1,
+              "fibreGrams": 6.9
+            },
+            "confidence": "high",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-02T11:53:21+10:00"
+          }
+        }
+      ],
+      "snackCount": 2,
+      "snacks": [
+        {
+          "id": "snack-1",
+          "servingDetailPresent": false,
+          "hasNotes": true,
+          "hasPhoto": true,
+          "analysis": {
+            "itemName": "Roasted salted mixed nuts",
+            "calories": 189,
+            "nutrition": {
+              "proteinGrams": null,
+              "carbohydrateGrams": null,
+              "fatGrams": null,
+              "sugarGrams": null,
+              "fibreGrams": null
+            },
+            "confidence": "medium",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-03T08:48:09+10:00"
+          }
+        },
+        {
+          "id": "snack-2",
+          "servingDetailPresent": false,
+          "hasNotes": true,
+          "hasPhoto": false,
+          "analysis": {
+            "itemName": "2 cheese slices",
+            "calories": 130,
+            "nutrition": {
+              "proteinGrams": null,
+              "carbohydrateGrams": null,
+              "fatGrams": null,
+              "sugarGrams": null,
+              "fibreGrams": null
+            },
+            "confidence": "low",
+            "source": "codex",
+            "notesPresent": true,
+            "updatedAt": "2026-07-03T08:48:09+10:00"
+          }
+        }
+      ],
+      "photoCount": 1,
+      "waterIntake": {
+        "totalMl": 3540,
+        "entries": [
+          {
+            "id": "coffee",
+            "label": "Coffee",
+            "amountMl": "800",
+            "consumed": true,
+            "parsedMl": 800
+          },
+          {
+            "id": "water-bottle",
+            "label": "Bottle of water",
+            "amountMl": "2100",
+            "consumed": true,
+            "parsedMl": 2100
+          },
+          {
+            "id": "agemate",
+            "label": "AgeMate",
+            "amountMl": "240",
+            "consumed": true,
+            "parsedMl": 240
+          },
+          {
+            "id": "water-glass",
+            "label": "Glass of water",
+            "amountMl": "400",
+            "consumed": true,
+            "parsedMl": 400
+          }
+        ]
+      },
+      "estimatedCalories": 1573,
+      "nutrition": {
+        "proteinGrams": 133.8,
+        "carbohydrateGrams": 63.4,
+        "fatGrams": 33.6,
+        "sugarGrams": 16.2,
+        "fibreGrams": 28.8
+      },
+      "dailyNotesPresent": false,
+      "analysis": {
+        "manualItems": 0,
+        "openAiItems": 0,
+        "codexItems": 5,
+        "unanalysedItems": 0
+      }
     },
     {
       "date": "2026-07-01",
       "logged": true,
-      "updatedAt": "2026-07-01T21:08:05+10:00",
+      "updatedAt": "2026-07-02T17:58:03+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -271,7 +684,7 @@
     {
       "date": "2026-06-30",
       "logged": true,
-      "updatedAt": "2026-07-01T09:32:15+10:00",
+      "updatedAt": "2026-07-02T17:58:27+10:00",
       "supplements": {
         "morningSupplementsTaken": true,
         "takenCount": 3,
@@ -1168,10 +1581,6 @@
     },
     {
       "date": "2026-06-03",
-      "logged": false
-    },
-    {
-      "date": "2026-06-02",
       "logged": false
     }
   ]

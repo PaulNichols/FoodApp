@@ -156,13 +156,31 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Roasted salted nuts",
-      "photoPath": "photos/2026/07/2026-07-02/snack-1.webp"
+      "photoPath": "photos/2026/07/2026-07-02/snack-1.webp",
+      "analysis": {
+        "itemName": "Roasted salted mixed nuts",
+        "calories": 189,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo label shows 189 Cal per 30 g serving and about two servings per pack; assumed one serving.",
+        "updatedAt": "2026-07-03T08:48:09+10:00",
+        "inputHash": "codex:snack-1:roasted-salted-nuts:photo-label-189-cal-per-30g"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "2 cheese slices ",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "2 cheese slices",
+        "calories": 130,
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Text-only estimate; likely useful protein/fat snack, with calories depending on slice size.",
+        "updatedAt": "2026-07-03T08:48:09+10:00",
+        "inputHash": "codex:snack-2:2-cheese-slices:text-estimate"
+      }
     }
   ],
   "waterIntake": {
