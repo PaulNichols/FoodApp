@@ -163,27 +163,6 @@
       "servingDescription": "",
       "notes": "2 cheese slices ",
       "photoPath": null
-    },
-    {
-      "id": "snack-3",
-      "servingDescription": "",
-      "notes": "Minestrone soup",
-      "photoPath": null,
-      "analysis": {
-        "itemName": "",
-        "calories": 250,
-        "nutrition": {
-          "proteinGrams": 8,
-          "carbohydrateGrams": 29,
-          "fatGrams": 9,
-          "sugarGrams": null,
-          "fibreGrams": 6
-        },
-        "confidence": null,
-        "notes": "",
-        "source": "manual",
-        "updatedAt": "2026-07-02T17:55:53+10:00"
-      }
     }
   ],
   "waterIntake": {
@@ -216,5 +195,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-02T11:53:21+10:00",
-  "updatedAt": "2026-07-02T17:55:56+10:00"
+  "updatedAt": "2026-07-02T17:56:56+10:00"
 }
