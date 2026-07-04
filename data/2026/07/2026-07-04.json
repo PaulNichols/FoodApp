@@ -79,9 +79,9 @@
       "label": "Evening meal",
       "templateId": "man-shake-wpi",
       "templateName": "Man Shake + 2 scoops WPI protein",
-      "usedDefault": true,
+      "usedDefault": false,
       "servingDescription": "",
-      "notes": "",
+      "notes": "Two slices of cheese on toast",
       "photoPath": null,
       "ingredients": [
         "Man Shake serving: 56 g",
@@ -100,23 +100,7 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ],
-      "analysis": {
-        "itemName": "Man Shake + 2 scoops WPI protein",
-        "calories": 327,
-        "nutrition": {
-          "proteinGrams": 53.4,
-          "carbohydrateGrams": 11.7,
-          "fatGrams": 4.3,
-          "sugarGrams": 4.1,
-          "fibreGrams": 6.9
-        },
-        "confidence": "high",
-        "source": "codex",
-        "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-07-04T09:34:33+10:00",
-        "inputHash": "codex:evening-meal:man-shake-wpi:v3-man-shake-label"
-      }
+      ]
     }
   ],
   "snacks": [],
@@ -150,5 +134,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-04T09:34:33+10:00",
-  "updatedAt": "2026-07-04T17:41:18+10:00"
+  "updatedAt": "2026-07-04T18:16:11+10:00"
 }
