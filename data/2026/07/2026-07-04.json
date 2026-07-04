@@ -143,12 +143,12 @@
       {
         "id": "water-glass",
         "label": "Glass of water",
-        "amountMl": "400",
+        "amountMl": "800",
         "consumed": true
       }
     ]
   },
   "dailyNotes": "",
   "createdAt": "2026-07-04T09:34:33+10:00",
-  "updatedAt": "2026-07-04T14:11:50+10:00"
+  "updatedAt": "2026-07-04T14:14:08+10:00"
 }
