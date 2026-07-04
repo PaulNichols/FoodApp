@@ -119,14 +119,7 @@
       }
     }
   ],
-  "snacks": [
-    {
-      "id": "snack-1",
-      "servingDescription": "",
-      "notes": "",
-      "photoPath": "photos/2026/07/2026-07-04/snack-1.webp"
-    }
-  ],
+  "snacks": [],
   "waterIntake": {
     "entries": [
       {
@@ -157,5 +150,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-04T09:34:33+10:00",
-  "updatedAt": "2026-07-04T17:40:49+10:00"
+  "updatedAt": "2026-07-04T17:41:18+10:00"
 }
