@@ -56,9 +56,9 @@
       "label": "Lunch",
       "templateId": "paul-lunch-shake",
       "templateName": "Paul's lunch shake",
-      "usedDefault": true,
+      "usedDefault": false,
       "servingDescription": "",
-      "notes": "",
+      "notes": "tartare, focaccia, swordfish creamy sauce and broccoli",
       "photoPath": null,
       "ingredients": [
         "spinach or kale: 1 cup",
@@ -72,23 +72,7 @@
         "cacao nibs: 1 tsp",
         "plant sterol powder: 1 tsp optional",
         "Default lunch shake calories: 600 Cal"
-      ],
-      "analysis": {
-        "itemName": "Paul's lunch shake",
-        "calories": 600,
-        "nutrition": {
-          "proteinGrams": 27,
-          "carbohydrateGrams": 40,
-          "fatGrams": 25,
-          "sugarGrams": 8,
-          "fibreGrams": 15
-        },
-        "confidence": "medium",
-        "source": "codex",
-        "notes": "User-confirmed default lunch shake calories: 600 Cal for the saved recipe quantities.",
-        "updatedAt": "2026-07-04T09:34:33+10:00",
-        "inputHash": "codex:lunch:paul-lunch-shake:v4-user-confirmed-600-cal"
-      }
+      ]
     },
     {
       "slot": "evening-meal",
@@ -166,5 +150,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-04T09:34:33+10:00",
-  "updatedAt": "2026-07-04T09:35:41+10:00"
+  "updatedAt": "2026-07-04T14:11:50+10:00"
 }
