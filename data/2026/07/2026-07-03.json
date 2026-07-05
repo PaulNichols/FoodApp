@@ -156,13 +156,31 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Nuts",
-      "photoPath": "photos/2026/07/2026-07-03/snack-1.webp"
+      "photoPath": "photos/2026/07/2026-07-03/snack-1.webp",
+      "analysis": {
+        "itemName": "Roasted salted mixed nuts",
+        "calories": 378,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo label shows 189 Cal per 30 g and about 2 serves per pack; estimate assumes the small pack was eaten.",
+        "updatedAt": "2026-07-06T07:23:26+10:00",
+        "inputHash": "codex:2026-07-03:snack-1:mixed-nuts-photo-2-serves-v1"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "",
-      "photoPath": "photos/2026/07/2026-07-03/snack-2.webp"
+      "photoPath": "photos/2026/07/2026-07-03/snack-2.webp",
+      "analysis": {
+        "itemName": "Tasty cheese and crackers snack pack",
+        "calories": 140,
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Photo shows a single-serve cheese and crackers pack, but no nutrition panel; useful protein snack with calorie uncertainty.",
+        "updatedAt": "2026-07-06T07:23:26+10:00",
+        "inputHash": "codex:2026-07-03:snack-2:cheese-crackers-photo-v1"
+      }
     }
   ],
   "waterIntake": {
