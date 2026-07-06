@@ -114,7 +114,7 @@
       "usedDefault": false,
       "servingDescription": "",
       "notes": "",
-      "photoPath": null,
+      "photoPath": "photos/2026/07/2026-07-06/evening-meal.webp",
       "ingredients": [
         "Man Shake serving: 56 g",
         "Man Shake per 56 g serving: 203 Cal (850 kJ)",
@@ -132,7 +132,15 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Home-made burger",
+        "calories": null,
+        "confidence": null,
+        "notes": "",
+        "source": "manual",
+        "updatedAt": "2026-07-06T19:13:21+10:00"
+      }
     }
   ],
   "snacks": [
@@ -179,5 +187,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-06T08:26:00+10:00",
-  "updatedAt": "2026-07-06T17:14:12+10:00"
+  "updatedAt": "2026-07-06T19:13:33+10:00"
 }
