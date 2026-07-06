@@ -148,13 +148,31 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Fruit and almond mix",
-      "photoPath": "photos/2026/07/2026-07-06/snack-1.webp"
+      "photoPath": "photos/2026/07/2026-07-06/snack-1.webp",
+      "analysis": {
+        "itemName": "Fruit and almond mix",
+        "calories": 228,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo label shows 114 Cal per 30 g and about 2 serves per pack; mainly dried fruit, so sugar-dense snack.",
+        "updatedAt": "2026-07-07T08:55:13+10:00",
+        "inputHash": "codex:2026-07-06:snack-1:fruit-almond-mix-photo-label"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Protein bar",
-      "photoPath": "photos/2026/07/2026-07-06/snack-2.webp"
+      "photoPath": "photos/2026/07/2026-07-06/snack-2.webp",
+      "analysis": {
+        "itemName": "Carman's Violet Crumble protein bar",
+        "calories": 186,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo identifies a Carman's Violet Crumble protein bar; useful protein snack but still energy-dense.",
+        "updatedAt": "2026-07-07T08:55:13+10:00",
+        "inputHash": "codex:2026-07-06:snack-2:carmans-violet-crumble-protein-bar"
+      }
     }
   ],
   "waterIntake": {
