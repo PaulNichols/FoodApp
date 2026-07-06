@@ -111,7 +111,7 @@
       "label": "Evening meal",
       "templateId": "man-shake-wpi",
       "templateName": "Man Shake + 2 scoops WPI protein",
-      "usedDefault": true,
+      "usedDefault": false,
       "servingDescription": "",
       "notes": "",
       "photoPath": null,
@@ -132,26 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ],
-      "analysis": {
-        "itemName": "Man Shake + 2 scoops WPI protein",
-        "calories": 327,
-        "nutrition": {
-          "proteinGrams": 53.4,
-          "carbohydrateGrams": 11.7,
-          "fatGrams": 4.3,
-          "sugarGrams": 4.1,
-          "fibreGrams": 6.9
-        },
-        "confidence": "high",
-        "source": "codex",
-        "notes": "Label-based default: Man Shake 56 g serving = 203 Cal plus WPI 2 scoops/30 g = 124 Cal.",
-        "updatedAt": "2026-07-06T08:26:00+10:00",
-        "inputHash": "codex:evening-meal:man-shake-wpi:v3-man-shake-label"
-      }
+      ]
     }
   ],
-  "snacks": [],
+  "snacks": [
+    {
+      "id": "snack-1",
+      "servingDescription": "",
+      "notes": "Fruit and almond mix",
+      "photoPath": "photos/2026/07/2026-07-06/snack-1.webp"
+    },
+    {
+      "id": "snack-2",
+      "servingDescription": "",
+      "notes": "Protein bar",
+      "photoPath": "photos/2026/07/2026-07-06/snack-2.webp"
+    }
+  ],
   "waterIntake": {
     "entries": [
       {
@@ -164,7 +161,7 @@
         "id": "water-bottle",
         "label": "Bottle of water",
         "amountMl": "700",
-        "consumed": false
+        "consumed": true
       },
       {
         "id": "agemate",
@@ -176,11 +173,11 @@
         "id": "water-glass",
         "label": "Glass of water",
         "amountMl": "400",
-        "consumed": false
+        "consumed": true
       }
     ]
   },
   "dailyNotes": "",
   "createdAt": "2026-07-06T08:26:00+10:00",
-  "updatedAt": "2026-07-06T08:26:22+10:00"
+  "updatedAt": "2026-07-06T17:14:12+10:00"
 }
