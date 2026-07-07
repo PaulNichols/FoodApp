@@ -156,13 +156,31 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Banana",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Banana",
+        "calories": 105,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Medium banana estimate; useful pre/post-training carbohydrate but low protein on its own.",
+        "updatedAt": "2026-07-07T20:50:12+10:00",
+        "inputHash": "codex:snack:banana:v1-text-estimate"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Orange",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Orange",
+        "calories": 62,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "One medium orange estimate; light snack with carbs, not meaningful protein.",
+        "updatedAt": "2026-07-07T20:50:12+10:00",
+        "inputHash": "codex:snack:orange:v1-text-estimate"
+      }
     }
   ],
   "waterIntake": {
