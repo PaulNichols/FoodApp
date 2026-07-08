@@ -163,6 +163,18 @@
       "servingDescription": "",
       "notes": "Four slices of wholemeal bread, tuna sandwiches",
       "photoPath": null
+    },
+    {
+      "id": "snack-3",
+      "servingDescription": "",
+      "notes": "Crisps",
+      "photoPath": null
+    },
+    {
+      "id": "snack-4",
+      "servingDescription": "",
+      "notes": "Club chocolate biscuits ",
+      "photoPath": null
     }
   ],
   "waterIntake": {
@@ -195,5 +207,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-08T08:40:49+10:00",
-  "updatedAt": "2026-07-08T20:59:00+10:00"
+  "updatedAt": "2026-07-09T08:22:03+10:00"
 }
