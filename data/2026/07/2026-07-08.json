@@ -49,7 +49,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Man Shake + 2 scoops WPI protein with banana",
+        "calories": 432,
+        "nutrition": {
+          "proteinGrams": 54.7,
+          "carbohydrateGrams": 38.7,
+          "fatGrams": 4.7,
+          "sugarGrams": 18.5,
+          "fibreGrams": 10
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Default shake plus one banana estimate; strong protein coverage, with banana adding useful carbs.",
+        "updatedAt": "2026-07-08T20:38:37+10:00",
+        "inputHash": "codex:breakfast:man-shake-wpi-banana:v1"
+      }
     },
     {
       "slot": "lunch",
@@ -140,7 +156,23 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Banana",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Banana",
+        "calories": 105,
+        "nutrition": {
+          "proteinGrams": 1.3,
+          "carbohydrateGrams": 27,
+          "fatGrams": 0.4,
+          "sugarGrams": 14.4,
+          "fibreGrams": 3.1
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for one medium banana; useful carb snack, low protein.",
+        "updatedAt": "2026-07-08T20:38:37+10:00",
+        "inputHash": "codex:snack-1:banana:v1"
+      }
     }
   ],
   "waterIntake": {
