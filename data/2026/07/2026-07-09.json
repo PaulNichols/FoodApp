@@ -151,7 +151,14 @@
       }
     }
   ],
-  "snacks": [],
+  "snacks": [
+    {
+      "id": "snack-1",
+      "servingDescription": "",
+      "notes": "Kiwi",
+      "photoPath": null
+    }
+  ],
   "waterIntake": {
     "entries": [
       {
@@ -163,7 +170,7 @@
       {
         "id": "water-bottle",
         "label": "Bottle of water",
-        "amountMl": "700",
+        "amountMl": "2100",
         "consumed": true
       },
       {
@@ -182,5 +189,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-09T08:20:52+10:00",
-  "updatedAt": "2026-07-09T08:21:01+10:00"
+  "updatedAt": "2026-07-09T17:07:14+10:00"
 }
