@@ -155,7 +155,19 @@
     {
       "id": "snack-1",
       "servingDescription": "",
-      "notes": "Apple",
+      "notes": "2* Apple",
+      "photoPath": null
+    },
+    {
+      "id": "snack-2",
+      "servingDescription": "",
+      "notes": "Banana ",
+      "photoPath": null
+    },
+    {
+      "id": "snack-3",
+      "servingDescription": "",
+      "notes": "Kiwi",
       "photoPath": null
     }
   ],
@@ -189,5 +201,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-11T10:00:56+10:00",
-  "updatedAt": "2026-07-11T10:49:43+10:00"
+  "updatedAt": "2026-07-11T13:50:46+10:00"
 }
