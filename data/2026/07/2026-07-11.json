@@ -164,7 +164,7 @@
       {
         "id": "coffee",
         "label": "Coffee",
-        "amountMl": "400",
+        "amountMl": "800",
         "consumed": true
       },
       {
@@ -189,5 +189,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-11T10:00:56+10:00",
-  "updatedAt": "2026-07-11T10:01:30+10:00"
+  "updatedAt": "2026-07-11T10:48:42+10:00"
 }
