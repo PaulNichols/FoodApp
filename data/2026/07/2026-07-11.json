@@ -156,19 +156,67 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "2* Apple",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Two apples",
+        "calories": 190,
+        "nutrition": {
+          "proteinGrams": 1,
+          "carbohydrateGrams": 50,
+          "fatGrams": 0.6,
+          "sugarGrams": 38,
+          "fibreGrams": 8.8
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for two medium apples; useful carbs, low protein.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:48b3819e68a95f80df06973555bc115721c29786127ce25babfb82f08cc11687"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Banana ",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Banana",
+        "calories": 105,
+        "nutrition": {
+          "proteinGrams": 1.3,
+          "carbohydrateGrams": 27,
+          "fatGrams": 0.4,
+          "sugarGrams": 14.4,
+          "fibreGrams": 3.1
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for one medium banana; useful carb snack, low protein.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:8d3e337339e77778d21195f77780bd5f96053403d06491d3a1511b01b8511cb0"
+      }
     },
     {
       "id": "snack-3",
       "servingDescription": "",
       "notes": "Kiwi",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Kiwifruit",
+        "calories": 45,
+        "nutrition": {
+          "proteinGrams": 0.8,
+          "carbohydrateGrams": 11,
+          "fatGrams": 0.4,
+          "sugarGrams": 6.7,
+          "fibreGrams": 2.1
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for one kiwifruit; light carb snack, minimal protein.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:8a4089399237d68d0015d5d70fe638bed70741d3035c254d2aa1c5bc260595ea"
+      }
     }
   ],
   "waterIntake": {
@@ -201,5 +249,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-11T10:00:56+10:00",
-  "updatedAt": "2026-07-11T13:50:46+10:00"
+  "updatedAt": "2026-07-13T09:03:46+10:00"
 }

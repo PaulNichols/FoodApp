@@ -132,7 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "KFC chicken pieces and chips",
+        "calories": 1950,
+        "nutrition": {
+          "proteinGrams": 110,
+          "carbohydrateGrams": 90,
+          "fatGrams": 115,
+          "sugarGrams": 2,
+          "fibreGrams": 8
+        },
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Text-only estimate for six fried chicken pieces plus chips; large portion, exact pieces/chip size uncertain.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:4cc9e334e93b5343d53dd060e2b97b1ac6cd0199c1474134463d6020365eb7e5"
+      }
     }
   ],
   "snacks": [
@@ -140,7 +156,23 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Apple",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Apple",
+        "calories": 95,
+        "nutrition": {
+          "proteinGrams": 0.5,
+          "carbohydrateGrams": 25,
+          "fatGrams": 0.3,
+          "sugarGrams": 19,
+          "fibreGrams": 4.4
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for one medium apple; light carb snack, low protein.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:5c2174a877e719fdbc533a6fd84ba1feae65b7c82b697c3c4b741b228c7daa70"
+      }
     }
   ],
   "waterIntake": {
@@ -179,5 +211,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-10T08:34:13+10:00",
-  "updatedAt": "2026-07-10T18:10:12+10:00"
+  "updatedAt": "2026-07-13T09:03:46+10:00"
 }

@@ -132,7 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Roast chicken with peas, cauliflower, potatoes and gravy",
+        "calories": 650,
+        "nutrition": {
+          "proteinGrams": 45,
+          "carbohydrateGrams": 55,
+          "fatGrams": 28,
+          "sugarGrams": 8,
+          "fibreGrams": 9
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo-backed estimate; good protein and vegetables, gravy/potato portions drive uncertainty.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:1557d2aa3c3491a386150c7e6520b2e3504b9b9e73957fe432802e9fc3806522"
+      }
     }
   ],
   "snacks": [
@@ -140,7 +156,23 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Kiwi",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Kiwifruit",
+        "calories": 45,
+        "nutrition": {
+          "proteinGrams": 0.8,
+          "carbohydrateGrams": 11,
+          "fatGrams": 0.4,
+          "sugarGrams": 6.7,
+          "fibreGrams": 2.1
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for one kiwifruit; light carb snack, minimal protein.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:09e20ebf3152e9a9cc789050fec0c86a4a7bde36065843395fc5882c39f87435"
+      }
     }
   ],
   "waterIntake": {
@@ -173,5 +205,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-09T08:20:52+10:00",
-  "updatedAt": "2026-07-09T18:40:45+10:00"
+  "updatedAt": "2026-07-13T09:03:46+10:00"
 }

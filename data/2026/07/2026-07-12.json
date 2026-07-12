@@ -156,13 +156,45 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "40g protein bar",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "40 g protein bar",
+        "calories": 160,
+        "nutrition": {
+          "proteinGrams": 10,
+          "carbohydrateGrams": 17,
+          "fatGrams": 5,
+          "sugarGrams": 6,
+          "fibreGrams": 3
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for a 40 g protein bar; helpful protein snack, brand unknown.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:cc5a6a36d145e841dd959d91b8cfb92f4be508410ea6df38c0d12de7a55e78fd"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Four packets of crisps",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Four packets of crisps",
+        "calories": 600,
+        "nutrition": {
+          "proteinGrams": 8,
+          "carbohydrateGrams": 64,
+          "fatGrams": 36,
+          "sugarGrams": 4,
+          "fibreGrams": 4
+        },
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Text-only estimate for four small packets; snack energy likely high, packet size uncertain.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:540612bcb823e6eff86e55d74eff428b1a891746fe987a74b83013b2c0c95ee7"
+      }
     }
   ],
   "waterIntake": {
@@ -195,5 +227,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-12T11:29:52+10:00",
-  "updatedAt": "2026-07-12T17:05:23+10:00"
+  "updatedAt": "2026-07-13T09:03:46+10:00"
 }

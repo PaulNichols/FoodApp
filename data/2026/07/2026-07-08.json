@@ -132,7 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Chicken, rice and cauliflower",
+        "calories": 500,
+        "nutrition": {
+          "proteinGrams": 40,
+          "carbohydrateGrams": 55,
+          "fatGrams": 12,
+          "sugarGrams": 4,
+          "fibreGrams": 5
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate; solid protein, rice covers training carbs, portion uncertainty.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:db14a43c51fd0ecd4df8933c5bf094268811f1e8405ab70ec85bae2c5a8373a9"
+      }
     }
   ],
   "snacks": [
@@ -162,19 +178,67 @@
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Four slices of wholemeal bread, tuna sandwiches",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Two tuna sandwiches on wholemeal bread",
+        "calories": 450,
+        "nutrition": {
+          "proteinGrams": 38,
+          "carbohydrateGrams": 56,
+          "fatGrams": 7,
+          "sugarGrams": 6,
+          "fibreGrams": 8
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate for four bread slices plus tuna; strong protein, spread quantity uncertain.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:a7b164e8914c6c11eda10b91264020c630be8e4f40ccd94de0d6766562a7e3df"
+      }
     },
     {
       "id": "snack-3",
       "servingDescription": "",
       "notes": "Crisps",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Crisps",
+        "calories": 150,
+        "nutrition": {
+          "proteinGrams": 2,
+          "carbohydrateGrams": 16,
+          "fatGrams": 9,
+          "sugarGrams": 1,
+          "fibreGrams": 1
+        },
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Text-only estimate for one small packet/serve; low protein snack, quantity unclear.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:7901af0fa7abcd0ee9de123e526ae7f33ba1b5b59cc14c85528e1e445c85ec02"
+      }
     },
     {
       "id": "snack-4",
       "servingDescription": "",
       "notes": "Club chocolate biscuits ",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Club chocolate biscuits",
+        "calories": 230,
+        "nutrition": {
+          "proteinGrams": 3,
+          "carbohydrateGrams": 30,
+          "fatGrams": 11,
+          "sugarGrams": 20,
+          "fibreGrams": 1
+        },
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Text-only estimate for two chocolate biscuit bars; sweet snack quantity uncertain.",
+        "updatedAt": "2026-07-13T09:03:46+10:00",
+        "inputHash": "codex:1a84afd68f4597f77bd2d3dc0e5b1f9c3e2df31242247ed83a9d75dce6cbbe08"
+      }
     }
   ],
   "waterIntake": {
@@ -207,5 +271,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-08T08:40:49+10:00",
-  "updatedAt": "2026-07-09T08:22:03+10:00"
+  "updatedAt": "2026-07-13T09:03:46+10:00"
 }
