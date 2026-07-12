@@ -157,6 +157,12 @@
       "servingDescription": "",
       "notes": "40g protein bar",
       "photoPath": null
+    },
+    {
+      "id": "snack-2",
+      "servingDescription": "",
+      "notes": "Four packets of crisps",
+      "photoPath": null
     }
   ],
   "waterIntake": {
@@ -189,5 +195,5 @@
   },
   "dailyNotes": "",
   "createdAt": "2026-07-12T11:29:52+10:00",
-  "updatedAt": "2026-07-12T11:30:24+10:00"
+  "updatedAt": "2026-07-12T17:05:23+10:00"
 }
