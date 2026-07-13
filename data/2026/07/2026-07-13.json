@@ -132,7 +132,16 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Chicken schnitzel with peas and potato gratin",
+        "calories": 900,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Photo shows two crumbed chicken pieces, peas, potato/gratin and small sauce; protein adequate, with most energy from crumb, potato and sauce.",
+        "updatedAt": "2026-07-14T09:05:34+10:00",
+        "inputHash": "codex:2026-07-13:evening-meal:chicken-schnitzel-peas-potato-gratin-photo-v1"
+      }
     }
   ],
   "snacks": [],
