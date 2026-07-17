@@ -1,0 +1,138 @@
+{
+  "date": "2026-07-17",
+  "timezone": "Australia/Brisbane",
+  "supplements": {
+    "morningSupplementsTaken": true,
+    "items": [
+      {
+        "name": "Creatine",
+        "taken": true,
+        "notes": ""
+      },
+      {
+        "name": "AgeMate",
+        "taken": false,
+        "notes": ""
+      },
+      {
+        "name": "Collagen peptides",
+        "taken": true,
+        "notes": ""
+      }
+    ],
+    "notes": ""
+  },
+  "meals": [
+    {
+      "slot": "breakfast",
+      "label": "Breakfast",
+      "templateId": "man-shake-wpi",
+      "templateName": "Man Shake + 2 scoops WPI protein",
+      "usedDefault": false,
+      "servingDescription": "",
+      "notes": "Large bowl of granola with some fruit and yoghurt",
+      "photoPath": null,
+      "ingredients": [
+        "Man Shake serving: 56 g",
+        "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+        "Man Shake per 56 g serving: 29.4 g protein",
+        "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+        "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+        "Man Shake per 56 g serving: 6.9 g dietary fibre",
+        "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+        "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+        "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+        "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ]
+    },
+    {
+      "slot": "lunch",
+      "label": "Lunch",
+      "templateId": "paul-lunch-shake",
+      "templateName": "Paul's lunch shake",
+      "usedDefault": false,
+      "servingDescription": "",
+      "notes": "Bacon and egg roll. Cookie.",
+      "photoPath": null,
+      "ingredients": [
+        "spinach or kale: 1 cup",
+        "avocado: 1/2",
+        "frozen mixed berries: 1/2 cup",
+        "oats: 1/4 cup",
+        "ground flaxseeds or walnuts: 2 tbsp",
+        "protein powder: 1 scoop",
+        "soy milk: 1 cup",
+        "cinnamon powder: 1/2 tsp",
+        "cacao nibs: 1 tsp",
+        "plant sterol powder: 1 tsp optional",
+        "Default lunch shake calories: 600 Cal"
+      ]
+    },
+    {
+      "slot": "evening-meal",
+      "label": "Evening meal",
+      "templateId": "man-shake-wpi",
+      "templateName": "Man Shake + 2 scoops WPI protein",
+      "usedDefault": false,
+      "servingDescription": "",
+      "notes": "",
+      "photoPath": null,
+      "ingredients": [
+        "Man Shake serving: 56 g",
+        "Man Shake per 56 g serving: 203 Cal (850 kJ)",
+        "Man Shake per 56 g serving: 29.4 g protein",
+        "Man Shake per 56 g serving: 2.5 g fat, 2.0 g saturated fat",
+        "Man Shake per 56 g serving: 9.9 g carbohydrate, 2.3 g sugars",
+        "Man Shake per 56 g serving: 6.9 g dietary fibre",
+        "Man Shake per 56 g serving: 160 mg sodium, 40 mg potassium",
+        "Man Shake per 56 g serving: 400 mg calcium, 3.3 mg iron, 130 mg magnesium",
+        "Man Shake per 56 g serving: 380 mg phosphorus, 4.8 mg zinc",
+        "Default Man Shake + WPI calories: 327 Cal (203 Cal Man Shake + 124 Cal WPI)",
+        "WPI protein serving: 2 scoops = 30 g",
+        "WPI protein per 30 g serving: 124 Cal (519 kJ)",
+        "WPI protein per 30 g serving: 24 g protein",
+        "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
+        "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
+        "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
+      ]
+    }
+  ],
+  "snacks": [],
+  "waterIntake": {
+    "entries": [
+      {
+        "id": "coffee",
+        "label": "Coffee",
+        "amountMl": "400",
+        "consumed": true
+      },
+      {
+        "id": "water-bottle",
+        "label": "Bottle of water",
+        "amountMl": "700",
+        "consumed": false
+      },
+      {
+        "id": "agemate",
+        "label": "AgeMate",
+        "amountMl": "240",
+        "consumed": true
+      },
+      {
+        "id": "water-glass",
+        "label": "Glass of water",
+        "amountMl": "400",
+        "consumed": true
+      }
+    ]
+  },
+  "dailyNotes": "Away at a swimming competition in Townsville",
+  "createdAt": "2026-07-17T14:04:27+10:00",
+  "updatedAt": "2026-07-17T14:05:47+10:00"
+}
