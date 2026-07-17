@@ -81,8 +81,8 @@
       "templateName": "Man Shake + 2 scoops WPI protein",
       "usedDefault": false,
       "servingDescription": "",
-      "notes": "",
-      "photoPath": null,
+      "notes": "I shared this",
+      "photoPath": "photos/2026/07/2026-07-17/evening-meal.webp",
       "ingredients": [
         "Man Shake serving: 56 g",
         "Man Shake per 56 g serving: 203 Cal (850 kJ)",
@@ -134,5 +134,5 @@
   },
   "dailyNotes": "Away at a swimming competition in Townsville",
   "createdAt": "2026-07-17T14:04:27+10:00",
-  "updatedAt": "2026-07-17T14:05:47+10:00"
+  "updatedAt": "2026-07-17T18:32:10+10:00"
 }
