@@ -49,7 +49,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Large granola bowl with fruit and yoghurt",
+        "calories": 650,
+        "nutrition": {
+          "proteinGrams": 22,
+          "carbohydrateGrams": 85,
+          "fatGrams": 22,
+          "sugarGrams": 32,
+          "fibreGrams": 9
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only replacement estimate; yoghurt helps protein, but granola/fruit make this a higher-carb breakfast.",
+        "updatedAt": "2026-07-20T08:39:31+10:00",
+        "inputHash": "codex:2026-07-17:breakfast:granola-fruit-yoghurt-text-v1"
+      }
     },
     {
       "slot": "lunch",
@@ -72,7 +88,23 @@
         "cacao nibs: 1 tsp",
         "plant sterol powder: 1 tsp optional",
         "Default lunch shake calories: 600 Cal"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Bacon and egg roll with cookie",
+        "calories": 800,
+        "nutrition": {
+          "proteinGrams": 27,
+          "carbohydrateGrams": 78,
+          "fatGrams": 40,
+          "sugarGrams": 22,
+          "fibreGrams": 4
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only replacement estimate; decent protein from egg/bacon, with most extra energy from roll, sauces and cookie.",
+        "updatedAt": "2026-07-20T08:39:31+10:00",
+        "inputHash": "codex:2026-07-17:lunch:bacon-egg-roll-cookie-text-v1"
+      }
     },
     {
       "slot": "evening-meal",
@@ -100,7 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Shared dim sum plates",
+        "calories": 600,
+        "nutrition": {
+          "proteinGrams": 20,
+          "carbohydrateGrams": 70,
+          "fatGrams": 26,
+          "sugarGrams": 12,
+          "fibreGrams": 5
+        },
+        "confidence": "low",
+        "source": "codex",
+        "notes": "Photo shows shared bao, spring rolls, dumplings and sauces; portion split is unclear, so calories are conservative.",
+        "updatedAt": "2026-07-20T08:39:31+10:00",
+        "inputHash": "codex:2026-07-17:evening-meal:shared-dim-sum-photo-v1"
+      }
     }
   ],
   "snacks": [],
@@ -134,5 +182,5 @@
   },
   "dailyNotes": "Away at a swimming competition in Townsville",
   "createdAt": "2026-07-17T14:04:27+10:00",
-  "updatedAt": "2026-07-17T18:32:10+10:00"
+  "updatedAt": "2026-07-20T08:39:31+10:00"
 }
