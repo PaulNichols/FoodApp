@@ -132,7 +132,23 @@
         "WPI protein per 30 g serving: 1.8 g fat, 1.5 g saturated fat",
         "WPI protein per 30 g serving: 1.8 g carbohydrate, 1.8 g sugars/lactose",
         "WPI protein per 30 g serving: 0 g fibre, 93 mg sodium, 123 mg calcium"
-      ]
+      ],
+      "analysis": {
+        "itemName": "Chicken with peas and Brussels sprouts",
+        "calories": 520,
+        "nutrition": {
+          "proteinGrams": 55,
+          "carbohydrateGrams": 28,
+          "fatGrams": 20,
+          "sugarGrams": 8,
+          "fibreGrams": 12
+        },
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Text-only estimate; strong protein dinner, with calories dependent on chicken portion and added oil or sauce.",
+        "updatedAt": "2026-07-21T08:39:41+10:00",
+        "inputHash": "codex:2026-07-20:evening-meal:chicken-peas-brussels-text-v1"
+      }
     }
   ],
   "snacks": [],
