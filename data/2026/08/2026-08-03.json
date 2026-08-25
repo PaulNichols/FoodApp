@@ -159,19 +159,19 @@
       "photoPath": "photos/2026/08/2026-08-03/snack-1.webp",
       "analysis": {
         "itemName": "Cheese and crackers",
-        "calories": 140,
+        "calories": 117,
         "nutrition": {
-          "proteinGrams": 6,
-          "carbohydrateGrams": 13,
-          "fatGrams": 8,
-          "sugarGrams": 2,
-          "fibreGrams": 1
+          "proteinGrams": 6.4,
+          "carbohydrateGrams": 6.3,
+          "fatGrams": 7.1,
+          "sugarGrams": 1,
+          "fibreGrams": 1.1
         },
-        "confidence": "low",
+        "confidence": "high",
         "source": "codex",
-        "notes": "Single-serve estimate from the note/photo context; some protein, but calorie uncertainty remains without a readable label.",
-        "updatedAt": "2026-08-04T08:35:21+10:00",
-        "inputHash": "codex:d260aff5cc84f0ec7698bf82d12b8ae7328fa1ea0c89b73093f62ca80b7b235b"
+        "notes": "Photo label shows one 30 g serve at 117 Cal with 6.4 g protein; compact snack with modest protein.",
+        "updatedAt": "2026-08-25T08:51:20+10:00",
+        "inputHash": "codex:2026-08-03:snack-1:cheese-crackers-label-30g-v1"
       }
     },
     {
