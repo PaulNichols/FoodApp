@@ -156,13 +156,31 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Apple",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Apple",
+        "calories": 95,
+        "confidence": "medium",
+        "source": "codex",
+        "notes": "Typical medium apple estimate; a light carbohydrate snack with little protein.",
+        "updatedAt": "2026-10-06T08:34:25+10:00",
+        "inputHash": "codex:snack-1:apple:text-v1"
+      }
     },
     {
       "id": "snack-2",
       "servingDescription": "",
       "notes": "Sausage",
-      "photoPath": null
+      "photoPath": null,
+      "analysis": {
+        "itemName": "Sausage",
+        "calories": 180,
+        "confidence": "low",
+        "source": "codex",
+        "notes": "One average sausage assumed; size, type, and added oil are unknown, so this is an approximate higher-fat snack estimate.",
+        "updatedAt": "2026-10-06T08:34:25+10:00",
+        "inputHash": "codex:snack-2:sausage:text-v1"
+      }
     }
   ],
   "waterIntake": {
