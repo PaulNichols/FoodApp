@@ -156,7 +156,16 @@
       "id": "snack-1",
       "servingDescription": "",
       "notes": "Bar",
-      "photoPath": "photos/2026/10/2026-10-06/snack-1.webp"
+      "photoPath": "photos/2026/10/2026-10-06/snack-1.webp",
+      "analysis": {
+        "itemName": "Carman's Protein Bar, Salted Dark Choc & Almond",
+        "calories": 190,
+        "confidence": "high",
+        "source": "codex",
+        "notes": "Photo identifies one 40 g bar with 10 g protein; useful snack protein, though it is not a complete meal.",
+        "updatedAt": "2026-10-07T08:30:23+10:00",
+        "inputHash": "codex:snack:snack-1:carmans-salted-dark-choc-almond-40g-v1"
+      }
     }
   ],
   "waterIntake": {
