@@ -5,8 +5,8 @@
   "source": "FoodApp repository data",
   "window": {
     "days": 31,
-    "startDate": "2026-09-22",
-    "endDate": "2026-10-22"
+    "startDate": "2026-09-23",
+    "endDate": "2026-10-23"
   },
   "totals": {
     "loggedDays": 2,
@@ -34,6 +34,10 @@
     "daysWithDailyNotes": 0
   },
   "days": [
+    {
+      "date": "2026-10-23",
+      "logged": false
+    },
     {
       "date": "2026-10-22",
       "logged": false
@@ -585,10 +589,6 @@
     },
     {
       "date": "2026-09-23",
-      "logged": false
-    },
-    {
-      "date": "2026-09-22",
       "logged": false
     }
   ]
